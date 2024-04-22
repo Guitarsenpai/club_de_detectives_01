@@ -6,8 +6,8 @@ label caso1:
     scene bg escuela edificio principal corredor with dissolve
     "While walking towards the detective club, I thought about how I could attract new members."
     # "It's not like committing a crime and then solving it is an option."
-"I don't think Alice would blackmail other people with her crying..."
-"..."
+    "I don't think Alice would blackmail other people with her crying..."
+    "..."
     extend " Just in case, I'll make her clear that she shouldn't do that again..."
 "That girl sure does get annoying when she wants to... I hope she's not like that all the time."
     unk "Excuse me..."
@@ -22,7 +22,7 @@ label caso1:
     "I accidentally expressed my curiosity."
     unk "Ah! Um... I'm new to the school."
     show hellen alegre
-    unk "My name is {yellow}Hellen Turner{/yellow}, nice to meet you..."
+    unk "My name is {amarillo}Hellen Turner{/amarillo}, nice to meet you..."
     pla "Ah... nice to meet you too. I'm [pla_name]."
     show hellen alegre
     hel "..."
@@ -48,7 +48,7 @@ label caso1:
     unk "Hello, heh, heh, heh."
     pla "H-hello..."
     show hatty sonriendo
-    hel "This is Hatty, {yellow}my twin sister.{/yellow}"
+    hel "This is Hatty, {amarillo}my twin sister.{/amarillo}"
     pla "Twin sister?"
     # extend "But if they don't look alike..."
     # hel "We've been told that a lot, but you're wrong."
@@ -303,7 +303,7 @@ $ renpy.notify( "Not having charisma can be counterproductive...")
     ali "S-sorry..."
     pla "Don't worry..."
     "At least it's better than nothing."
-"Even though I'm curious about that case where Alice was involved, it's best not to dig any further..."
+    "Even though I'm curious about that case where Alice was involved, it's best not to dig any further..."
     show alice normal
     pla "So impressing someone when solving a case... is an effective way to attract someone to this club..."
     pla "But where are we supposed to get a case?"
