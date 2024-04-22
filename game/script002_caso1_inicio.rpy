@@ -1,329 +1,329 @@
 label caso1_inicio:
 
-    $dia="Jue."
-    $fecha="Febrero 20"
-    $hora=16#4pm
-    $quick_menu=True
+    $ dia="Thu."
+    $ fecha="February 20"
+    $ hora=16#4pm
+    $ quick_menu=True
     window show
     # pause 1
     scene bg salon club detectives with dissolve
     play music ambiente2 fadein 4
-    "Ha pasado un día desde que entregamos los volantes..."
-    "Y todavía no ha llegado nadie..."
-    "Para matar el tiempo, me he dedicado a leer algunas novelas sobre detectives."
-    "En este salón, hay algunas novelas interesantes..."
+    "It's been a day since we handed out the flyers..."
+    "And no one has arrived yet..."
+    "To kill time, I have dedicated myself to reading some novels about detectives."
+    "In this room, there are some interesting novels..."
     show alice normal with dissolve
-    pla "Uhm... ¿Entonces, {amarillo}el asesino es el mayordomo{/amarillo}?"
-    "Después de haber llegado al clímax de la historia, le di a conocer mi conclusión a Alice."
-    "Según ella, yo necesitaba{nw}"
+    pla "Uhm... So, {amarillo}the killer is the butler{/amarillo}?"
+    "Having reached the climax of the story, I made my conclusion known to Alice."
+    "According to her, I needed{nw}"
     play sound campana
-    extend " {amarillo}\"entrenamiento deductivo\"{/amarillo}." with flashbulb
-    "Y Alice es quien me estaba enseñando..."
+    extend " {amarillo}\"deductive training\"{/amarillo}." with flashbulb
+    "And Alice was the one who was teaching me..."
     show alice sonriendo
-    ali "Ju, ju, ju... Es un error común pensar eso."
-    pla "¿Un error? Pero si está claro que el mayordomo es el culpable..."
+    ali "He, He, He... It is a common mistake to think so."
+    pla "A mistake? But if it's clear that the butler is to blame..."
     show alice alegre
-    ali "Esa era la intención del escritor."
+    ali "That was the intention of the writer."
     play sound campana
-    ali "{amarillo}No hay que dejarse guiar por pistas falsas.{/amarillo}" with flashbulb
+    ali "{amarillo}Do not let yourself be led by false leads.{/amarillo}" with flashbulb
     show alice sonriendo
-    pla "¿Pistas falsas?"
-    ali "Sí, los autores de misterio {amarillo}suelen ser muy tramposos.{/amarillo}"
-    ali "A las pistas verdaderas no se le dan demasiado enfásis en las historias..."
-    ali "Y cuando menos te lo esperes..."
+    pla " False leads?"
+    ali "Yes, the authors of mysteries {amarillo} tend to be very tricky.{/amarillo}"
+    ali "True clues are not given much emphasis in the stories..."
+    ali "And when you least expect it..."
 
     scene bg alice_objection with dissolve
     show alice_objection with dissolve
 
-    ali "¡El detective señala a la persona menos sospechosa!"
+    ali "The detective points to the least suspicious person!"
 
-    pla "Eh... ¿Con que es así?"
-    pla "Eso suena injusto..."
-    ali "Bueno..."
-    ali "Es que una historia de detectives en donde sepas quién es el culpable, se tornaría aburrida..."
-    ali "Aunque pensándolo bien..."
-    ali "La gracia de una novela de misterio, {amarillo}es el misterio en sí mismo{/amarillo}. No siempre es algo relevante saber quien es el culpable..."
-    pla "Entiendo..."
+    pla "So… that's the way it is?"
+    pla "That sounds unfair..."
+    ali "Well..."
+    ali "It's just that a detective story where you know who the culprit is, would get boring..."
+    ali "Though on second thought..."
+    ali "The beauty of a mystery novel, {amarillo} is the mystery itself {/amarillo}. It is not always relevant to know who is to blame..."
+    pla "I think I understand..."
     scene bg salon club detectives with dissolve
     show alice normal with dissolve
     pla "..."
-    ali "Esto ha estado muy calmado..."
-    pla "Sí, así es."
+    ali "This has been very calm..."
+    pla "Yes, you are right."
     ali "..."
     show alice pensando
-    ali "No ha habido ningún delito..."
-    pla "Tampoco hay que alegrarse porque ocurra uno."
+    ali "There has been no crime..."
+    pla "Nor should one be happy because one happens."
     show alice normal
-    ali "Pero... esto no es lo que quiero para el club..."
-    ali "¿Crees que lo de los volantes no funcionó?"
-    pla "Bueno, tampoco tenía muchas esperanzas en eso..."
+    ali "But... this is not what I want for the club..."
+    ali "You think the flyer thing didn't work?"
+    pla "Well, I didn't have much hope with that..."
     show alice sorprendida
-    ali "¿¡Eeeehh!?" with hpunch
-    pla "Solo mira..."
+    ali "Whaaat!?" with hpunch
+    pla "Just look..."
     show alice normal
-    pla "Varios clubes tienen muchas actividades por ofrecer, sin tener que depender de nadie, como parece ser el caso aquí."
-    pla "Este es un club demasiado pasivo..."
-    pla "Creo que estamos al mismo nivel que el club de literatura en cuanto a popularidad."
-    pla "No... quizás debajo de ellos todavía."
+    pla "Several clubs have many activities to offer, without having to depend on anyone, that doesn't seems to be the case here."
+    pla "This is a too passive club..."
+    pla "I think we're on the same level as the literature club in terms of popularity."
+    pla "No... maybe under them yet."
     show alice pensando
-    ali "Ehh..."
-    ali "Eso es decepcionante..."
-    pla "Es lo que hay."
-    pla "Tenemos que pensar en una actividad para el club..."
-    pla "No sé... algo que tenga que ver con la temática... eso de las deducciones y cosas así..."
+    ali "Uhh..."
+    ali "That's dissappointing..."
+    pla "It is what it is."
+    pla "We have to think of an activity for the club..."
+    pla "I don't know... something that has to do with the theme... that thing about deductions and things like that..."
     ali "Uhm..."
-    ali "Uhhmmmm..."
+    ali "Uhhmm..."
     show alice asustada
     ali "UHHHMMMM...."
     show alice sorprendida
     play sound campana
-    ali "¡Ah! ¡Una {amarillo}{i}escape room{/i}!{/amarillo}" with flashbulb
+    ali "Oh! A {amarillo}{i}escape room{/i}!{/amarillo}" with flashbulb
     show alice normal
-    pla "¿Escape room? ... Una sala de escape..."
-    pla "¿Qué es eso?"
-    ali "Es un juego, donde pones a un grupo de personas en una habitación o sala grande..."
-    ali "Y solo podrán salir si resuelven los acertijos que se encuentran."
-    pla "Oh, eso es interesante..."
-    pla "Me recuerda a una película..."
-    "Aunque esa película era gore..."
-    ali "Aunque lo complicado, es la creación de los acertijos..."
+    pla "Escape room? ...An escape room..."
+    pla "What's that?"
+    ali "It's a game, where you put a group of people in a big room or hall..."
+    ali "And they will only be able to get out if they solve the puzzles they find."
+    pla "Oh that's interesting..."
+    pla "Reminds me of a movie..."
+    "Even though that movie was gore..."
+    ali "Although the complicated thing is the creation of the riddles..."
     show alice pensando
-    ali "Lo he intentado... pero no soy buena en crear uno que sea desafiante."
-    pla "Uh, yo tampoco..."
-    pla "Si tuvieramos a {amarillo}una persona a la que le gusten los acertijos...{/amarillo}"
+    ali "I've tried... but I'm not good at creating one that's challenging."
+    pla "Uh me neither..."
+    pla "If we had {amarillo} a person who likes riddles...{/amarillo}"
     show alice pensando
-    ali "Y si... {w=1}{nw}"
+    ali "What if... {w=1}{nw}"
     show alice sorprendida
-    pla "Denegado."
-    pla "Ya te he dicho que no debemos cometer un delito y luego fingir resolverlo."
-    ali "¡Wuuaah! ¡Me has leído la mente!" with hpunch
-    pla "Eres tan fácil de entender..."
+    pla "Denied."
+    pla "I've already told you that we shouldn't commit a crime and then pretend to solve it."
+    ali "Woah! You have read my mind!" with hpunch
+    pla "You are so easy to understand..."
     show alice normal
     ali "..."
-    ali "¡Oh!"
-    ali "¿Y si solamente es un show?"
-    ali "Podríamos dejar que los participantes resuelvan un crimen fingido, mientras nosotros les ayudamos con pistas."
-    pla "Dene... oh... no es una mala idea..."
+    ali "Oh!"
+    ali "What if it's just a show?"
+    ali "We could let the participants solve a fake crime, while we help them with clues."
+    pla "Deni...oh...not a bad idea..."
     show alice sonriendo
-    ali "Je, je, je. ¿Verdad que sí?"
-    pla "Pero hay un problema."
-    pla "Si fuera un crimen fingido..."
-    pla "Tendría que haber sospechosos, ¿no?"
+    ali "He, he, he. I'm great right?"
+    pla "But there is a problem."
+    pla "If it was a faked crime..."
+    pla "There would have to be suspects, right?"
     show alice normal
-    ali "Sí. Eso es obvio."
+    ali "Yes. That's obvious."
     show alice sorprendida
-    pla "¡Y también es obvio que solo somos dos personas!" with hpunch
+    pla "And it is also obvious that we are only two people!" with hpunch
     ali "..."
     show alice pensando
-    ali "Ah..."
-    ali "Necesitaríamos a más personas para hacerlo bien..."
-    pla "Así es..."
-    pla "Pero eso es mejor que nada... hay que hacer el esfuerzo."
-    pla "No podemos quedarnos de brazos cruzados esperando que un caso nos caiga del cielo..."
+    ali "Oh..."
+    ali "We would need more people to do it right..."
+    pla "That's how it is..."
+    pla "But that's better than nothing... you have to make the effort."
+    pla "We cannot sit idly by waiting for a case to fall from the sky..."
     show alice normal
-    unk "Disculpen... ¿hay alguien aquí?"
-    pla "¿Eh?"
+    unk "Excuse me... is there anyone here?"
+    pla "Uh?"
     hide alice
     show marissa normal with slow_dissolve
     "..."
     show marissa alegre
-    mar "¡Ah! ¡[pla_name], aquí estás!"
-    pla "¿¡Marissa!?"
+    mar "Oh! [pla_name], here you are!"
+    pla "Marissa!?"
     show marissa:
         linear .5 mleft
     show alice normal at mright with dissolve
-    ali "¿La conoces, [pla_name]?"
-    pla "Eh, sí... la conocí cuando fui al club de cocina..."
+    ali "Do you know her, [pla_name]?"
+    pla "Uh, yeah... I met her when I went to the cooking club..."
     show marissa normal
-    mar "Hola... este... ¿Alice?"
+    mar "Hello... uh... Alice?"
     show alice sorprendida
-    ali "¿¡Ah!?" with hpunch
+    ali "Huh?" with hpunch
     show marissa alegre hablando
-    mar "Soy Marissa, ¿no te acuerdas? Creo que nos vimos aquí hace un año."
-    mar "El club ayudó a mi hermana mayor por el caso de un robo..."
+    mar "I'm Marissa, don't you remember? I think we met here a year ago."
+    mar "The club helped my older sister in the case of a robbery..."
     show alice pensando
     ali "..."
     show alice sorprendida
-    ali "¡Oh! ¡El caso del collar de oro!"
+    ali "Oh! The case of the gold necklace!"
     show marissa alegre:
         mleft
         brinquitos
-    mar "¡Sí, ese mismo!"
-    "¿Un collar de oro? Vaya, eso debió ser algo serio..."
-    pla "¿Y qué te trae por aquí, Marissa?"
+    mar "Yes, that same one!"
+    "A gold necklace? Wow, that must have been something serious..."
+    pla "And what brings you here, Marissa?"
     show alice normal
     show marissa preocupada
     mar "..."
-    extend " ¿Puedo cerrar la puerta?"
-    pla "¿Eh?"
-    mar "Necesito ayuda de ustedes..."
+    extend " Can I close the door?"
+    pla "Uh?"
+    mar "I need help from you guys..."
     show alice alegre:
         mright
         brinquitos
-    ali "Ah, ¡Un caso al fin!"
+    ali "Ah, a case at last!"
     mar "..."
     show alice pensando
-    ali "Pe- perdón..."
-    mar "Descuida..."
-    mar "Entonces... ¿Puedo contar con ustedes?"
+    ali "S- sorry..."
+    mar "Don't worry..."
+    mar "So... Can I count on you?"
     stop music fadeout 5
-    mar "Es algo delicado lo que voy a hablar..."
-    mar "Y no quisiera que otras personas me escuchen..."
-    "Alice y yo intercambiamos miradas, extrañados por la petición de Marissa."
-    "Alice asintió con la cabeza, entonces me dirigí a la entrada para cerrar la puerta."
-    ali "Pu- puedes sentarte aquí..."
+    mar "It's something delicate what I'm going to talk about..."
+    mar "And I don't want other people to listen to me..."
+    "Alice and I exchanged glances, puzzled by Marissa's request."
+    "Alice nodded, and then I went to the door to close it."
+    ali "You can sit here..."
     show marissa sonrojada
-    mar "Gracias."
-    pla "Entonces... ¿de qué querías hablar?"
+    mar "Thank you."
+    pla "So... what did you want to talk about?"
     show marissa preocupada
     show alice normal
     mar "..."
     show marissa apenada
-    mar "Bueno... es algo confuso... no sé por donde comenzar..."
+    mar "Well... it's a bit confusing... I don't know where to start..."
     show marissa preocupada
     mar "..."
-    mar "Ah... bien... lo que pasa,{nw}"
+    mar "Ah... well... the thing is,{nw}"
     play sound campana
-    extend " es que {amarillo}recibí una carta{/amarillo}..." with flashbulb
+    extend " that {amarillo}I received a letter{/amarillo}..." with flashbulb
     show alice sorprendida
-    ali "¿U- una carta?"
-    ali "¡Ah! ¿Es alguien que te está chantajeando?" with hpunch
+    ali "A- a letter?"
+    ali "Oh! Is it someone who is blackmailing you?" with hpunch
     show marissa sorprendida
-    mar "¿Eh?"
-    mar "No, no..."
+    mar "What?"
+    mar "No no..."
     show alice normal
     show marissa preocupada
     play sound campana
-    mar "{amarillo}Es una carta de amor.{/amarillo}" with flashbulb
+    mar "{amarillo}It's a love letter.{/amarillo}" with flashbulb
     ali "..."
     pla "..."
-    extend " ¿una carta de amor?"
+    extend " a love letter?"
     play music ambiente2 fadein 10
-    "De repente, sentí que toda la tensión en el aire se había desvanecido."
+    "Suddenly, I felt that all the tension in the air had vanished."
     show marissa preocupada
-    mar "Sí. Una carta de amor que recibí {amarillo}el viernes de la semana pasada{/amarillo}."
-    pla "¿Todavía hoy en día se siguen escribiendo cartas de amor?"
-    mar "Así parece..."
+    mar "Yes. A love letter I received {amarillo}on Friday of the last week{/amarillo}."
+    pla "Are love letters still being written today?"
+    mar "So it seems..."
     show alice pensando
-    ali "Eh... solo eso..."
-    "Alice sonó muy decepcionada."
+    ali "Uh... just that..."
+    "Alice sounded very disappointed."
     show marissa apenada
-    mar "Por desgracia, no."
-    "Marissa sacó una hoja de papel doblada y me lo entregó."
-    mar "Esa es la carta..."
+    mar "Unfortunately, no."
+    "Marissa pulled out a folded sheet of paper and handed it to me."
+    mar "That's the letter..."
     scene carta_amor with dissolve
-    "Alice se acercó a mi lado mientras yo comenzaba a leer la carta."
+    "Alice came over to my side as I began to read the letter."
 
     #carta bla bla
-    "{amarillo}\"Señorita Mar... Le escribo esta carta para expresar el gran amor que siento por usted [...]\"{/amarillo}"
-    "{amarillo}\"Desde el primer día que la conocí, me enamoré como un tonto soñador. [...]\"{/amarillo}"
-    "{amarillo}\"Me encanta que usted sea tan inteligente y muy responsable con lo que hace.\"{/amarillo}"
-    "{amarillo}\"Siendo la persona tan recta y madura que es usted, espero que venga a...\"{/amarillo}"
-    "Después de esto se menciona que la destinataria está invitada a ir al café que queda cerca de la escuela a las cinco de la tarde."
-    "Y también hay muchas cursilerías que no vale la pena mencionar por ahora."
+    "{amarillo}\"Miss Mar... I am writing this letter to express the great love I feel for you [...]\"{/amarillo}"
+    "{amarillo}\"From the first day I met you, I fell in love like a dreamy fool. [...]\"{/amarillo}"
+    "{amarillo}\"I love that you are so intelligent and very responsible with what you do.\"{/amarillo}"
+    "{amarillo}\"Being the upright and mature person that you are, I hope you come to...\"{/amarillo}"
+    "After this it is mentioned that the addressee is invited to go to the cafe that is near the school at five in the afternoon."
+    "And there are also many cheesy things that are not worth mentioning for now."
 
     scene bg salon club detectives with dissolve
     show marissa preocupada at mleft with dissolve
     show alice normal at mright with dissolve
     pla "..."
-    pla "No soy ningún experto en el tema, pero..."
-    pla "¿Qué tiene de malo esta carta?"
-    "Aparte de que es demasiado cursi."
-    mar "Eh... es sobre lo que pone al final..."
+    pla "I'm no expert on the subject, but..."
+    pla "What's wrong with this letter?"
+    "Apart from being too cheesy."
+    mar "Eh... it's about what it says at the end..."
     show marissa apenada
-    mar "Me citaba para al {i}café{/i} que queda cerca de la escuela."
-    mar "Pero al llegar al lugar..."
-    mar "No vi a nadie."
-    mar "Quedé esperando bastante tiempo, y al final me fui."
+    mar "In the letter he would make an appointment with me at the {i} café {/ i} that is near the school."
+    mar "But when I get to the place..."
+    mar "I saw no one."
+    mar "I was waiting for a long time, and in the end I left."
     show alice sorprendida
-    ali "¿Fu- fuiste plantada?"
+    ali "We-were you stood up?"
     show marissa apenada at decaer
-    mar "Eso parece..."
+    mar "So it seems..."
     show marissa at reponerse_rapido
-    mar "Alguien que me escribió esa carta tan cursi, tuvo que dejarme plantada..."
+    mar "Someone who wrote me that cheesy letter, had to stood me up..."
     show marissa alegre
-    mar "Bueno, tampoco es que me importara tanto, ya que pensaba rechazarlo..."
-    ali "¡Wow! ¡Qué directa!" with hpunch
+    mar "Well, it's not like I minded that much, since I was thinking of turning him down..."
+    ali "Wow! How direct!" with hpunch
     mar "..."
     show alice normal
     show marissa apenada
-    extend " Pero si eso se hubiera quedado hasta ahí, no estaría pidiendo ayuda ahora."
+    extend " But if that had stopped there, I wouldn't be asking for help now."
     show marissa preocupada
     mar "..."
-    # extend " Quiero que descubran quién me escribió esa carta."
+    # extend " I want you to find out who wrote that letter."
     # show alice sorprendida
-    # ali "¿¡Eh!?" with hpunch
-    # pla "Pero... ¿no dijiste que no te importaba?"
+    # ali "¿¡Uh!?" with hpunch
+    # pla "But... ¿Didn't you say it doesn't matter to you?"
     # show alice normal
-    # mar "Así es... pero..."
-    mar "Desde que recibí esa carta..."
+    # mar "That's right... but..."
+    mar "Since I received that letter..."
     stop music fadeout 5
-    mar "Siento que ahora{nw}"
+    mar "I feel that now{nw}"
     play sound campana
-    extend " {amarillo}alguien me está acosando.{/amarillo}" with flashbulb
+    extend " {amarillo}someone is stalking me.{/amarillo}" with flashbulb
     show alice sorprendida
-    ali "¿¡Ehhh!? ¿¡Un acosador!?" with hpunch
+    ali "Huh!? A stalker!?" with hpunch
     show marissa normal
-    "Con que era eso..."
+    "So that was it..."
     play music tiempo_muerto fadein 5
-    mar "Así que..."
-    extend " Necesito que me ayuden a descubrir {nw}"
+    mar "So..."
+    extend " I need help to discover {nw}"
     play sound campana
-    extend "{amarillo}quién fue la persona que me envió esa carta.{/amarillo}" with flashbulb
-    mar "No he hablado de esto {amarillo}con nadie, ni con los maestros...{/amarillo}"
-    mar "No quisiera que esto llegue a más, por eso les pido ayuda a ustedes."
-    mar "Sé que este club puede manejar estos asuntos con mucha discresión."
-    "Aunque ahora en este club solo estamos un par de novatos, y un pollo con gorra..."
-    mar "¿Entonces? ¿Podrían ayudarme?"
+    extend "{amarillo}who was the person who sent me that letter.{/amarillo}" with flashbulb
+    mar "I haven't talked about this {amarillo} with anyone, not even with the teachers...{/amarillo}"
+    mar "I don't want this to get any further, that's why I ask you for help."
+    mar "I know that this club can handle these matters very discreetly."
+    "Although now in this club we are only a couple of rookies, and a chicken with a cap..."
+    mar "So? Could you help me?"
     pla "Uh..."
     show alice alegre at brinquitos
-    ali "¡Claro que sí! ¡Déjanos el caso a nosotros!"
+    ali "Of course! Leave the case to us!"
     show alice normal
-    pla "Espera..."
-    pla "Marissa, ¿solo quieres saber quién te envió la carta?"
+    pla "Wait..."
+    pla "Marissa, so you just want to know who sent you the letter?"
     show marissa alegre hablando
-    mar "Sí. Al saber quién fue, podría hablar con un maestro para arreglar este problema debidamente."
-    "Como quien dice, ella quiere evidencias sólidas para acusar a alguien."
+    mar "Yes. Knowing who it was, I could talk to a teacher to fix this problem properly."
+    "I get it, she wants solid evidence to accuse someone."
     show marissa alegre
-    mar "Ya sabes, las cosas se resuelven hablando."
-    mar "O amenazarlos con alguien de mayor autoridad."
+    mar "You know, things are solved by talking."
+    mar "Or by threatening them with someone of higher authority."
     # pla "..."
-    pla "Entiendo..."
-    show marissa alegre hablando at brinquitos 
-    mar "¡Muchas gracias, sabía que podría contar con ustedes!"
+    pla "I understand..."
+    show marissa alegre hablando at brinquitos
+    mar "Thank you so much, I knew I could count on you!"
     pla "..."
     hide marissa with slow_dissolve
     show alice normal:
         ease 1.5 center
-    ali "... ¿qué pasa, [pla_name]?"
-    pla "¿Y qué es lo que vamos a hacer ahora?"
+    ali "... what's wrong, [pla_name]?"
+    pla "And what are we going to do now?"
     show alice sorprendida
-    pla "Tú deberias tener algo de experiencia en esto..."
+    pla "You should have some experience in this..."
     show alice pensando
-    ali "Eh... bueno, aunque no lo parezca, no soy popular con los chicos, así que no he recibido alguna carta de amor, o algo parecido..."
+    ali "Uh... well, although it may not seem like it, I'm not popular with guys, so I haven't received any love letters, or anything like that..."
     show alice sorprendida
-    pla "¡Eso no!" with hpunch
-    pla "Me refiero, a lo que debemos hacer después de aceptar un caso."
+    pla "Not that!" with hpunch
+    pla "I mean, what should we do after accepting a case."
     show alice alegre
     play sound campana
-    ali "¡Ah! Eso, je, je... cierto..." with flashbulb
+    ali "Oh! That, heh, heh... right..." with flashbulb
     ali "..."
     show alice normal
-    extend " bien..."
-    ali "Antes que todo, en una investigación es primordial tener un registro de las cosas que se descubren."
+    extend " ok..."
+    ali "First of all, in an investigation it is essential to have a record of the things that are discovered."
     show alice sonriendo
-    ali "Espérame un momento..."
+    ali "Wait for me a moment..."
     hide alice with dissolve
     pause 1
-    "Alice se fue de inmediato a buscar algo entre los cajones de una mesa."
+    "Alice immediately went to look for something among the drawers of a table."
     "..."
     show alice sonriendo with dissolve
-    ali "Aquí tienes."
+    ali "Here you have."
     play sound notify
-    $renpy.notify("Has recibido un bloc de notas")
-    $quick_menu_btn_notepad=True
+    $ renpy.notify("You have received a notebook")
+    $ quick_menu_btn_notepad=True
     pause 1.2
-    ali "{amarillo}Aquí puedes apuntar todas las pistas que vayas descubriendo...{/amarillo} o cualquier cosa que se te ocurra."
+    ali "{amarillo}Here you can write down all the clues that you discover...{/amarillo} or whatever you can think of."
     if renpy.variant("pc"):
         show text "{font=gui/fonts/fontawesome.ttf}{size=70}{/size}{/font}":
             xpos 0.750 ypos 0.7
@@ -334,41 +334,41 @@ label caso1_inicio:
                 ease .5 yoffset 0
                 repeat 4
             linear .8 alpha 0
-    "Alice me entregó un bloc de notas y un bolígrafo."
+    "Alice handed me a notebook and a pen."
     if renpy.variant("pc"):
         hide text
-    pla "Entiendo..."
+    pla "I understand..."
     hide alice with slow_dissolve
-    "Bueno... lo primero sería apuntar lo que sabemos hasta el momento..."
-    tuto "Hola, esto es un{nw}"
+    "Well... the first thing would be to write down what we know so far..."
+    tuto "Hello, this is a {nw}"
     play sound campana
-    extend " {amarillo}mensaje del tutorial.{/amarillo}" with flashbulb
-    $ addNote("Marissa Morstan (perfil)","Marissa Morstan es miembro del club de cocina. Es una persona muy amable y sociable, además es quien nos ha pedido a Alice y a mí identificar a la persona que la está acosando, que también le había entregado una carta de amor.","marissa")
-    tuto "Se te notificará cada vez que el bloc de notas {amarillo}se actualice.{/amarillo}"
-    tuto "Puedes consultarlo en cualquier momento."
-    tuto "Además, este bloc de notas se utilizará a la hora de realizar algún {amarillo}interrogatorio{/amarillo} o incluso en un {amarillo}debate escolar.{/amarillo}"
-    # tuto "Incluso será de utilidad consultarlo cuando estés en medio de un {amarillo}debate escolar.{/amarillo}"
-    tuto "Ya veremos las {amarillo}mecánicas de juego{/amarillo} más adelante."
+    extend " {amarillo}tutorial message.{/amarillo}" with flashbulb
+    $ addNote("Marissa Morstan (profile)","Marissa Morstan is a member of the cooking club. She is a very friendly and sociable person, she is also the one who has asked Alice and me to identify the person who is stalking her. That same person also delivered a love letter to her.","marissa")
+    tuto "You will be notified every time the {amarillo} notepad is updated.{/amarillo}"
+    tuto "You can check it at any time."
+    tuto "In addition, this notebook will be used when conducting a {amarillo}interrogation{/amarillo} or even in a {amarillo}school debate.{/amarillo}"
+    # tuto "It will even be useful to consult it when you are in the middle of a {amarillo}school debate.{/amarillo}"
+    tuto "We'll cover the {amarillo}gameplay{/amarillo} later."
     show alice normal with dissolve
-    pla "Listo... ¿y qué sigue?"
-    ali "Veamos..."
-    ali "Ahora toca escuchar el {amarillo}testimonio{/amarillo} de nuestra \"cliente\" sobre como han sucedido los hechos, y realizar preguntas para {amarillo}obtener pistas.{/amarillo}"
-    pla "Ya veo..."
+    pla "Done... and what's next?"
+    ali "Let's see..."
+    ali "Now it's time to listen to the {amarillo}testimony{/amarillo} of our \"client\" about how the events happened, and ask questions to {amarillo}get clues.{/amarillo}"
+    pla "I see..."
     show alice:
         ease .5 mright
     show marissa preocupada at mleft with dissolve
-    pla "Marissa, entonces puedes contarnos al detalle tu caso."
+    pla "Marissa, then you can tell us about your case in detail."
     show marissa alegre
-    mar "Claro..."
-    mar "Supongo que comenzaré a contarles desde el comienzo del día {amarillo}cuando recibí la carta.{/amarillo}"
+    mar "Sure..."
+    mar "I guess I'll start telling you from the beginning of the day {amarillo} when I received the letter.{/amarillo}"
     show marissa preocupada
-    mar "Pero antes de eso..."
+    mar "But before that..."
     show marissa apenada
-    extend " quisiera beber algo de agua."
+    extend " I would like to drink some water."
     show marissa alegre at brinquitos
     stop music fadeout 3
-    mar "Siento que hablaré demasiado je, je, je..."
-    pla "Claro..."
+    mar "I feel like I'll talk too much heh heh heh..."
+    pla "Sure..."
     # scene bg negro with slow_dissolve
     # stop music fadeout 3
     # pause 2
