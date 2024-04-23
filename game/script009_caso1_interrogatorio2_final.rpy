@@ -1,115 +1,116 @@
 label caso1_iterrogatorio2_final:
+label caso1_iterrogatorio2_final:
 
-    $fase_titulo.append("Interrogatorio de Prof. Harrow")
-    $fase_tipo_vida.append("cantidad")
-    $fase_corazones.append(cantidad_corazones)
-    $fase_multiplicador.append(10)
+    $ fase_titulo.append("Interrogation of Prof. Harrow")
+    $ fase_tipo_vida.append("amount")
+    $ fase_corazones.append(cantidad_corazones)
+    $ fase_multiplicador.append(10)
 
     stop music fadeout 2
     hide screen interrogatorio_btns
     $quick_menu_gameplay = False
     $hide_gameplay_layout()
-    $estadoj="Libre"
-    pla "Muchas gracias profesora Harrow."
-    $addNote("Prof. Harrow (perfil)","Una persona estricta y muy responsable con su trabajo, así es la profesora Mary Harrow. Además, le gusta el orden y la eficiencia.{p}{p}Cuando se enoja, da mucho miedo. La conozco desde hace un buen tiempo ya que ella es una amiga de mi familia, por lo cual, me he acostumbrado a su mirada intimidadora.","mary")
-    pla "Creo que eso era todo lo que necesitaba saber."
+    $estadoj="Free"
+    pla "Thank you very much Professor Harrow."
+    $ addNote("Professor Harrow (profile)","A strict and very responsible person with her work, that's Professor Mary Harrow. Also, she likes order and efficiency.{P}{p}When she gets angry, she is very scary. I've known her for a long time since she's a friend of my family, so I've gotten used to her intimidating look.","Mary")
+    pla "I think that's all I needed to know."
     show mary pensando
-    mary "Entiendo."
+    mary "I understand."
     show mary hablando
-    mary "Bien, te puedes retirar. Ahora tengo que hablar con Marissa..."
+    mary "Fine, you should go now. I have to talk to Marissa..."
     show mary:
         ease .5 mleft
     show marissa apenada at mright with dissolve
-    mar "Uuuaaaahh... Noooooo..." with hpunch
-    "Pobre Marissa..."
+    mar "Oooooooooooooooooo..." with hpunch
+    "Poor Marissa..."
     scene bg escuela edificio principal corredor with fade
-    "Cada vez, esto se vuelve más confuso..."
-    "Ahora, han aparecido nuevos detalles... y {amarillo}un sospechoso...{/amarillo}"
-    "¿Podremos resolver este misterio?"
+    "This is getting more and more confusing..."
+    "Now, new details have emerged... and {amarillo}a suspect...{/amarillo}"
+    "Can we solve this mystery?"
     if numero_alice_obtenido:
-        "Por cierto..."
-        "¿Cómo le habrá ido a Alice?"
-        "No he tenido noticias suyas."
-        "Le envié un mensaje diciéndole que encontré nuevas pistas sobre el caso, pero no me ha contestado..."
-    "El receso no tardará en terminar..."
-    "Después de clases iré al club."
+        "By the way..."
+        "How will Alice have fared?"
+        "I haven't heard from her."
+        "I sent her a message telling her that I found new leads of the case, but she hasn't replied to me..."
+    "The break time will soon be over..."
+    "When classes are over I will go to the club."
     scene bg negro with slow_dissolve
     hide screen quick_menu
-    $quick_menu=False
+    $ quick_menu=False
     window hide
     pause 2
-    $hora=14
-    $quick_menu=True
+    $ hora=14
+    $ quick_menu=True
     window show
     scene bg escuela corredor clubes dia with dissolve
     pause 2
-    "Para mi sorpresa, encontré el salón del club de detectives completamente cerrado."
+    "To my surprise, I found the detective club room completely closed."
     if numero_alice_obtenido:
-        "Estuve golpeando la puerta, pero nadie ha respondido."
-        "También le he marcado a Alice pero no ha contestado."
-    "¿Donde podría estar?"
+        "I've been banging on the door, but no one has answered."
+        "I also dialed Alice but she did not answer."
+    "Where could she be?"
     show hatty sonriendo with dissolve
     pause 1
     "..."
     play music ambiente fadein 4
-    hat "¿¡Ehh!? Tú eres..."
-    hat "El chico de la otra vez."
-    pla "Hola."
+    hat "Huh!? You are..."
+    hat "That boy from the other time."
+    pla "Hello."
     show hatty alegre
-    hat "¡Hey qué tal! ¿Qué haces frente al club de literatura?" with hpunch
-    pla "¿Qué?"
+    hat "Hey what's up! What are you doing in the front of the literature club?" with hpunch
+    pla "What?"
     show hatty pensando
-    hat "¿Qué pasa con esa cara de confusión?"
-    pla "Ehm... Hatty, este es el club de detectives..."
+    hat "What's with that confused face?"
+    pla "Um... Hatty, this is the detective club..."
     show hatty asustada
-    hat "¿¡Eh!?" with hpunch
-    hat "Me... he equivocado..."
+    hat "Huh!?" with hpunch
+    hat "I have made a mistake..."
     show hatty pensando at decaer
-    hat "Donde puede estar..."
+    hat "Where can she be..."
     show hatty at reponerse
-    pla "¿Qué estás buscando? Si se puede saber..."
-    hat "Estoy buscando a mi hermana..."
-    hat "Me había dicho que iba al club de literatura a llenar un formulario..."
+    pla "Who are you looking for? If it can be known..."
+    hat "I'm looking for my sister..."
+    hat "She had told me that she was going to the literature club to fill out a form..."
     "Uh..."
-    hat "Ah... qué molestia, solo tengo que decirle que llegaré tarde a la casa..."
-    "Hatty comenzó a murmurar para sí misma, mientras miraba su celular."
-    hat "Justamente hoy también tuvo que{nw}"
+    hat "Ah... what a nuisance, I just have to tell her that I'll be late home..."
+    "Hatty began to mutter to herself, as she looked at her cell phone."
+    hat "Just today {nw}"
     play sound campana
-    extend " {amarillo}caerse la red de telefonía...{/amarillo}" with flashbulb 
-    "¿Eh?"
+    extend " {amarillo} the telephone network also had to go down...{/amarillo}" with flashbulb
+    "Huh?"
     show hatty sonriendo
-    hat "¿Qué pasa, [pla_name]?"
+    hat "What's wrong, [pla_name]?"
 
     menu:
-        "\"No es nada\"":
-            $updateStat("intel","-",1)
-            $renpy.notify("Inteligencia -1")
-            pla "No es nada."
-            hat "Uhm... ya..."
+        "\"It's nothing\"":
+            $ updateStat("intel","-",1)
+            $ renpy.notify("Intelligence -1")
+            pla "It's nothing."
+            hat "Uhm... ok..."
+        "\"Is the phone network down?\"":
 
-        "\"¿La red de telefonía está caída?\"":
-            $updateStat("intel","+",1)
-            $renpy.notify("Inteligencia +1")
-            pla "¿La red de telefonía está caída?"
-            hat "Así es..."
+            $ updateStat("intel","+",1)
+            $ renpy.notify("Intelligence +1")
+            pla "Is the phone network down?"
+            hat "That's how it is..."
 
     show hatty pensando
-    hat "¿No te parece curioso?"
+    hat "Don't you find it curious?"
     play sound campana
-    hat "{amarillo}El viernes de la semana pasada también estaba la red caída.{/amarillo}" with flashbulb
-    pla "Con que el viernes de la semana pasada..."
-    pla "Entonces, ¿no puedes llamar a tu hermana?"
+    hat "{amarillo}On Friday of last week the network was also down.{/amarillo}" with flashbulb
+    pla "It's that so? On Friday of last week..."
+    pla "So you can't call your sister?"
     show hatty molesta
-    hat "Sí... aunque suena el tono, las llamadas no conectan, tampoco sirve la red de internet, ni puedo enviar mensajes de texto..."
-    pla "¿Entonces tampoco se podía llamar o enviar mensajes el viernes pasado?"
-    hat "Sí... por eso es curioso, hoy también es viernes..."
-    hat "Y el problema duró todo el día, seguramente hoy sea igual..."
-    $addNote("Problemas en red de telefonía","El viernes de la semana pasada (cuando Marissa recibió la carta), y también el viernes 21, la red de telefonía se ha caído. Por lo tanto ha sido imposible llamar o enviar mensajes desde el celular en esos días.")
-    pla "Ya veo... no me había dado cuenta."
+    hat "Yes... although the tone sounds, the calls do not connect, the internet does not work, nor can I send text messages..."
+    pla "So you couldn't call or text last Friday either?"
+    hat "Yes... that's why it's funny, today is also Friday..."
+    hat "And the problem lasted all day, surely today is the same..."
+    $ addNote("Phone network problems","On Friday of last week (when Marissa received the letter), and also on Friday the 21st, the phone network was down. Therefore it has been impossible to call or send messages from the cell phone in those days.")
+    pla "I see... I hadn't noticed."
     show hatty sonriendo
-    hat "¿Eh? ¿Por qué estás apuntando eso?"
-    pla "Ah, bueno... estoy en medio de una investigación..."
-    hat "¿Una investigación?"
+    hat "Huh? Why are you noting that down?"
+    pla "Uh, well... I'm in the middle of an investigation..."
+    hat "An investigation?"
 
     # pla "¿Estás buscando a tu hermana?"
     # hat "Sí. Ella se unió al club de literatura, y pensé que este era el salón."
@@ -126,207 +127,208 @@ label caso1_iterrogatorio2_final:
     # pla "Estamos en medio de una investigación."
     # hat "Ooohhh..."
 
-    hat "¿Y a quién estás investigando?"
-    pla "No puedo decírtelo. Es información confidencial."
+    hat "And who are you investigating?"
+    pla "I can't tell you. It is confidential information."
     show hatty molesta
     hat "Uhh..."
-    extend " ahora estaré con la curiosidad."
-    pla "Bueno, si estás deseosa de saberlo, siempre serás bienvenida al club."
-    pla "Estamos en busca de nuevos miembros."
-    hat "Eh..."
+    extend " now I'll be curious."
+    pla "Well, if you're willing to know, you're always welcome at the club."
+    pla "We are looking for new members."
+    hat "Uh..."
     show hatty alegre at brinquitos
-    hat "Interesante. Lo tendré en cuenta. Je, je."
+    hat "Interesting. I'll keep it in mind. He he."
     show hatty pensando
     hat "..."
-    hat "Hey... [pla_name]... me averguenza decirlo... pero..."
-    hat "¿Dónde está el club de literatura?"
-    "Vaya, su sentido de la orientación está terriblemente mal..."
-    pla "Bueno, el club de literatura está en el primer salón de este corredor..."
-    hat "Oh, me he pasado entonces..."
+    hat "Hey... [pla_name]... I'm embarrassed to say it... but..."
+    hat "Where is the literature club?"
+    "Wow, her sense of direction is terribly wrong..."
+    pla "Well, the literature club is in the first room of this corridor..."
+    hat "Oh, I've gone too far then..."
     show hatty alegre
-    hat "Bueno, nos vemos [pla_name]."
+    hat "Well, see you [pla_name]."
     hide hatty with dissolve
     # "Y al final, Hatty se fue con los ánimos decaídos..."
-    "Esa chica necesita tener un mapa todo el día..."
+    "That girl needs to have a map all day..."
     # "..."
-    "Uhm... qué debería hacer..."
+    "Uhm... what should I do..."
     if numero_alice_obtenido:
-        "Ya que Alice no me ha contestado, no tengo nada que hacer aquí..."
-    "Todavía hay tiempo."
-    "Y con lo que he descubierto hasta ahora..."
+        "Since Alice hasn't answered me, I have nothing to do here..."
+    "There is still time."
+    "And with what I've discovered so far..."
     play sound campana
-    "Sería buena idea hablar con {amarillo}Beck Doran.{/amarillo}" with flashbulb
-    "Si alguien sabe de acosadores, seguramente es él."
-    $quick_menu_btn_notepad=False
-    $addstate=True
+    "It would be a good idea to talk to {amarillo}Beck Doran.{/amarillo}" with flashbulb
+    "If anyone knows about stalkers, it's probably him."
+    $ quick_menu_btn_notepad=False
+    $ addstate=True
     label beck_esta_en_club_de:
-        "Si no me equivoco... Beck está en el club de..."
+        "If I'm not wrong... Beck is in the club of..."
         menu:
-            "Deportes":
-                "No... está claro que es eso, pero de un deporte en específico..."
-                $addstate=False
+            "Sports":
+                "No...That's for sure, but from a specific sport..."
+                $ addstate=False
                 jump beck_esta_en_club_de
-            "Beisból":
-                "No... ese no es..."
-                $addstate=False
+            "Baseball":
+                "No... That's not..."
+                $ addstate=False
                 jump beck_esta_en_club_de
-            "Fútbol":
+            "Soccer":
                 if addstate:
-                    $updateStat("intel","+",1)
-                    $renpy.notify("Inteligencia +1")
-                $quick_menu_btn_notepad=True
-                "El club de fútbol..."
+                    $ updateStat("intel","+",1)
+                    $ renpy.notify("Intelligence +1")
+                $ quick_menu_btn_notepad=True
+                "The football club..."
 
-    "Entonces... seguramente a esta hora... Beck podría estar en la cancha de la escuela..."
-    "Bien, vamos para allá..."
+    "So... probably at this hour... Beck would be on the school field..."
+    "Ok, let's go there..."
     stop music fadeout 5
     scene bg escuela campo deporte tarde with slow_dissolve
-    "Al llegar a la cancha de la escuela, noté que había un partido en juego..."
+    "Arriving at the school field, I noticed that there was a game in progress..."
     play music partido_futbol fadein 6
     "..."
-    "¿¡Eh!?" with hpunch
-    "Al examinar el lugar, vi que alguien se escondía detrás de un árbol."
+    "Huh!?" with hpunch
+    "Examining the place, I saw that someone was hiding behind a tree."
     "Uh..."
-    "Con pasos cautelosos, me acerqué a aquel árbol..."
-    "Y la sorpresa fue..."
+    "With cautious steps, I approached that tree..."
+    "And the surprise was..."
     stop music fadeout 2
     show alice sorprendida
-    ali "¡...!" with hpunch
-    pla "¿Alice?"
-    ali "¡Aaaahh!" with hpunch
+    ali "...!" with hpunch
+    pla "Alice?"
+    ali "Aaahh!" with hpunch
     play music ambiente3 fadein 3
-    ali "¿[pla_name]? ¿Qu- qué haces aquí?"
-    pla "Es lo que yo debería preguntar..."
-    pla "¿Qué estás haciendo escondida aquí? Pareces una acosadora..."
+    ali "[pla_name]? Wha- what are you doing here?"
+    pla "That's what I should ask..."
+    pla "What are you doing hiding here? You look like a stalker..."
     show alice asustada
-    ali "¡Ah! ¡Cla- claro que no!" with hpunch
-    ali "¡Estoy investigando!" with hpunch
-    pla "¿Investigando qué?"
+    ali "Oh! Of course not!" with hpunch
+    ali "I am investigating!" with hpunch
+    pla "Investigating what?"
     show alice pensando
-    ali "A todas estas personas..."
+    ali "To all those people..."
     show alice normal
-    ali "Marissa había dicho que el sábado vino a la escuela, ¿no?"
+    ali "Marissa had said that she came to school on Saturday, right?"
     show alice pensando
     play sound campana
-    ali "{amarillo}Pues ese día hubo un partido de fútbol.{/amarillo}" with flashbulb
+    ali "{amarillo}Well, that day there was a soccer game.{/amarillo}" with flashbulb
     show alice normal
-    pla "¿En serio? No tenía idea..."
+    pla "Oh really? I had no idea..."
     show alice pensando
-    ali "Sí... recordé que uno de mis superiores era fánatico del fútbol, y había dicho que aquí juegan partidos de ligas escolares en los fines de semana."
+    ali "Yes... I remembered that one of my superiors was a soccer fanatic, and he said that here they play school league games on the weekends."
     show alice normal
-    ali "Así que pensé que el acosador posiblemente frecuente venir a la cancha..."
-    $addNote("Cancha en fin de semana","En los fines de semana, se juegan partidos de ligas escolares en la escuela, eso es lo que me dijo Alice.")
+    ali "So I thought the stalker would often come onto the field..."
+    $ addNote("Field on weekend","On the weekends, school league games are played at the school, that's what Alice told me.")
     pla "..."
-    pla "Nada mal..."
-    ali "¿Y tú por qué viniste acá?"
+    pla "Not bad..."
+    ali "And why did you come here?"
     # pla "¿No has recibido mi mensaje? Te lo envié en la hora de receso."
     # ali "Uhm... no... no he recibido nada."
     # "Me lo imaginaba, entonces la red telefónica realmente está fallando..."
-    pla "En mi caso, vine para tratar de hablar con un experto en acosadores."
+    pla "In my case, I came here to try to talk to a stalker expert."
     show alice sorprendida
-    ali "¿¡Eh!?" with hpunch
-    ali "¿Un experto en acosadores?"
-    pla "¿Has visto a todas esas chicas entre el público?"
-    unk "¡Eso, vamos! ¡Hay que ganar!"
-    unk "¡Aaahh! ¡Beck! ¡Mete otro gol!"
+    ali "Huh!?" with hpunch
+    ali "A stalker expert?"
+    pla "Have you seen all those girls in the audience?"
+    unk "That, come on! We have to win!"
+    unk "Aahh! Beck! Score another goal!"
     show alice normal
-    ali "Uh... sí..."
-    "A pesar de que esto parecía ser un partido de práctica, había varias chicas haciendo de porristas..."
-    pla "Pues cuando fui al salón de Marissa, descubrí que uno de sus compañeros suele ser acosado por mujeres."
+    ali "Uh... yeah..."
+    "Even though this seemed to be a practice match, there were several girls cheerleading…"
+    pla "Well, when I went to Marissa's classroom, I found out that one of her classmates is often stalked by women."
     show alice sorprendida
-    ali "¿¡En serio!?" with hpunch
-    pla "Sí, se llama Beck Doran... ese mismo que tiene la pelota..."
-    pla "Pensé que sería buena idea hablar con él sobre el caso."
-    ali "¿Estás seguro?"
-    ali "Marissa no quería que muchas personas se enteraran de su problema..."
-    pla "Lo sé... Pero creo que podemos tener más información si hablamos con él."
+    ali "Oh really!?" with hpunch
+    pla "Yes, his name is Beck Doran... the same one with the ball..."
+    pla "I thought it would be a good idea to talk to him about the case."
+    ali "You're sure?"
+    ali "Marissa didn't want too many people to find out about her problem..."
+    pla "I know... But I think we can get more information if we talk to him."
     show alice normal
-    ali "Uh... bueno, está bien."
+    ali "Uh...well, okay."
     "..."
     ali "..."
     show alice sorprendida
-    pla "¿Piensas quedarte allí?"
-    ali "Pues... sí..."
-    pla "Déjame decirte que eso te hace ver muy sospechosa."
-    pla "Vamos, veamos el partido un rato."
+    pla "Do you plan to stay there?"
+    ali "Well yes..."
+    pla "Let me tell you, that makes you look very suspicious."
+    pla "Come on, let's watch the game for a while."
     ali "..."
     show alice sonrojada
-    ali "... Está bien..."
+    ali "... Alright..."
     if not numero_alice_obtenido:
-        pla "Oye, Alice... creo que deberíamos intercambiar números."
+        pla "Hey, Alice... I think we should exchange numbers."
         show alice sorprendida
-        ali "¿¡Eh!?"
+        ali "Huh!?"
         show alice sonrojada
-        ali "La verdad... es que yo también estaba pensando en eso..."
-        pla "Genial."
-        "Alice y yo intecambiamos números."
-        "Aunque la red de telefonía esté fallando hoy, siempre es bueno tener el número de tus compañeros."
+        ali "The truth… is that I was thinking about that too..."
+        pla "Great."
+        "Alice and I exchanged numbers."
+        "Even if the phone network is failing today, it is always good to have the number of your colleagues."
     stop music fadeout 4
     scene bg negro with dissolve
     pause 1.4
     $hora=15
     scene bg escuela corredor afuera tarde with dissolve
     pause 1
-    "Después de que el partido terminó, Alice y yo estuvimos muy atentos de a donde se dirigía Beck."
-    "Esperamos el momento oportuno para hablar con él."
-    "Beck había ya había salido de unos vestidores que quedaban cerca de la cancha."
-    "Y cuando Beck ya no estaba cerca de nadie, fue entonces cuando nos acercamos."
+    "After the match ended, Alice and I kept a close eye on where Beck was headed."
+    "We waited for the opportune moment to speak with him."
+    "Beck had already left some locker rooms that were near the field."
+    "And when nobody was around anymore, that's when we got closer."
     show beck serio with dissolve
     pause 1
     show beck sorprendido
-    bec "¿Eh?"
-    pla "Hola, Beck..."
-    bec "Tú eres... el chico que estaba hablando con Marissa..."
-    bec "¿Cómo te llamabas? Este..."
-    pla "[pla_name]. Y esta chica que me está acompañando es Alice Baskerville."
-    bec "¿Quién?"
+    bec "Hey?"
+    pla "Hi Beck..."
+    bec "You are... the boy who was talking to Marissa..."
+    bec "What was your name?"
+    pla "[pla_name]. And this girl who is accompanying me is Alice Baskerville."
+    bec "Who?"
     show alice pensando at right with dissolve
-    "Vi que Alice estaba escondida detrás de mí."
-    bec "¿Qué pasa? Parece que le doy miedo..."
-    pla "Alice... vamos, deja de esconderte..."
+    "I saw that Alice was hiding behind me."
+    bec "What's wrong? It seems to be scared..."
+    pla "Alice... come on, stop hiding..."
     ali "Uh..."
     show beck:
         ease .5 mleft
     pause .5
     show alice:
         ease .5 mright
-    ali "{size=25}H- hola...{/size}"
+    ali "{size=25}H- hello...{/size}"
     show beck pensando
-    bec "¿Entonces? ¿Qué querían?"
+    bec "So? What do you want?"
     show beck guino
-    bec "No me digas... ¿te arrepentiste y ahora quieres unirte al club de fútbol?"
-    pla "Eh... no. Ya tengo un club."
+    bec "Don't tell me... you regretted it and now you want to join the soccer club?"
+    pla "Uh no. I already have a club."
     play sound campana
-    pla "Alice y yo somos del club de detectives." with flashbulb
+    pla "Alice and I are from the detective club." with flashbulb
     show beck sorprendido
-    bec "¿¡Eeeeh!?" with hpunch
-    bec "Pe- pero... ¿no estabas a punto de meterte en el club de Marissa?"
-    pla "Era solo una excusa para investigar."
-    bec "¿Investigar?"
-    bec "¿Qu- qué están investigando?"
-    pla "No podemos decírtelo. Es algo confidencial con quien pidió nuestra ayuda."
+    bec "Whaat!?" with hpunch
+    bec "B-but... weren't you about to join Marissa's club?"
+    pla "It was just an excuse to investigate."
+    bec "Investigate?"
+    bec "Wh- what are you investigating?"
+    pla "We can't tell you. It's confidential."
     hide alice with dissolve
     show beck pensando:
         ease .5 center
-    bec "Uh... bueno, yo no me he metido en algún problema, así que adiós..."
-    pla "¡Espera!" with hpunch
-    pla "No es un caso que te involucra a ti. Pero podrías haber sido {amarillo}testigo de algo...{/amarillo}"
+    bec "Uh... well, I haven't gotten into any trouble, so bye..."
+    pla "Wait!" with hpunch
+    pla "It's not a case involving you. But you could have been {amarillo}witness to something...{/amarillo}"
     show beck sorprendido
-    bec "¿Eh?"
-    pla "Queremos saber lo que pasó {amarillo}el viernes de la semana pasada.{/amarillo}"
-    bec "¿El viernes?"
-    pla "Solo necesito hacerte algunas preguntas, no será mucho tiempo."
+    bec "Huh?"
+    pla "We want to know what happened {amarillo} on Friday of last week.{/amarillo}"
+    bec "On Friday?"
+    pla "I just need to ask you a few questions, it won't be long."
     bec "..."
     show beck pensando
-    bec "Bueno... ¿y qué quieren saber?"
-    pla "Para empezar, ¿podrías relatarnos lo que pasó ese día?"
-    bec "Uh... no me siento cómodo con esto..."
+    bec "Well... and what do you want to know?"
+    pla "To begin with, could you tell us what happened that day?"
+    bec "Uh... I'm not comfortable with this..."
     show beck preocupado
-    bec "¿Me meteré en problemas si digo algo indebido?"
-    pla "Lo dudo... solo queremos saber más de ese día."
+    bec "Will I get in trouble if I say something wrong?"
+    pla "I doubt it... we just want to know more about that day."
     show beck pensando
     bec "..."
-    extend " está bien."
-    pla "Muchas gracias."
-    bec "Bien... veamos..."
+    extend " alright."
+    pla "Thank you so much."
+    bec "Ok... let's see..."
     jump caso1_testimonio3
+    
