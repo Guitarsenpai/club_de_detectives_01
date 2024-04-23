@@ -1,106 +1,106 @@
 label int2_gameover:
     hide screen interrogatorio_btns
-    $hide_gameplay_layout()
+    $ hide_gameplay_layout()
     stop music fadeout 1.0
-    mary "Sabes, [pla_name], te recomiendo que busques otro club."
+    mary "You know, [pla_name], I recommend you to find another club."
     show mary hablando
-    mary "No estás haciendo más que perder el tiempo."
-    mary "No hablaré más, ahora retírate. Tengo que hablar con cierta alumna problemática."
-    pla "Eh, profesora Harrow..." 
-    mary "¿Te lo tengo que repetir?" with hpunch
+    mary "You are doing nothing but wasting time."
+    mary "I won't talk anymore, now retire. I have to talk to a certain troublesome student."
+    pla "Hey, Professor Harrow..."
+    mary "Do I have to repeat myself?" with hpunch
     pla "No..."
     jump caso1_gameover
-    
+
 label int2f0:
     hide screen interrogatorio_btns
-    $showplay_excl("espera")
-    "¿El viernes de la semana pasada?"
-    "Marissa dijo que ese día encontró la carta en su bolso..."
-    pla "Espere, profesora Harrow..."
-    pla "¿Con quién estuvo hablando en el salón de maestros?"
+    $ showplay_excl("wait")
+    "Friday of last week?"
+    "Marissa said that day she found the letter in her bag..."
+    pla "Wait, Professor Harrow..."
+    pla "Who was you talking to in the teachers' lounge?"
     # mary "..."
     play sound campana
-    mary "Con Beck Doran." with flashbulb
-    pla "¿¡Ehhh!?"
+    mary "With Beck Doran." with flashbulb
+    pla "Huh!?"
     show mary hablando
-    mary "¿Por qué te sorprendes? ¿Acaso también lo conoces?"
-    pla "Eh... algo así..."
+    mary "Why are you surprised? Do you know him too?"
+    pla "Uh... something like that..."
     show mary normal
-    pla "Como sea, después de que estuvo hablando con Beck en el salón de maestros..."
-    pla "Usted iba en dirección al salón de Marissa, ¿no?"
-    mary "Así es."
+    pla "Anyway, after you were talking to Beck in the teachers' lounge..."
+    pla "You were going in the direction of Marissa's classroom, weren't you?"
+    mary "That's how it is."
     show mary:
         ease .5 mleft
     show marissa normal at mright with dissolve
-    mar "Con que Beck estaba... ¿hablando con la profesora Harrow?"
-    mar "Qué raro... {nw}"
+    mar "Beck was... talking with Professor Harrow?"
+    mar "That's weird... {nw}"
     play sound campana
-    extend "{amarillo}él no es alguien al que le guste las clases de matemáticas.{/amarillo}" with flashbulb
+    extend "{amarillo}He is not someone who likes math classes.{/amarillo}" with flashbulb
     show mary hablando
     mary "..."
     show marissa sorprendida
-    mar "¡Iiiiihhhh!" with hpunch
-    mar "¡Ya- ya me callo! ¡Pe- perdón por interrumpir!" with hpunch
+    mar "Iiiihhhh!" with hpunch
+    mar "I- I'll shut up! Par- pardon for interrupting!" with hpunch
     show marissa preocupada
     show mary hablando
-    mary "Él ha ido a verme varias veces, lo que demuestra que Beck sí hace un esfuerzo por aprender."
+    mary "He has been going to see me several times, which shows that Beck does make an effort to learn."
     show mary pensando
-    mary "No como otras personas..."
-    "Vaya, qué indirecta tan directa..."
+    mary "Not like other people..."
+    "Wow, what a direct blow..."
     if not fraseInterr[0]:
-        $addNote("Ayuda en matemáticas","El día del tropiezo (viernes), Beck estuvo con la profesora Harrow en el salón de maestros, por una pequeña tutoría de matemáticas; según he oído de la profesora, Beck ha ido varias veces a buscar ayuda. Aunque... Marissa había dicho que él odia esa clase... ¿Entonces para qué va a hablar con la profesora?")
-        "No sé si este hecho es importante... pero nada pierdo con anotarlo."
-        $updateNote("Beck Doran (perfil)",ndesc="\n\nAl parecer, a Beck no le gusta las clases de matemáticas.",add=True)
-        pla "Y también esto..."
-    pla "¿Acaso a Marissa le ha ido mal en clases?"
-    "Sin querer hice esta pregunta, motivado por la curiosidad."
+        $ addNote("math help","On the day of the trip (Friday), Beck was with Professor Harrow in the teachers' lounge, for a little math tutorial; From what I heard from the teacher, Beck has gone several times for help. Although... Marissa said that he hates that class... Then why is he going to talk to the teacher?")
+        "I don't know if this fact is important... but I lose nothing by writing it down."
+        $ updateNote("Beck Doran (profile)",ndesc="\n\nApparently, Beck doesn't like math classes.",add=True)
+        pla "And also this..."
+    pla "Has Marissa been doing poorly in class?"
+    "I inadvertently asked this question, motivated by curiosity."
     show mary normal
-    mary "Decir que le va mal es poca cosa..."
-    mary "Aunque ella sea una chica muy carismática..."
-    mary "Es una completa olvidadiza, despreocupada, siempre anda con la cabeza en las nubes..."
-    mary "No entrega sus tareas a tiempo, y si lo hace, sus trabajos dejan que desear."
+    mary "To say that she is doing badly is little..."
+    mary "Even though she is a very charismatic girl..."
+    mary "She is completely forgetful, carefree and she always walks with her head in the clouds..."
+    mary "She doesn't turn in her homework on time, and if she does, her work leaves a lot desire."
     show marissa apenada at decaer
-    mar "Ya pareeeee..."
+    mar "Stop it pleeease..."
     if not fraseInterr[0]:
-        $updateNote("Marissa Morstan (perfil)",ndesc="\n\nEs una chica carismática, pero la profesora Harrow me ha hecho ver que esta chica es también despreocupada, olvidadiza, no entrega tareas a tiempo, es mala en matemáticas...",add=True)
-        pla "Interesante..."
+        $ updateNote("Marissa Morstan (profile)",ndesc="\n\nShe is a charismatic girl, but Professor Harrow has made me see that this girl is also carefree, forgetful and that she doesn't turn in homework on time. She is bad at math...",add=True)
+        pla "Interesting..."
         show marissa sorprendida at reponerse_rapido
-        mar "¡Oye, [pla_name]! No anotes cosas innecesarias." with hpunch
+        mar "Hey, [pla_name]! Do not write down unnecessary things." with hpunch
     hide marissa with dissolve
     show mary:
         ease .5 center
-    $fraseInterr[0]=True
+    $ fraseInterr[0]=True
     jump caso1_testimonio2_inicio
 
 label int2f1:
     hide screen interrogatorio_btns
-    $showplay_excl("espera")
-    pla "¿A qué hora exactamente fue al salón?"
-    mary "A las diez en punto."
-    mary "Los jueves y viernes doy clases de matemáticas en ese salón a esa hora."
+    $ showplay_excl("wait")
+    pla "What time exactly did you go to the classroom?"
+    mary "At ten o'clock."
+    mary "On Thursdays and Fridays I teach mathematics in that room at that time."
     if not fraseInterr[1]:
-        $addNote("Horario de Prof. Harrow","Los jueves y viernes a las diez de la mañana, la profesora Harrow imparte clases de matemáticas en el salón de Marissa.")
-    pla "Entiendo..."
-    $fraseInterr[1]=True
+        $ addNote("Prof. Harrow's Schedule","On Thursday and Friday at ten in the morning, Professor Harrow teaches math in Marissa's classroom.")
+    pla "I understand..."
+    $ fraseInterr[1]=True
     jump caso1_testimonio2_inicio
 
 label int2f2:
     hide screen interrogatorio_btns
-    $showplay_excl("espera")
-    pla "¿Cómo ocurrió exactamente ese choque entre usted y Marissa?"
-    mary "No tiene misterio..."
-    mary "Al momento de llegar a la entrada, Marissa apareció de repente."
-    mary "Al parecer, ella estaba corriendo."
+    $ showplay_excl("wait")
+    pla "How exactly did that clash between you and Marissa happen?"
+    mary "It has no mystery..."
+    mary "As I reached the entrance, Marissa suddenly appeared."
+    mary "Apparently she was running."
     show mary:
         ease .5 mleft
     show marissa normal at mright with dissolve
-    pla "Uhm... ¿Marissa?"
-    mar "Eh... salí corriendo del salón por problemas en el club..."
-    pla "Ya veo..."
+    pla "Uhm... Marissa?"
+    mar "Uh... I ran out of the classroom because of problems at the club..."
+    pla "I see..."
     if not fraseInterr[2]:
-        $addNote("¿Problemas en el club?","¿Qué clase de problemas tenía el club de Marissa para que ella saliera corriendo del salón?")
-        "Tendré que preguntarle más tarde sobre esto."
-    $fraseInterr[2]=True
+        $ addNote("Problems at the club?","What kind of trouble was Marissa's club having for her to run out of the classroom?")
+        "I'll have to ask her about this later."
+    $ fraseInterr[2]=True
     hide marissa with dissolve
     show mary:
         ease .5 center
@@ -108,91 +108,91 @@ label int2f2:
 
 label int2f3:
     hide screen interrogatorio_btns
-    $showplay_excl("espera")
-    pla "Así que... los papeles que usted llevaba, ¿se cayeron al suelo?"
-    mary "Así es."
+    $ showplay_excl("wait")
+    pla "So... the papers you were carrying, did they fall on the floor?"
+    mary "That's how it is."
     mary "..."
     show mary:
         ease .6 mleft
     show marissa normal at mright with dissolve
-    "La profesora Harrow dirigió una breve y amenazadora mirada a Marissa."
+    "Professor Harrow gave Marissa a brief, menacing look."
     show marissa sorprendida
-    mar "¡Iiiihh!" with hpunch
-    "¡La profera Harrow usó intimidación!"
-    "¡Es muy efectivo!"
+    mar "Iiiihh!" with hpunch
+    "Professor Harrow used intimidation!"
+    "It is very effective!"
     show marissa preocupada
-    mar "A mi también se me cayeron algunas cosas."
-    pla "¿En serio?"
-    mar "Uh... sí... llevaba la mochila abierta y se me cayeron los cuadernos."
+    mar "I also dropped some things."
+    pla "Oh really?"
+    mar "Uh...yes...I had my backpack open and my notebooks fell out."
     show marissa apenada
-    mar "Fue aterrador estarlos recogiendo teniendo a la profesora tan cerca."
+    mar "It was terrifying to be picking them up with the teacher so close."
     show marissa normal
-    pla "Por cierto..."
+    pla "By the way..."
     play sound campana
-    extend " {amarillo}¿Así que alguien vino a ayudarlas?{/amarillo}" with flashbulb
-    pla "¿Me podría decir de quien se trataba?"
+    extend " {amarillo}So someone came to help you?{/amarillo}" with flashbulb
+    pla "Could you tell me who?"
     show mary sorprendida
     # mary "Eh..."
-    mary "Se trataba de {amarillo}Neil London.{/amarillo} Es un chico del tercer año B."
+    mary "It was {amarillo} Neil London.{/amarillo} he is a third year B class boy."
     show mary normal
-    pla "¿Neil London? ¿Marissa, lo conoces?"
-    mar "No... nunca había escuchado ese nombre antes."
+    pla "Neil London? Marissa, do you know him?"
+    mar "No... I've never heard that name before."
     pla "Uhm..."
     if not fraseInterr[3]:
-        pla "¿Podría describírmelo?"
-        "Voy a tener que hablar con ese chico..."
-        mary "Es alguien de aspecto tranquilo, piel clara, al igual que su cabello."
-        $addNote("Neil London (perfil)","Es alguien de aspecto tranquilo, piel clara, al igual que su cabello.")
-        pla "Muchas gracias."
-        $addNote("Tropiezo","La profesora Harrow y Marissa chocaron entre ellas en la entrada del salón de Marissa, aproximadamente a las diez de la mañana. Papeles salieron volando, y Neil London fue a ayudarlas a recoger sus papeles.")
-        "También anotaré todo lo que sé sobre este tropiezo entre Marissa y la profesora."
+        pla "Could you describe it to me?"
+        "I'm going to have to talk to that guy..."
+        mary "He is someone with a calm appearance, pale skin, just like his hair."
+        $ addNote("Neil London (profile)","He is someone with a calm appearance, pale skin, just like his hair.")
+        pla "Thank you so much."
+        $ addNote("Stumbling","Professor Harrow and Marissa bumped into each other in the doorway of Marissa's classroom at approximately ten in the morning. Papers went flying, and Neil London went to help them pick up their papers.")
+        "I'll also write down everything I know about this run-in between Marissa and the teacher."
     hide marissa with dissolve
     show mary:
         ease .5 center
-    $fraseInterr[3]=True
+    $ fraseInterr[3]=True
     jump caso1_testimonio2_inicio
 
 label int2f4:
     hide screen interrogatorio_btns
-    $showplay_excl("espera")
-    pla "¿A qué castigo se refiere?"
+    $ showplay_excl("wait")
+    pla "What punishment are you referring to?"
     show mary:
         ease .6 mleft
     show marissa apenada at mright with dissolve
-    mar "Fue horrible, [pla_name]..."
+    mar "It was horrible, [pla_name]..."
     show marissa at decaer
-    mar "La profe me mandó a resolver cien ejercios de álgebra en la biblioteca."
+    mar "The teacher sent me to solve one hundred algebra exercises in the library."
     # if not fraseInterr[4]:
     #     $addNote("Castigo de Marissa","Debido al tropiezo que tuvo Marissa con la profesora de Matemáticas, ella recibió un castigo. Tuvo que ir a la biblioteca a resolver ejercicios de álgebra")
-    mar "Fue toda una tortura..."
+    mar "It was quite the torture..."
     show marissa at reponerse
     show mary pensando
-    mary "Ah... si tan solo fueras aplicada en tus estudios, no te parecería un castigo serio."
+    mary "If you were diligent in your studies, it wouldn't seem like a serious punishment to you."
     hide marissa with dissolve
     show mary:
         ease .5 center
-    # $fraseInterr[4]=True
+        # $fraseInterr[4]=True
     jump caso1_testimonio2_inicio
 
 label int2f5:
     hide screen interrogatorio_btns
-    $showplay_excl("espera")
-    pla "¿No pasó nada más?"
+    $ showplay_excl("wait")
+    pla "Nothing else happened?"
     show mary hablando
-    mary "Por algo he dicho que di mis clases con normalidad."
-    pla "Ah, cierto..."
-    $restCorazones()
-    mary "Te sugiero que no me hagas perder el tiempo..." with hpunch
-    pla "¡Pe- pe- perdón!"
+    mary "For something I have said that I gave my classes normally."
+    pla "Oh right..."
+    $ restCorazones()
+    mary "I suggest you don't waste my time..." with hpunch
+    pla "Par- par- pardon!"
     jump caso1_testimonio2_inicio
 
 label int2f6:
     hide screen interrogatorio_btns
-    $showplay_excl("espera")
-    pla "¿Eso es todo?"
-    mary "Eso es todo."
+    $ showplay_excl("wait")
+    pla "That's all?"
+    mary "That's all."
     show mary hablando
-    mary "¿Algún problema con eso?"
-    $restCorazones()
-    pla "¡Eh! No- no..." with hpunch
+    mary "Any problem with that?"
+    $ restCorazones()
+    pla "Huh! No-no..." with hpunch
     jump caso1_testimonio2_inicio
