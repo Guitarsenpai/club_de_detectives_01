@@ -1,5 +1,5 @@
 label caso1_testimonio2:
-    $ estadoj="Interrogation"
+    $ estadoj="Testimony"
     $ interrogatorio_activo=False
     $ initInterrVars()
     #intro testimonio
