@@ -1,243 +1,243 @@
 label caso1_investigacion1:
     scene bg salon club detectives with dissolve
-    "Después de que Marissa se fuera, Alice y yo todavía estábamos en el salón del club."
-    "Primero, nos detuvimos a revisar la carta."
+    "After Marissa left, Alice and I were still in the clubroom."
+    "First, we started by reviewing the letter."
     scene carta_amor with dissolve
     ali "Uhm..."
-    ali "La letra es muy descuidada..."
-    pla "¿Tal vez sean los nervios, no?"
-    ali "Puede ser..."
-    pla "¿Qué significará ese manchón?"
-    ali "Parece como si hubo un exceso de tinta."
-    ali "Quizás mantuvo la punta del bolígrafo mucho tiempo en el papel..."
-    pla "Uhm, y justamente en el nombre, como si lo estuviera pensando demasiado."
+    ali "The handwriting is very sloppy..."
+    pla "Maybe it's nerves, right?"
+    ali "It could be..."
+    pla "What will that stain mean?"
+    ali "It looks as if there was an excess of ink."
+    ali "Maybe he kept the tip of the pen on the paper for a long time..."
+    pla "Uhm, and right on the name, like he was overthinking it."
     pla "..."
-    pla "Hay algo raro con la letra..."
-    ali "¿Eh?"
+    pla "There's something weird with the handwriting..."
+    ali "Uh?"
     scene bg salon club detectives with dissolve
     show alice normal with dissolve
-    ali "¿A qué te refieres, [pla_name]?"
+    ali "What do you mean, [pla_name]?"
     show alice sorprendida
-    pla "¡Ya sé!"
-    pla "Es... es..."
+    pla "I know!"
+    pla "It's... It's..."
     show alice normal
-    ali "¿Lo olvidaste?"
-    pla "No... nada de eso..."
-    pla "Ah... lo tengo en la punta de la lengua..."
+    ali "You forgot it?"
+    pla "No... none of that..."
+    pla "Ah... I have it on the tip of my tongue..."
     show alice sorprendida
-    pla "Era algo que tenía que ver con la forma de escribir... con la inclinación..."
-    ali "¡Necesitas usar la {amarillo}Ruleta de la incógnita{/amarillo}!"
-    pla "La- la ruleta de la... ¿qué?"
+    pla "It was something that had to do with the way of writing... with the inclination..."
+    ali "You need to use the {amarillo}Roulette of the Incognito{/amarillo}!"
+    pla "The- the roulette of the... what?"
     show alice alegre
-    ali "Es una técnica que usaban mis superiores cuando olvidaban temporalmente una palabra."
-    ali "Lo que tienes que hacer, es imaginarte varias letras que giren en círculos..."
-    ali "Entonces vas descartando letras una por una hasta formar una palabra."
-    pla "No entiendo..."
+    ali "It's a technique my superiors used when they temporarily forgot a word."
+    ali "What you have to do is imagine several letters that rotate in circles..."
+    ali "Then you are discarding letters one by one until you form a word."
+    pla "I don't understand..."
     show alice enojada
-    ali "¡Rápido, [pla_name]!" with hpunch
-    ali "¡Cierra los ojos y haz lo que te acabo de decir!"
-    pla "E- está bien..."
-    pla "No hay nada que perder..."
+    ali "Quick, [pla_name]!" with hpunch
+    ali "Close your eyes and do what I just told you!"
+    pla "I-okay..."
+    pla "Nothing to lose..."
     stop music fadeout 4
     scene bg negro with fade
-    tuto "Es hora de otro minijuego."
-    tuto "En la {amarillo}Ruleta de la incógnita{/amarillo} verás una serie de letras que van girando en círculos."
-    tuto "El objetivo es seleccionar varias letras para formar una palabra."
-    tuto "Si seleccionas una letra incorrecta, se te restará vida..."
-    tuto "En este minijuego, las vidas están representadas por un porcentaje."
-    tuto "Cada letra incorrecta resta un 10\%"
-    tuto "Si seleccionas una letra correcta, esta se irá agregando a un panel en la derecha."
-    tuto "Básicamente, es como {amarillo}el juego del ahorcado.{/amarillo}"
-    tuto "Buena suerte."
+    tuto "It's time for another minigame."
+    tuto "In the {amarillo} Roulette of the Incognito {/amarillo} you will see a series of letters that are spinning in circles."
+    tuto "The objective is to select several letters to form a word."
+    tuto "If you select a wrong letter, you will lose life..."
+    tuto "In this minigame, lives are represented by a percentage."
+    tuto "Each incorrect letter subtracts 10%%"
+    tuto "If you select a correct letter, it will be added to a panel on the right."
+    tuto "Basically, it's like {amarillo}the game of hangman.{/amarillo}"
+    tuto "Good luck."
 
-    #-----Inicia minijuego
 
-    $estadoj="Ruleta Incóg."
-    $ruleta_porcentaje=100
-    $ruleta_id=1
+     #-----Inicia minijuego
+    $ estadoj="Incog. Roulette"
+    $ ruleta_porcentaje=100
+    $ ruleta_id=1
 
-    #palabra a descubir
-    $palabra_ruleta="ZURDO"
+     #palabra a descubir
+    $ palabra_ruleta="LEFTHANDED"
 
-    #posicion de la letra a averiguar en palabra
-    $posicionenpalabra=0
+     #posicion de la letra a averiguar en palabra
+    $ posicionenpalabra=0
 
     python:
         #lo que se mostrara en el panel derecho
         lstLetrasActuales=[]
-        #agregamos varios guiones bajos
+
         for x in xrange(0,len(palabra_ruleta)):
             lstLetrasActuales.append("_")
 
-    $letras1=["U","Y","H","Z","R","A","J","R","O"]
-    $letras2=["I","B","Z","R","Ñ","D","M","C","H","B"]
-    
-    $quick_menu_gameplay=True
-    $showMinigameTitle("Ruleta de la incógnita")
-    $quick_menu_bajo=True
+    $letras1=["Z","Y","E","L","D","A","D","R","O"]
+    $letras2=["I","D","Z","F","N","T","M","E","H","B"]
+
+    $ quick_menu_gameplay=True
+    $ showMinigameTitle("Roulette of the Incognito ")
+    $ quick_menu_bajo=True
     window hide
     play music deduccion fadein 3
-    $change_cursor("target")
+    $ change_cursor("target")
     scene bg salon club detectives
-    $renpy.show_screen("temporizador",185)#185
-    
-    call screen ruleta_incognita(letras1,letras2,"A partir de la forma de escribir, se deduce que el autor es...",palabra_ruleta)
+    $ renpy.show_screen("timer",185) )#185
+
+    call screen ruleta_incognita(letras1,letras2,"From the way of writing, it can be deduced that the author is...",palabra_ruleta)
 
 label ruleta1_gameover:
     stop music fadeout 3
-    $estadoj="Libre"
-    # $quick_menu_gameplay=False
-    $quick_menu_bajo=False
+    $ estadoj="Free"
+    # $quick_menu_gameplay=False 
+    $ quick_menu_bajo=False
     window show
     show alice normal with dissolve
-    pla "Me rindo."
-    ali "Pensé que te esforzarías más."
+    pla "I give up."
+    ali "I thought you'd try harder."
     show alice pensando at decaer
-    ali "Así que ya no tenemos más pistas..."
+    ali "So we don't have any more clues..."
     jump caso1_gameover
 
 label ruleta1_fin:
 
-    $fase_titulo.append("Ruleta de la incógnita")
-    $fase_tipo_vida.append("porcentaje")
-    $fase_corazones.append(ruleta_porcentaje)
-    $fase_multiplicador.append(5)
+    $ fase_titulo.append("Roulette of the Incognito ")
+    $ fase_tipo_vida.append("percentage")
+    $ fase_corazones.append(ruleta_porcentaje)
+    $ fase_multiplicador.append(5)
 
-    $showplay_excl("esoes")
+    $ showplay_excl("that is")
     stop music fadeout 3
-    $estadoj="Libre"
-    $quick_menu_gameplay=False
-    $quick_menu_bajo=False
+    $ estadoj="Free"
+    $ quick_menu_gameplay=False
+    $ quick_menu_bajo=False
     window show
     show alice sorprendida with dissolve
     play sound campana
-    pla "¡El autor es zurdo!" with flashbulb
-    ali "¿¡Eh!?"
-    ali "¿Por qué dices eso?"
+    pla "The author is left-handed!" with flashbulb
+    ali "Hey!?"
+    ali "Why do you say that?"
     show alice normal
-    pla "Por la inclinación de la letra."
-    pla "Esa inclinación se me hacía algo extraña..."
-    pla "Y es justamente porque alguien que escribe con la mano izquierda, tendrá la letra inclinada a ese lado..."
-    pla "Además, eso también explicaría la mancha en la carta."
+    pla "By the inclination of the letter."
+    pla "That inclination seemed strange to me..."
+    pla "And it is precisely because someone who writes with their left hand will have the letter tilted to that side..."
+    pla "Besides, that would also explain the stain on the letter."
     show alice sorprendida
-    ali "¿¡Eh!? ¿En serio?"
-    pla "Sí. Al dejar el bolígrafo puesto sobre el papel en un punto específico durante algún tiempo..."
-    pla "Haría que la tinta se escurriera, y como se escribe de izquierda a derecha..."
+    ali "Uh!? Really?"
+    pla "Yes. By leaving the pen on the paper at a specific point for some time..."
+    pla "It would make the ink run, and since you write from left to right..."
     show alice normal
-    ali "Alguien zurdo pasaría la mano con la que escribe sobre la tinta..."
-    pla "Así es."
+    ali "Someone left-handed would pass the hand with which he writes over the ink..."
+    pla "That's how it is."
     ali "..."
     play music ambiente fadein 3
     show alice alegre at brinquitos
-    ali "¡Eso es increíble! ¡[pla_name], eres muy listo!"
-    ali "¡Me alegra mucho tenerte en el club!"
+    ali "That's incredible! [pla_name], you're so smart!"
+    ali "I'm so glad to have you in the club!"
     #actualizamos perfil de sospechoso
     #--nota: actualizar de acuerdo al nombre, usar la posicion del array no es confiable, ya que esta posicion puede variar de acuerdo a cuando se obtiene una pista
-    $updateNote("Perfil del sospechoso",ndesc="\n\nHay pistas que indican que el autor de la carta es zurdo.",add=True)
-    pla "Ah... vamos... tampoco es para tanto..."
+    $ updateNote("Suspect Profile",ndesc="\n\nThere are clues that the author of the letter is left-handed.",add=True)
+    pla "Ah... come on... it's not that big a deal..."
     pla "..."
     show alice normal
-    pla "El tiempo ha pasado volando, ya van a ser las cinco."
+    pla "Time has flown by, it's already going to be five o'clock."
     show alice sorprendida
-    ali "Eh, no me había dado cuenta..."
+    ali "Uh, I hadn't realised..."
     show alice normal
-    ali "Ya va siendo hora de salir..."
-    ali "Pero antes, deberíamos revisar el casillero de Marissa..."
-    pla "Uhm, claro..."
-    ali "Vámonos, Sherinford."
+    ali "It's time to go out..."
+    ali "But first, we should check Marissa's locker..."
+    pla "Um, sure..."
+    ali "Let's go, Sherinford."
     show sherinford grande behind alice at left with dissolve:
         xoffset -300
         on show:
             linear 1 xoffset 20
-    she "¡Pío, pío, pío!"
+    she "Twit, twit, twit!"
     scene bg negro with slow_dissolve
     hide screen quick_menu
-    $quick_menu=False
+    $ quick_menu=False
     window hide
-    $hora=17
+    $ hora=17
     pause 2
-    $quick_menu=True
+    $ quick_menu=True
     window show
     scene bg escuela corredor with slow_dissolve
     show alice normal with dissolve
     show sherinford pequeño at center with dissolve:
         ypos .450
         xoffset 70
-    "Junto a Alice y su pollo, fui al corredor de los salones de clase, en donde están los casilleros."
-    "Le había enviado un mensaje a Marissa que nos indicara cuál era su casillero."
+    "Together with Alice and her chicken, I went to the corridor of the classrooms, where the lockers are."
+    "I had texted Marissa to tell us where her locker was."
     ali "Uhm..."
-    "Alice murmuró mientras revisaba el casillero con una enorme lupa."
+    "Alice muttered as she checked the locker with a huge magnifying glass."
     ali "Uuuuuhhhmmm..."
-    ali " Ya veo..."
-    pla "¿Has descubierto algo?"
+    ali " I see..."
+    pla "Have you discovered something?"
     show alice sonriendo at brinquitos
     show sherinford pequeño at brinquitos
-    ali "Efectivamente..."
-    ali "Los rayones en el cerrojo del casillero no son para nada comunes."
+    ali "Indeed..."
+    ali "The scratches on the locker latch are quite uncommon."
     pla "..."
-    "Gracias capitana obvia, eso ya lo vi sin necesidad de una lupa..."
+    "Thank you captain obvious, I already saw that without needing a magnifying glass..."
     show alice pensando
-    ali "No he encontrado más pistas..."
-    ali "Creo que eso es todo..."
+    ali "I haven't found any more clues..."
+    ali "I think that's all..."
     show alice sorprendida
-    pla "No tan rápido."
-    pla "Deberíamos preguntarnos{nw}"
+    pla "Not so fast."
+    pla "We should ask ourselves {nw}"
     play sound campana
-    extend " {amarillo}por qué este casillero estuvo siendo forcejeado por alguien.{/amarillo}" with flashbulb
-    ali "¡Ah! ¡Po- por supuesto! Claro que eso ya lo sabía." with hpunch
+    extend " {amarillo}why this locker was being tampered with by someone.{/amarillo}" with flashbulb
+    ali "Oh! O- of course! Of course I already knew that." with hpunch
     show alice pensando
-    ali "So- solo estaba poniéndote a prueba..."
-    "Lo dudo mucho..."
-    pla "Como sea, teniendo en cuenta lo que nos contó Marissa..."
+    ali "I was just testing you..."
+    "I really doubt it..."
+    pla "Anyway, considering what Marissa told us..."
     show alice normal
-    pla "Si esos rayones aparecieron el sábado..."
-    pla "Tendríamos que averiguar si alguien vio algo sospechoso en ese lapso de tiempo."
-    ali "No creo que eso sea fácil..."
-    ali "{amarillo}Los fines de semana, solo vienen estudiantes por actividades del club...{/amarillo}"
-    ali "Y este edificio {amarillo}permanece generalmente vacío...{/amarillo}"
-    ali "Incluso los salones de aquí se mantienen cerrados."
-    $addNote("Salones de clase en fin de semana","Los salones de clase permanecen cerrados los fines de semana, a exepción del edificio de clubes.\nPor lo tanto, el edificio en donde están los casilleros se mantiene vacío.")
-    pla "Oh, eso no lo sabía..."
-    pla "Entonces, regresando al motivo del forcejeo..."
-    pla "Considerando que se trata de un acosador, ¿esta persona quería algo de Marissa?"
-    pla "Ya sabes, algo así como un tesoro... O un premio..."
+    pla "If those scratches appeared on Saturday..."
+    pla "We'd have to find out if anyone saw anything suspicious in that time frame."
+    ali "I don't think that's easy..."
+    ali "{amarillo}On weekends, the students only come for club activities...{/amarillo}"
+    ali "And this {amarillo} building generally remains empty...{/amarillo}"
+    ali "Even the salons here are kept closed."
+    $ addNote("Classrooms on the weekend","Classrooms are closed on weekends, with the exception of the club building.\nTherefore, the building where the lockers are located remains empty.")
+    pla "Oh, I didn't know that..."
+    pla "So, back to the reason for the tampering..."
+    pla "Considering that we are talking about a stalker, did this person want something from Marissa?"
+    pla "You know, something like a treasure... Or a prize..."
     show alice pensando
-    ali "Uh... siento escalofríos de tan solo pensar en eso..."
+    ali "Uh... I get chills just thinking about it..."
     show alice normal
     play sound campana
-    ali "{amarillo}¿Pero qué cosa quería sacar el acosador del casillero de Marissa?{/amarillo}" with flashbulb
-    $addNote("¿Hay algo de valor en el casillero?","¿Qué buscaba el responsable del forcejeo en el casillero de Marissa? ¿Hay algo de valor que Marissa guarda en su casillero?")
-    pla "Habrá que preguntarle a Marissa si guardaba algo de valor..."
-    ali "Buena idea..."
+    ali "{amarillo}But what was the stalker trying to get out of Marissa's locker?{/amarillo}" with flashbulb
+    $ addNote("Is there anything of value in the locker?","What was the person responsible for the tampering looking for in Marissa's locker? Is there anything of value that Marissa keeps in her locker?")
+    pla "We'll have to ask Marissa if she kept anything of value..."
+    ali "Good idea..."
     show alice sorprendida
     play sound campana
-    ali "¡Ah!" with flashbulb
-    pla "¿Alice?"
-    ali "¡Ya sé! ¿¡Y qué tal si el responsable buscaba meter algo en el casillero!?"
-    # ali "Entonces al ver que no podía abrirlo..."
+    ali "Oh!" with flashbulb
+    pla "Alice?"
+    ali "I know! And what if the person responsible was looking to put something in the locker!?"
+
     hide sherinford with dissolve
     hide alice with dissolve
-    "Claramente emocionada, Alice sacó de su mochila una hoja de cuaderno."
-    pla "¿Qué tienes ahora en mente?"
-    ali "[pla_name], he estado pensándolo..."
-    ali "¿Cómo llegó esa carta al bolso de Marissa?"
-    ali "Creo que el acosador quiso meter la carta en el casillero, por eso forzó la cerradura."
-    ali "Y al ver que era muy difícil hacerlo, entonces..."
-    "Alice comenzó a tratar de meter la hoja a través de las hendiduras de la puerta."
-    "Incluso trató de meterlo por los orificios que están al frente."
-    "Sin embargo..."
+    "Clearly excited, Alice took a notebook sheet from her backpack."
+    pla "What do you have in mind now?"
+    ali "[pla_name], I've been thinking about it..."
+    ali "How did that letter get into Marissa's bag?"
+    ali "I think the stalker wanted to put the letter in the locker, so he picked the lock."
+    ali "And seeing that it was very difficult to do it, then..."
+    "Alice began trying to get the blade through the cracks in the door."
+    "She even tried to get it through the holes in the front."
+    "However..."
     show alice pensando with dissolve
     show sherinford pequeño at center with dissolve:
         ypos .450
         xoffset 70
-    ali "No- no entra..."
-    she "Pío..."
-    "La hipótesis de Alice no tardó en desmoronarse."
-    pla "No creo que haya sido eso..."
-    pla "De lo contrario, {amarillo}Marissa nos habría dicho que encontró la carta en el casillero, y no en su bolso.{/amarillo}"
-    ali "Uh... eso parece... pensé que estaba en lo correcto..."
-    $addNote("Papel y casillero","Alice demostró que no se puede meter una hoja de papel en un casillero sin tener que abrirlo antes.")
-    "Alice sonó decepcionada, pero no estaría de más apuntar lo descubierto."
+    ali "No- it doesn't go in..."
+    she "Twit..."
+    "Alice's hypothesis soon fell apart."
+    pla "I don't think that was it..."
+    pla "Otherwise, {amarillo} Marissa would have told us that she found the letter in the locker, and not in her bag.{/amarillo}"
+    ali "Uh...that seems to be...I thought I was right..."
+    $ addNote("paper and locker","Alice demonstrated that you can't put a piece of paper in a locker without first opening it.")
+    "Alice sounded disappointed, but it wouldn't hurt to write down what she found."
     show alice normal
     # ali "..."
     # pla "¿Qué pasa ahora, Alice?"
@@ -245,150 +245,151 @@ label ruleta1_fin:
     # ali "¿Cómo estamos seguros de que el acosador realmente no pudo abrir el casillero?"
     # $addNote("¿Cerradura fue forzada?","Alice sugirió que quizás el acosador sí pudo abrir el casillero...")
     # pla "..."
-    pla "Bien, creo que tenemos suficiente información por hoy."
-    pla "Ya es tarde."
-    ali "Ah, sí... no hay nada más que investigar aquí."
-    pla "Bueno, me voy."
+    pla "Well, I think we have enough information for today."
+    pla "It's getting late."
+    ali "Uh yes... there is nothing more to investigate here."
+    pla "Well, I'm leaving."
     show alice pensando
     ali "..."
-    if pla_stat["carisma"]>=2:
+    if pla_stat["charisma"]>=2:
         show alice pensando
         ali " [pla_name]..."
-        pla "¿Qué pasa?"
-        ali "Este... bu- bueno..."
+        pla "What's wrong?"
+        ali "Uh... we- well..."
         show alice sonrojada
-        ali "{size=25}Deberíamos intercambiar números...{/size}"
-        pla "¿Perdón?"
+        ali "{size=25}We should exchange numbers...{/size}"
+        pla "What?"
         show alice asustada
         ali "..."
-        ali "No- no me hagas repetirlo..." with hpunch
-        "No lo haría, si ella hablara con una voz más audible."
+        ali "do- don't make me repeat it..." with hpunch
+        "I wouldn't, if she spoke with a more audible voice."
         show alice sonrojada
-        ali "Me preguntaba..."
-        extend " si podríamos intercambiar números..."
+        ali "I was wondering..."
+        extend " if we could exchange numbers..."
         show alice asustada
-        ali "¡N- no pienses nada extraño!" with hpunch
+        ali "D-don't think anything strange!" with hpunch
         show alice sonrojada
-        ali "Es que yo..."
-        pla "No estoy pensando en nada extraño... está bien."
+        ali "Is that I..."
+        pla "I'm not thinking of anything strange... it's okay."
         show alice sorprendida
-        ali "¿¡Eh!?" with hpunch
-        pla "¿Por qué actúas así?"
+        ali "Uh!?" with hpunch
+        pla "Why do you act like this?"
         show alice pensando
-        ali "Eh... no... nada..."
+        ali "Uh...no...nothing..."
         stop music fadeout 3
         scene bg negro with dissolve
         pause 1.5
-        "Antes de despedirnos, intercambié números con Alice."
-        $numero_alice_obtenido=True
+        "Before we said goodbye, I exchanged numbers with Alice."
+        $ numero_alice_obtenido=True
     else:
-        $numero_alice_obtenido=False
-        extend " adiós [pla_name]."
+        $ numero_alice_obtenido=False
+        extend " bye [pla_name]."
         stop music fadeout 3
         scene bg negro with dissolve
         pause 1.5
-    
+
     if numero_alice_obtenido:
         hide screen quick_menu
         window hide
-        $quick_menu=False
-        $hora=20 #8 pm
+        $ quick_menu=False
+        $ hora=20 #8 pm
         pause 2
         window show
-        $quick_menu=True
+        $ quick_menu=True
         "..."
         #ring
-        "En la noche, recibí un mensaje de Alice."
-        ali "{amarillo}\"Hola, ¿cómo estás?\"{/amarillo}"
-        ali "{amarillo}\"Espero que logremos resolver este caso...\"{/amarillo}"
-        ali "{amarillo}\"Cuento contigo, [pla_name] :3\"{/amarillo}"
+        "In the night, I received a message from Alice."
+        ali "{amarillo}\"Hi, how are you?\"{/amarillo}"
+        ali "{amarillo}\"I hope we can solve this case...\"{/amarillo}"
+        ali "{amarillo}\"I'm counting on you, [pla_name] :3\"{/amarillo}"
 
     scene bg negro with slow_dissolve
     hide screen quick_menu
-    $quick_menu=False
+    $ quick_menu=False
     window hide
 
-    $hora=20 #8 pm
+    $ hora=20 #8 pm
     pause 2
-    
-    $hora=10
-    $dia="Vie."
-    $fecha="Febrero 21"
-    $estadoj="Receso"
+
+    $ hora=10
+    $ dia="Fri"
+    $ fecha="February 21"
+    $ estadoj="Break time"
 
     window show
-    $quick_menu=True
+    $ quick_menu=True
 
     scene bg escuela corredor with dissolve
-    "{amarillo}- Al día siguiente, en la hora de receso... -{/amarillo}"
+    "{amarillo}- The next day, during break time... -{/amarillo}"
     play music ambiente2 fadein 5
-    "Al salir de mi salón de clases, me encontré con una cara conocida."
+    "Walking out of my classroom, I met a familiar face."
     show alice alegre with dissolve
-    ali "¡[pla_name]! ¡Buenos días!" with hpunch
-    pla "Alice... Buenos días..."
-    "Vi que ella estaba de muy buen humor."
+    ali "[pl_name]! Good morning!" with hpunch
+    pla "Alice... Good morning..."
+    "I saw that she was in a very good mood."
     show alice enojada
-    ali "¡Vamos! ¡La investigación debe continuar!" with hpunch
-    pla "Eh..."
-    pla "Preferiría tener un descanso... las clases son más exigentes en este año..."
-    ali "¿¡Cómo puedes decir eso!?" with hpunch
-    ali "No puedes dejar que una investigación se enfríe demasiado, sino se echará a perder."
+    ali "Come on! The investigation must continue!" with hpunch
+    pla "Uh..."
+    pla "I would rather have a break... classes are more demanding this year..."
+    ali "How can you say that!?" with hpunch
+    ali "You can't let an investigation get too cold or it will go to waste."
     show alice normal
-    pla "Ahh... ahora ya me dio hambre..."
-    "Ignorando mis quejas, Alice continuó hablando."
-    ali "He estado pensando mucho en el caso anoche..."
-    ali "Con lo que nos ha contado Marissa..."
-    ali "Sería bueno establecer como punto de partida... {nw}"
+    pla "Ahh... now I'm hungry..."
+    "Ignoring my complaints, Alice continued talking."
+    ali "I've been thinking a lot about the case last night..."
+    ali "From what Marissa has told us..."
+    ali "It would be good to establish as a starting point... {nw}"
     play sound campana
-    extend "{amarillo}que el acosador es un conocido de ella.{/amarillo}" with flashbulb
-    pla "Tiene sentido..."
-    "Comencé a caminar rumbo a la cafetería, y Alice me estaba siguiendo a la vez que exponía sus ideas."
-    ali "Así que... hay que aprovechar este receso para saber más {amarillo}acerca de los compañeros de Marissa.{/amarillo}"
-    pla "Uh, vamos... dame un respiro..."
+    extend "{amarillo}that the stalker is an acquaintance of hers.{/amarillo}" with flashbulb
+    pla "Makes sense..."
+    "I started walking towards the cafeteria, and Alice was following me as she expounded her ideas."
+    ali "So... we have to take advantage of this break time to find out more {amarillo}about Marissa's classmates.{/amarillo}"
+    pla "Uh, come on... give me a break..."
     show alice enojada
-    ali "¡[pla_name]!" with hpunch
-    extend " No hay tiempo que perder."
+    ali "[pl_name]!" with hpunch
+    extend " There is no time to waste."
     show alice pensando
-    ali "Sino el club..."
-    ali "Podría cerrar..."
-    pla "Ni se te ocurra hacer un escándalo de esos."
-    ali "Jum..."
+    ali "If not, the club..."
+    ali "It could close..."
+    pla "Don't even think about making a scandal of yours."
+    ali "Um..."
     pla "..."
-    "Dejé de caminar, y comencé a rascarme la cabeza."
-    pla "Ah... está bien..."
+    "I stopped walking, and started scratching my head."
+    pla "Hah, It's okay..."
     show alice alegre at brinquitos
-    ali "¡Yaaay!"
-    extend " ¡Así se habla!"
+    ali "Yaaay!"
+    extend " Well said!"
     hide alice with dissolve
-    "Veamos... el salón de Marissa sería el..."
+    "Let's see... Marissa's classroom would be the..."
     pla "..."
-    "Vi que Alice no me estaba siguiendo..."
-    pla "Alice... ¿no pretenderás que vaya yo solo, verdad?"
+    "I saw that Alice was not following me..."
+    pla "Alice... you don't want me to go alone, do you?"
     show alice pensando with dissolve
     ali "..."
-    ali "Eh- bu- bueno..."
-    "La chica comenzó a balbucear hasta dar con una respuesta."
+    ali "Uh- we- well..."
+    "The girl began to babble until she found an answer."
     show alice sorprendida
-    ali "¡Ah, sí!" with hpunch
+    ali "Oh yeah!" with hpunch
     show alice normal
-    ali "¿Recuerdas que Marissa nos dijo que fueramos discretos?"
-    ali "Pueees... sería sospechoso que lleguemos los dos."
+    ali "Remember how Marissa told us to be discreet?"
+    ali "Well... it would be suspicious if we both arrived."
     pla "..."
-    extend " touché."
+    extend "oh great."
     show alice sonriendo
-    ali "Así que... da lo mejor de ti para encontrar sospechosos."
-    ali "Yo estaré investigando en otro lado."
-    pla "¿Y si mejor cambiamos de lugar?"
+    ali "So... do your best to find suspects."
+    ali "I will be investigating elsewhere."
+    pla "What if we better change places?"
     show alice alegre at brinquitos
-    ali "¡Hasta luego!"
+    ali "See you later!"
     show alice:
         ease .3 xoffset 90
         ease .5 xoffset -900
     pause 1.5
     hide alice
     # hide alice with dissolve
-    "Sin terminar de escucharme, Alice se fue corriendo..."
-    "Ah... me las pagarás..."
+
+    "Without finishing listening to me, Alice ran away..."
+    "Ah... you will pay me..."
     scene bg negro with dissolve
     pause 1.4
     # "Le envié un mensaje a Marissa, avisándole que iría a su salón para buscar sospechosos."
@@ -396,126 +397,126 @@ label ruleta1_fin:
     # "Acordamos que yo iría porque supuestamente estoy interesado en el club de cocina."
     # "Y aprovechando el don de Marissa para ser muy sociable... ella me presentaría a sus compañeros de clase."
     scene bg salon clases with dissolve
-    pla "Disculpen... ¿está Marissa aquí?"
-    unk "¿Eh?"
-    unk "Marissa, alguien te está buscando."
-    mar "Ya voy..."
+    pla "Excuse me... is Marissa here?"
+    unk "Uh?"
+    unk "Marissa, someone is looking for you."
+    mar "I'm coming..."
     show marissa alegre hablando with dissolve
-    mar "¡Hola! ¿Eh? ¿[pla_name]?"
+    mar "Hello! Uh? [pla_name]?"
     # "Marissa fingió no conocerme, de acuerdo al plan que establecimos en el chat."
     show marissa normal
-    pla "Hola, vengo por lo del club de cocina, estoy interesado."
-    "A la vez que digo esto, le guiño un ojo disimuladamente."
+    pla "Hi, I'm here for the cooking club, I'm interested."
+    "As I was saying that, I secretly wink at her."
     show marissa alegre hablando at brinquitos
-    mar "Ah, ¿quieres unirte al club de cocina?"
-    "Y menos mal que Marissa captó mi señal."
-    pla "No estoy seguro, pero quisiera saber algunas cosas acerca del club."
+    mar "Ah, do you want to join the cooking club?"
+    "And thank goodness Marissa caught my signal."
+    pla "I'm not sure, but I would like to know a few things about the club."
     show marissa alegre
-    mar "¡Claro, no hay problema!"
-    unk "¿Quién es, Marissa? ¿Lo conoces?"
-    "Una de las chicas cerca de ella preguntó con mucha curiosidad."
+    mar "Sure, no problem!"
+    unk "Who is it, Marissa? Do you know him?"
+    "One of the girls near her asked very curiously."
     show marissa alegre hablando
-    mar "Por supuesto, él es... [pla_name]. Hace algunos días fue al club ya que estaba en busca de uno adonde unirse."
-    "Como se esperaba de alguien tan popular, Marissa manejó la situación con total naturalidad."
-    unk "Eh... con que es así... ya veo..."
+    mar "Of course, he is... [pla_name]. A few days ago he went to the club as he was looking for one to join."
+    "As expected of someone so popular, Marissa handled the situation matter-of-factly."
+    unk "Uh... so it's like that... I see..."
     scene bg negro with dissolve
-    "Y sin ser para nada sospechosa, Marissa estuvo presentándome con todos sus amigos, y también me habló acerca del resto de sus compañeros."
-    "Es lo único que se me ocurrió en poco tiempo..."
-    "Sin embargo, descubrí algunas cosas interesantes."
+    "And without being suspicious at all, Marissa was introducing me to all of her friends, and she also told me about the rest of her classmates."
+    "It's the only thing that occurred to me in a short time..."
+    "However, I discovered some interesting things."
     scene bg salon clases with dissolve
     show marissa alegre hablando with dissolve
-    unk "Hey, Marissa... ¿Quién es ese chico?"
-    unk "¿Acaso es tu novio? Ja, ja, ja."
+    unk "Hey, Marissa... who's that guy?"
+    unk "Is he your boyfriend? Ha ha ha."
     show marissa alegre
-    mar "Je, je, no estés bromeando."
+    mar "Heh heh, don't be kidding."
     show marissa:
         ease .5 mright
     show beck sonriendo at mleft with dissolve
     pause 1
-    "¡Wooaa... ese tipo es muy alto!" with vpunch
+    "Woooa... that guy is so tall!" with vpunch
     show marissa alegre
-    mar "[pla_name], te presento a {amarillo}Beck Doran.{/amarillo} Beck, te presento a [pla_name]."
-    bec "¿Qué onda?"
-    pla "Mucho gusto..."
-    "Beck... recuerdo que Marissa se encontró con él en la cafetería..."
-    mar "[pla_name] vino a buscarme por que está interesado en el club de cocina."
+    mar "[pla_name], this is {amarillo}Beck Doran.{/amarillo} Beck, this is [pla_name]."
+    bec "What's up?"
+    pla "Nice to meet you..."
+    "Beck... I remember Marissa said she ran into him in the cafeteria..."
+    mar "[pla_name] came to me because he is interested in the cooking club."
     show beck sorprendido
-    bec "Oh... ¿en serio?"
-    "El chico parecía que estaba analizándome con la mirada, espero que no se dé cuenta de nuestra mentira..."
+    bec "Oh really?"
+    "The boy looked like he was analyzing me, I hope he doesn't catch our lie..."
     stop music fadeout 4
     show beck serio
-    bec "Ya veo..."
+    bec "I see..."
     show marissa sorprendida
     mar "..."
     show beck enojado
-    bec "Sé cual es la verdad."
+    bec "I know what the truth is."
     pla "..."
-    mar "¿Eh?"
+    mar "What?"
     show beck serio
-    bec "Te llamas... [pla_name], ¿no?"
-    bec "Eres un chico listo... pero ya sé tus verdaderas intenciones."
+    bec "Your name is... [pla_name], right?"
+    bec "You're a smart boy... but I already know your true intentions."
     pla "..."
-    pla "No- No sé de lo que estás hablando..."
+    pla "I don't know what you're talking about..."
     # "¿Acaso es verdad lo que está diciendo?"
-    mar "Beck... ¿a qué te refieres?"
+    mar "Beck... what do you mean?"
     show beck enojado
-    bec "Marissa... ese chico..."
+    bec "Marissa... that boy..."
     play music ambiente2 fadein 2
     show beck sonriendo at brinquitos
-    bec "¡Quiere unirse al club para estar rodeado de lindas chicas!"
+    bec "He wants to join the club to be surrounded by cute girls!"
     show beck guino
-    bec "Eres todo un rufián, [pla_name], ja, ja, ja."
+    bec "You're quite the ruffian, [pla_name], ha ha ha."
     pla "..."
-    extend " ¡Ah! Ja, ja, ja..." with hpunch
-    "Solo pude reír, aliviado, esperando que cambiara de tema."
+    extend " Oh! Ha ha ha..." with hpunch
+    "I could only laugh, relieved, hoping he would change the subject."
     show marissa normal
     show beck sonriendo
-    bec "Hey [pla_name], no nos hagamos los tontos, si el club de cocina no es lo tuyo..."
+    bec "Hey [pla_name], let's not play dumb, if the cooking club isn't your thing..."
     play sound campana
-    bec "Date una vuelta por {amarillo}el club de fútbol.{/amarillo} Te aseguro que tendrás a más chicas siguiendote je, je, je." with flashbulb
-    bec "Bien, nos vemos ja, ja, ja."
+    bec "Take a tour by {amarillo}the soccer club.{/amarillo} I assure you that you will have more girls following you heh, heh, heh." with flashbulb
+    bec "Well, see you ha ha ha."
     hide beck with dissolve
     show marissa:
         ease .5 center
-    "Y con eso Beck se marchó del salón mientras emitía algunas carcajadas."
-    "Además, mientras salía, algunas chicas fueron a seguirlo..."
-    pla "... eso estuvo cerca..."
+    "And with that Beck left the room while he was laughing."
+    "Also, while he was leaving, some girls went to follow him…"
+    pla "... that was close..."
     show marissa alegre at decaer
-    mar "Eso parece, je, je..."
+    mar "So it seems, heh, heh..."
     show marissa alegre hablando at reponerse
-    mar "Como pudiste ver, él es Beck Doran, es miembro del club de fútbol."
-    mar "Es toda una celebridad en nuestro salón."
+    mar "As you could see, that is Beck Doran, he is a member of the soccer club."
+    mar "He is quite the celebrity in our classroom."
     pla "..."
     show marissa normal
-    mar "¿[pla_name]?"
-    pla "Ah, hay algo de lo que me dijo que me llamó la atención..."
-    pla "¿Qué quiso decir con eso de que {amarillo}\"tendría más chicas siguiendome\"{/amarillo}?"
-    mar "Eh... ¿estás interesado en eso?"
-    pla "No, no..."
-    "Bueno, sí..."
-    pla "Ese chico, ¿en serio es tan popular?"
+    mar "[pla_name]?"
+    pla "Ah, there's something he told me that caught my attention..."
+    pla "What did he mean with that {amarillo}\"I would have more girls following me\"{/amarillo}?"
+    mar "Uh... are you interested in that?"
+    pla "No no..."
+    "Okay, yes..."
+    pla "That boy, is he really that popular?"
     show marissa alegre
-    mar "Claro, casi todas las chicas del salón lo tienen como un ídolo.{nw}"
+    mar "Sure, almost every girl in the classroom has him as an idol.{nw}"
     play sound campana
-    extend " {amarillo}Incluso ha tenido acosadoras.{/amarillo}" with flashbulb
+    extend " {amarillo}He's even had female stalkers.{/amarillo}" with flashbulb
     show marissa normal
-    pla "¿¡Eh!?" with hpunch
-    "Con que ese chico ha tenido acosadoras..."
-    $addNote("Beck Doran (perfil)","Miembro del club de fútbol. Es una persona muy popular en su salón, en especial entre las mujeres. Según Marissa, él ha tenido algunas acosadoras molestándolo.","beck")
-    "Debería hablar con él más adelante."
-    pla "Ah... por cierto..."
-    $renpy.choice_for_skipping()
-    pla "Marissa, tengo que preguntarte algo..."
-    tuto "Ahora, deberás seleccionar un elemento del bloc de notas."
-    tuto "Solo debes hacer click en \"Presentar\" debajo del elemento a elegir."
+    pla "Uh!?" with hpunch
+    "So that boy has had stalkers..."
+    $ addNote("Beck Doran (profile)","Member of the football club. He is a very popular person in his classroom, especially among the girls. According to Marissa, he has had some female stalkers bothering him.","beck")
+    "I should talk to him later."
+    pla "Oh by the way..."
+    $ renpy.choice_for_skipping()
+    pla "Marissa, I have something to ask you..."
+    tuto "Now, you will need to select an element from the notepad."
+    tuto "You just have to click on \"Submit\" under the element to choose."
 
-    $initCorazones()
+    $ initCorazones()
     show screen corazones
-    $quick_menu_gameplay=True
-    mar "¿Sí? ¿Qué quieres preguntar?"
+    $ quick_menu_gameplay=True
+    mar "Yeah? What do you want to ask?"
 
-    ##ahora se debe seleccionar un item del bloc de notas, usaremos como id, el titulo del elemento
-    $idevidencia_correcta="¿Hay algo de valor en el casillero?"
+##ahora se debe seleccionar un item del bloc de notas, usaremos como id, el titulo del elemento
+    $ idevidencia_correcta="Is there anything of value in the locker?"
 
     label mostrar_evidencia1:
 
@@ -528,142 +529,142 @@ label ruleta1_fin:
 
     label evidencia_mostrada1:
         if idevidencia_mostrar==idevidencia_correcta:
-            $evidencia1_fallida1erintento=False
+            $ evidencia1_fallida1erintento=False
             jump evidencia_mostrada1_correcto
         else:
-            $evidencia1_fallida1erintento=True
-            $randomnum = renpy.random.randint(1, 5)
+            $ evidencia1_fallida1erintento=True
+            $ randomnum = renpy.random.randint(1, 5)
             if randomnum==1:
-                mar "No entiendo tu pregunta..."
+                mar "I do not understand your question..."
             elif randomnum==2:
                 show marissa alegre hablando
-                mar "Sabes... A veces dices cosas extrañas..."
+                mar "You know... Sometimes you say strange things..."
             elif randomnum==3:
                 show marissa enojada
-                mar "¿Podrías ir directo al grano? El tiempo de receso es muy corto."
+                mar "Could you go straight to the point? The break time is very short."
             elif randomnum==4:
-                mar "¿Te gusta perder el tiempo, eh?"
+                mar "You like to waste time, huh?"
             elif randomnum==5:
                 show marissa apenada
-                mar "[pla_name]... Date prisa, quiero ir a comprarme algo en la cafetería..."         
-            $restCorazones()
-            pla "Ah, lo siento... eso no era..." with hpunch
+                mar "[pla_name]...Hurry up, I want to go buy something in the cafeteria..."
+            $ restCorazones()
+            pla "Ah, sorry... that wasn't..." with hpunch
             jump mostrar_evidencia1
 
     label evidencia_mostrada1_gameover:
-        $evidencia_mostrada1_resuelta=False
+        $ evidencia_mostrada1_resuelta=False
         hide screen corazones
         stop music fadeout 1
         show marissa preocupada
-        mar "¿Qué estás intentando hacer, [pla_name]?"
-        $updateStat("intel","-",1)
-        $renpy.notify("Inteligencia -1")
-        pla "La verdad, es que ni yo lo sé..."
+        mar "What are you trying to do, [pla_name]?"
+        $ updateStat("intel","-",1)
+        $ renpy.notify("Intelligence -1")
+        pla "The truth is that I don't even know..."
         jump evidencia_mostrada1_final
 
     label evidencia_mostrada1_correcto:
-        $evidencia_mostrada1_resuelta=True
+        $ evidencia_mostrada1_resuelta=True
         hide screen corazones
-        $showplay_excl("esoes")
+        $ showplay_excl("that is")
         if not evidencia1_fallida1erintento:
-            $updateStat("intel","+",1)
-            $renpy.notify("Inteligencia +1")
-        pla "Marissa... ¿Guardas algo de valor en tu casillero?"
+            $ updateStat("intel","+",1)
+            $ renpy.notify("Intelligence +1")
+        pla "Marissa... Do you keep anything of value in your locker?"
         show marissa sorprendida
-        mar "¿Eh?"
-        mar "¿Por qué lo preguntas?"
-        pla "Bueno... eso explicaría que hayan forcejeado la cerradura de tu casillero..."
-        "Me aseguré de hablar en voz baja para que otros no escucharan."
+        mar "Huh?"
+        mar "Why do you ask?"
+        pla "Well... that would help explain why they would try to open your locker..."
+        "I made sure to speak quietly so others wouldn't hear."
         show marissa normal
         mar "Uhm..."
-        mar "Pues no guardo nada de valor en mi casillero."
-        mar "Solo tengo libros y cuadernos ahí."        
-        pla "Oh, entiendo... gracias, eso era lo que quería saber."
-        $removeNote("¿Hay algo de valor en el casillero?")
-        "Pregunta resuelta..."
+        mar "Well, I don't keep anything of value in my locker."
+        mar "I only have books and notebooks there."
+        pla "Oh, I understand... thanks, that's what I wanted to know."
+        $ removeNote("Is there anything of value in the locker?")
+        "Question resolved..."
         jump evidencia_mostrada1_final
 
 label evidencia_mostrada1_final:
-    $quick_menu_gameplay=False
-    pla "Bueno, creo que ya debo irme."
-    pla "Nos vemos, Marissa..."
+    $ quick_menu_gameplay=False
+    pla "Well, I think I should go now."
+    pla "See you Marissa..."
     stop music fadeout 1
     show marissa sorprendida:
         ease .5 mright
     show mary normal at mleft with dissolve
     play sound campana
-    pla "¡...!" with flashbulb
+    pla "...!" with flashbulb
     show mary hablando
-    mary "Marissa Morstan..."
-    mar "¡Aaah!" with hpunch
-    mar "¡Pro- pro- profesora Harrow!"
+    mary "Marissa Morestan..."
+    mar "Whoa!" with hpunch
+    mar "Pro- pro- Professor Harrow!"
     show mary normal
     mary "..."
-    mary "¿[pla_name]? No esperaba verte por aquí..."
-    pla "Hola, profesora Harrow..."
-    "La profesora Harrow estaba en la entrada del salón. Como siempre, con un aura intimidante..."
-    "Y vi que Marissa de repente se volvió nerviosa, como un ciervo frente a los faros de un automovil."
-    "¿Qué está pasando aquí?"
+    mary "[pla_name]? I didn't expect to see you here..."
+    pla "Hello, Professor Harrow..."
+    "Professor Harrow was at the entrance of the room. As always, with an intimidating aura..."
+    "And I saw that Marissa suddenly became nervous, like a deer in the headlights of a car."
+    "What's going on here?"
     show mary hablando
-    mary "Marissa... ven conmigo."
-    mar "¡Aaaahhh!" with hpunch
+    mary "Marissa... come with me."
+    mar "Aaaahhh!" with hpunch
     mary "Marissa."
     show marissa at brinquitos
-    mar "¡Iiiihh!" with hpunch
+    mar "Iiiihh!" with hpunch
     show mary normal
-    "Marissa soltó un extraño gemido, como el de un pequeño animal, a medida que la profesora se adentraba en el salón."
-    "La chica, que hasta hace poco tenía una actitud amable, ahora está mostrando una faceta nerviosa."
-    "Es lo que causa, la ira de la profesora Harrow..."
+    "Marissa let out a strange wail, like a small animal, as the teacher walked further into the room."
+    "The girl, who until recently had a friendly attitude, is now showing a nervous side."
+    "This is what causes, Professor Harrow's wrath..."
     show marissa apenada at decaer
-    "Como si hubiera aceptado un terrible destino, Marissa tomó su bolso, y cabizbaja se dirigió hacia la salida."
-    pla "Espere... profesora Harrow..."
+    "As if she had accepted a terrible fate, Marissa took her bag and head down, headed towards the exit."
+    pla "Wait... Professor Harrow..."
     show marissa normal at reponerse
-    pla "¿Por qué se está llevando a Marissa?"
+    pla "Why are you taking Marissa?"
     show mary hablando
-    mary "No tengo porque dar detalles. No es de tu incumbencia."
+    mary "I don't have to give details. It's none of your business."
     play music ambiente3 fadein 4
     show mary normal
     show marissa apenada
-    mar "¡[pla_name]! ¡Salvameeeee!" with hpunch
+    mar "[pl_name]! Save meeeee!" with hpunch
     pla "..."
-    pla "Profesora Harrow..."
-    pla "Agradecería que me dijera que está pasando..."
+    pla "Professor Harrow..."
+    pla "I'd appreciate it if you could tell me what's going on..."
     show mary hablando
-    mary "Solo tengo que hablar con Marissa acerca de su rendimiento académico del año pasado, eso es todo."
+    mary "I just have to talk to Marissa about her academic performance last year, that's all."
     show mary normal
     show marissa sorprendida
-    mar "¡Me- me- mentira! ¡Usted solo me está llevando por que sigue enojada por {amarillo}aquel tropiezo{/amarillo}!" with hpunch
+    mar "I- I- lie! You're only taking me because you're still angry about {amarillo}that stumble{/amarillo}!" with hpunch
     play sound campana
-    pla "¿Tropiezo?" with flashbulb
-    extend " Es no me lo has contado Marissa."
+    pla "That stumble?" with flashbulb
+    extend " You haven't told me, Marissa."
     # "Eso es algo que no me ha contado Marissa..."
     show marissa preocupada
-    mar "¿En serio? Eh, lo olvidé..."
-    "Debería indagar más..."
+    mar "Oh really? Uh i forgot..."
+    "I should investigate more..."
     show marissa normal
-    pla "Profesora Harrow, me gustaría hacerle algunas preguntas."
+    pla "Professor Harrow, I'd like to ask you a few questions."
     show mary sorprendida
-    mary "¿Eh? ¿A qué viene eso?"
-    pla "Es... por actividades de mi club..."
+    mary "Huh? What is this about?"
+    pla "It's... because of my club's activities..."
     show mary normal
-    "Me aseguré de mantener mi voz baja al decirlo."
-    "Aunque de todas formas, seguramente ya parezco sospechoso por tratar de averiguar lo que ha pasado entre ellas..."
+    "I made sure to keep my voice low as I said it."
+    "Although anyway, I probably already look suspicious for trying to find out what happened between them..."
     mary "..."
     show mary pensando
-    extend " entiendo."
-    mary "Podemos hablar en el salón de maestros."
-    pla "Muchas gracias..."
+    extend " I understand."
+    mary "We can talk in the teachers' lounge."
+    pla "Thank you so much..."
     stop music fadeout 2.5
     scene bg negro with dissolve
     pause 2
     scene bg salon maestros dia with fade
     show mary normal with dissolve
     # show marissa preocupada at mright with dissolve
-    pla "¿Entonces, podría contarme lo que pasó el día de ese \"tropiezo\"?"
+    pla "So, could you tell me what happened the day of that \"stumble\"?"
     # hide marissa with dissolve
     # show mary:
     #     ease .5 center
-    mary "Está bien..."
+    mary "Alright..."
     #reiniciamos corazones, si antes se acabaron corazones, al tratar de preguntar a marissa si tenia algo de valor, esto evitara que el interrogatorio se termine (por que corazones=0)
-    $initCorazones()
+    $ initCorazones()
     jump caso1_testimonio2
