@@ -1,14 +1,14 @@
 label caso1_testimonio2:
-    $estadoj="Testimonio"
-    $interrogatorio_activo=False
-    $initInterrVars()
+    $ estadoj="Interrogation"
+    $ interrogatorio_activo=False
+    $ initInterrVars()
     #intro testimonio
-    $showMinigameTitle(estadoj)
+    $ showMinigameTitle(estadoj)
     play music tiempo_muerto2 fadein 3
 
     label caso1_testimonio2_inicio:
 
-        if estadoj=="Interrogatorio":
+        if estadoj=="Interrogation":
             show screen interrogatorio_btns
             ## si se realizaron todas las preguntas necesarias...
             if fraseInterr[0] and fraseInterr[1] and fraseInterr[2] and fraseInterr[3]:
@@ -16,81 +16,81 @@ label caso1_testimonio2:
 
         if cantidad_corazones==0 or timeup:
             hide screen interrogatorio_btns
-            jump int2_gameover   
+            jump int2_gameover
 
-        $renpy.block_rollback()
+        $ renpy.block_rollback()
         show mary normal with dissolve
         $ interr_fraseid=0
-        mary "{amarillo}El viernes de la semana pasada{/amarillo}, después de haber hablado {amarillo}con un alumno{/amarillo} en el salón de maestros..."
+        mary "{amarillo}On Friday of last week{/amarillo}, after speaking {amarillo} with a student{/amarillo} in the teachers' lounge..."
         $ interr_fraseid=1
-        mary "{amarillo}Siguiendo con mi horario,{/amarillo} fui al salón de la señorita Morstan a impartir clases."
+        mary "{amarillo}Following my schedule,{/amarillo} I went to Miss Morstan's classroom to give classes."
         $ interr_fraseid=2
         show mary pensando
-        mary "Pero al acercarme a la entrada, {amarillo}fue cuando ella se tropezó conmigo.{/amarillo}"
+        mary "But as I approached the entrance, {amarillo} she bumped into me.{/amarillo}"
         $ interr_fraseid=3
         show mary hablando
-        mary "{amarillo}Papeles salieron volando{/amarillo}, fue un desastre. Menos mal que {amarillo}alguien vino a ayudar.{/amarillo}"
+        mary "{amarillo}Papers went flying{/amarillo}, it was a disaster. It's a good thing {amarillo}someone came to help.{/amarillo}"
         $ interr_fraseid=4
         show mary pensando
-        mary "Después de haber recogido mis documentos. Le impuse a Marissa un castigo."
+        mary "After I collected my documents. I imposed a punishment on Marissa."
         $ interr_fraseid=5
         show mary normal
-        mary "Luego, {amarillo}di mis clases con normalidad.{/amarillo}"
+        mary "Later, {amarillo}I gave my classes normally.{/amarillo}"
         $ interr_fraseid=6
-        mary "{amarillo}Eso es todo.{/amarillo}"
+        mary "{amarillo}That's all.{/amarillo}"
         $ renpy.block_rollback()
 
         hide screen interrogatorio_btns
 
-        if estadoj=="Testimonio":
+        if estadoj=="Interrogation":
             stop music fadeout 2
 
-            mary "Bien, suelta tus preguntas."
-            mary "No tengo todo el tiempo del mundo."
-            mary "Te daré {amarillo}cinco minutos{/amarillo} para aclarar todas tus dudas."
-            pla "¿¡Eh!?" with hpunch
-            "¿Cinco minutos?"
-            "¡Debo darme prisa!"
+            mary "Okay, drop your questions."
+            mary "I don't have all the time in the world."
+            mary "I will give you {amarillo}five minutes{/amarillo} to clarify all your doubts."
+            pla "Huh!?" with hpunch
+            "Five minutes?"
+            "I must hurry!"
 
             ## desactivamos opciones irrelevantes del quick menu, y el menu normal
-            $quick_menu_gameplay = True
+            $ quick_menu_gameplay = True
 
-            $estadoj="Interrogatorio"
-            $interrogatorio_activo=True
+            $ estadoj="Interrogation"
+            $ interrogatorio_activo=True
 
             ## variables del interrogatorio
-            $interr_id=2
+            $ interr_id=2
             ##para establecer cual es la última frase y así desactivar el botón de siguiente
-            $interr_frasefinal=6
+            $ interr_frasefinal=6
 
             #en este interrogatorio, como no se necesita refutar, se desactiva el botón
-            $interr_btn_refutar_disabled=True
+            $ interr_btn_refutar_disabled=True
 
             #variables bandera
-            $fraseInterr={0:0,1:1,2:2,3:3,4:4}
-            $fraseInterr[0]=False
-            $fraseInterr[1]=False
-            $fraseInterr[2]=False
-            $fraseInterr[3]=False
-            $fraseInterr[4]=False
+            $ fraseInterr={0:0,1:1,2:2,3:3,4:4}
+            $ fraseInterr[0]=False
+            $ fraseInterr[1]=False
+            $ fraseInterr[2]=False
+            $ fraseInterr[3]=False
+            $ fraseInterr[4]=False
 
-            #establecemos cantidad de corazones a 5
-            $initCorazones()
 
-            #intro interrogatorio
-            $showMinigameTitle(estadoj)
+            $ initCorazones()
 
-            #mostramos panel de corazones y temporizador en 300 segundos
-            $show_gameplay_layout(300)
-            #botones de interrogatorio
+
+            $ showMinigameTitle(estadoj)
+
+
+            $ show_gameplay_layout(300)
+
             show screen interrogatorio_btns
 
             play music tiempo_muerto2 fadein 3
 
             jump caso1_testimonio2_inicio
-
         else:
-            $checkTimeAndJump("int"+str(interr_id)+"_gameover")
-            "Por alguna razón, siento que hay algo aquí que podría ser importante en la investigación..."
-            "¡Necesito hacer las preguntas correctas!" with hpunch
+
+            $ checkTimeAndJump("int"+str(interr_id)+"_gameover")
+            "For some reason, I feel like there's something here that could be important in the investigation..."
+            "I need to ask the right questions!" with hpunch
             jump caso1_testimonio2_inicio
