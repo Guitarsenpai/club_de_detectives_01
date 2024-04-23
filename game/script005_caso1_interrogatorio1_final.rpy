@@ -1,87 +1,87 @@
 label caso1_iterrogatorio1_final:
 
-    $fase_titulo.append("Interrogatorio de Marissa")
-    $fase_tipo_vida.append("cantidad")
-    $fase_corazones.append(cantidad_corazones)
-    $fase_multiplicador.append(10)
+    $ fase_titulo.append("Marissa's interrogation")
+    $ fase_tipo_vida.append("amount")
+    $ fase_corazones.append(cantidad_corazones)
+    $ fase_multiplicador.append(10)
 
     stop music fadeout 2
     hide screen interrogatorio_btns
-    $quick_menu_gameplay = False
-    $hide_gameplay_layout()
+    $ quick_menu_gameplay = False
+    $ hide_gameplay_layout()
     scene bg negro with dissolve
     pause 1.5
-    $estadoj="Libre"
+    $estadoj="Free"
     play music ambiente2 fadein 4
     scene bg salon club detectives with dissolve
-    $hora=16 #4pm
-    pla "Bien... creo que ahora sí hemos hecho todas las preguntas debíamos hacer."
+    $hora=16#4pm
+    pla "Well... I think that now we have asked all the questions we should."
     show alice normal with dissolve
-    ali "Así parece, [pla_name]."
+    ali "It looks like it, [pla_name]."
     show alice:
         ease .5 mright
     show marissa sorprendida at mleft with dissolve
-    mar "Vaya... ya se ha hecho tarde..."
+    mar "Wow... it's already late..."
     show marissa alegre hablando
-    mar "Bueno, en serio muchas gracias por aceptar mi petición, me tengo que ir."
+    mar "Well, seriously thank you very much for accepting my request, I have to go."
     if numero_marissa_obtenido:
-        mar "Por cualquier cosa... [pla_name], puedes llamarme je, je, je."
+        mar "If you want anything... [pla_name], you can call me heh heh heh."
         show alice sorprendida
-        ali "¿¡Eh!?" with hpunch
-        ali "[pla_name]... ¿Tienes el número de Marissa?"
-        pla "Eh... sí... ¿hay algo malo con eso?"
+        ali "Uh!?" with hpunch
+        ali "[pla_name]... Do you have Marissa's number?"
+        pla "Uh...yeah...is there something wrong with that?"
         show alice sonrojada
-        ali "N- no... nada..."
+        ali "N-no... nothing..."
         show marissa alegre at brinquitos
-        mar "Je, je, je, estás sonrojada."
+        mar "Heh heh heh, you're blushing."
         show alice asustada
-        ali "¡Cla- claro que no!" with hpunch
+        ali "Of course not!" with hpunch
         show alice sonrojada
-        mar "Si quieres, también podemos intercambiar números."
-        mar "De todas formas, debe ser importante tener a donde llamarme, ¿no?"
-        ali "Su- supongo..."
-        "¿Qué pasa con la reacción de Alice?"
+        mar "If you want, we can also exchange numbers."
+        mar "Anyway, it could be important for you to have a number to call me, right?"
+        ali "I- I guess..."
+        "What about Alice's reaction?"
     else:
         show marissa sorprendida
-        mar "Ah, casi lo olvido..."
-        mar "Creo que es importante que intercambiemos números."
-        ali "Cierto..."
-        "Me mostré de acuerdo con la idea de Marissa, entonces Alice y yo intercambiamos números con ella."
+        mar "Oh, I almost forgot..."
+        mar "I think it's important that we exchange numbers."
+        ali "True..."
+        "I agreed with Marissa's idea, so Alice and I exchanged numbers with her."
 
     show alice normal
     show marissa preocupada
-    mar "Ah, otra cosa..."
+    mar "Oh, one more thing..."
     show alice sorprendida
-    ali "¿Qué pasa?"
-    mar "Este... quería pedirles otro favor..."
-    mar "Les estaría muy agradecida de que {amarillo}no hablen mucho del caso con otras personas...{/amarillo}"
-    mar "No quisiera que se extendieran rumores..."
-    pla "Entiendo... aunque eso complicaría las cosas..."
-    mar "Lo sé..."
-    mar "Pero en la medida de lo posible, sean cautelosos, por favor."
+    ali "Yes?"
+    mar "Uhm... I wanted to ask you another favor..."
+    mar "I would be very grateful if {amarillo} you try to not talk about the case too much with other people...{/amarillo}"
+    mar "I don't want rumors to be spread..."
+    pla "I understand... although that would complicate things..."
+    mar "I know..."
+    mar "But as far as possible, please be cautious."
     show marissa apenada
-    mar "No me gustaría que todo el mundo sepa que fui plantada por un acosador."
+    mar "I wouldn't want everyone to know that I was stood up by a stalker."
     show alice alegre at brinquitos
-    ali "¡Claro! ¡Cuenta con nosotros!"
+    ali "Sure! Count on us!"
     show marissa alegre
-    mar "En serio... gracias..."
-    mar "Y pensar que aparte de mi hermana, yo también necesitaría la ayuda de este club..."
+    mar "Thanks..."
+    mar "And to think that apart from my sister, I would also need the help of this club..."
     show alice normal
     show marissa alegre hablando
     show sherinford pequeño at mright with dissolve:
         ypos .450
         xoffset 70
-    she "Pío."
-    mar "¿Eh?"
-    mar "Ese pollito, ¿es tuyo?"
-    ali "S- sí... se llama Sherinford."
+    she "Tweet."
+    mar "Uh?"
+    mar "That chick, is it yours?"
+    ali "Y- yes... his name is Sherinford."
     show marissa alegre
-    mar "Awwww qué lindo."
+    mar "Awww how cute."
     show marissa alegre hablando
-    mar "Bueno, me voy."
-    mar "Estaremos en contacto."
+    mar "Well, I'm leaving."
+    mar "We'll be in touch."
     show marissa alegre at brinquitos
-    mar "¡Bye, bye!"
+    mar "Bye bye!"
     hide marissa with dissolve
     show alice:
         ease .5 center
@@ -89,12 +89,12 @@ label caso1_iterrogatorio1_final:
         ypos .450
         xoffset 70
         ease .5 xpos .5
-    pla "Qué caso tan curioso..."
+    pla "What a curious case..."
     show alice alegre at brinquitos
     show sherinford pequeño at brinquitos
-    ali "Je, je... ¿ahora no estás arrepentido de haberte unido al club?"
+    ali "Heh heh... Aren't you happy now for joining the club?"
     pla "..."
-    extend " solo espero no meterme en problemas con esto..."
+    extend " I just hope I don't get in trouble with this..."
     stop music fadeout 2
     scene bg negro with slow_dissolve
     pause 1.5
