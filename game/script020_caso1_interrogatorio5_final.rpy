@@ -1,274 +1,273 @@
 label caso1_interrogatorio5_final:
 
-    $fase_titulo.append("Interrogatorio de Neil")
-    $fase_tipo_vida.append("cantidad")
-    $fase_corazones.append(cantidad_corazones)
-    $fase_multiplicador.append(10)
+    $ fase_titulo.append("Neil's interrogation")
+    $ fase_tipo_vida.append("amount")
+    $ fase_corazones.append(cantidad_corazones)
+    $ fase_multiplicador.append(10)
 
-    $estadoj="Receso"
-    pla "Así que, {amarillo}¿nadie te llamó la atención, eh?{/amarillo}"
+    $ estadoj="Recess"
+    pla "So… {amarillo}nobody caught your eye, huh?{/amarillo}"
     show neil pensativo
-    nei "Eh... sí... ¿A- algún pro- problema con eso?"
+    nei "Uh...yeah... A-any prob-problem with that?"
     hide neil with dissolve
     show alice sorprendida with dissolve
-    ali "¡Ha tartamudeado!" with hpunch
-    pla "Sí... se hace evidente que a él le atrae Marissa..."
-    pla "Tengo una idea."
-    ali "¿Eh?"
-    pla "Solo sígueme la corriente..."
-    ali "E- entendido..."
+    ali "He stuttered!" with hpunch
+    pla "Yes... it becomes clear that he is attracted to Marissa..."
+    pla "I have an idea."
+    ali "Huh?"
+    pla "Just play along..."
+    ali "U-understood..."
     show alice normal:
         ease .5 mright
     show neil pensativo at mleft with dissolve
     play music ambiente3 fadein 3
-    pla "Hey Neil, esa chica está muy agradecida con tu ayuda..."
+    pla "Hey Neil, that girl is very grateful for your help..."
     show neil sorprendido
-    nei "¿¡Eeeeh!?" with hpunch
-    extend " ¿E- en serio?"
-    pla "Sí, y demasiado... le ha sorprendido que aún existieran los hombres caballerosos..."
+    nei "Whaaat!?" with hpunch
+    extend " Se-seriously?"
+    pla "Yes, and a lot... she was surprised to find out that chivalrous men still exist..."
     show neil sonriendo hablando
-    nei "Je- je- je, je, je... solo hice lo que un hombre tenía que hacer..."
+    nei "Heh-heh-heh... I just did what a man had to do..."
     show neil normal
-    pla "Sabes, yo conozco a esa chica, se llama Marissa."
+    pla "I happen to know that girl, her name is Marissa."
     show neil sonriendo hablando
-    nei "¿Marissa? Je, je, es un lindo nombre."
-    pla "Sí, en fin... ella me ha pedido tu número de celular."
+    nei "Marissa? Heh heh, she has a cute name."
+    pla "Yes, anyway... she asked me to get your cell phone number."
     show neil sorprendido
-    nei "¿¡Eeeeh!?" with hpunch
+    nei "Whaaaaat!?" with hpunch
     show neil sonriendo hablando at brinquitos
-    nei "Je, je, je... ya- ya veo..."
+    nei "Heh, heh, heh... I- I see..."
     show neil normal
-    nei "Está bien, supongo que debo darle mi número, je, je, je..."
-    pla "Puedes apuntarlo aquí."
-    "Le ofrecí a Neil mi bolígrafo y el bloc de notas."
-    $addNote("Número de Neil","Neil ha escrito de su propia mano su número de celular en mi bloc de notas. Escribió su número inmediatamente después de que yo le dijera que Marissa estaba interesada en llamarlo, esto me hace pensar que Neil está en interesado en esa chica...{p}{p}Uhm... no veo ese temblor que vi en la carta...","numneil",True)
-    nei "Bien, aquí lo tienes."
+    nei "Okay, I guess I should give you my number, heh heh heh..."
+    pla "You can write it down here."
+    "I offered Neil my pen and notepad."
+    $ addNote("Neil's number","Neil has written his cell phone number on my notepad in his own hand. He wrote his number immediately after I told him that Marissa was interested in calling him, this makes me think that Neil is interested in her...{p}{p} Uhm... I don't see that tremor that I saw in the letter...","numneil",True)
+    nei "Well, here you have it."
     pla "..."
-    nei "El receso no tardará en terminar. Me tengo que ir."
+    nei "The recess will soon be over. I have to go."
     show neil sonriendo hablando
-    nei "Estaré esperando su llamada."
-    nei "Je, je, je..."
+    nei "I'll be waiting for her call."
+    nei "Hehehe..."
     hide neil with dissolve
     stop music fadeout 4
     show alice normal:
         ease .5 center
-    ali "Se ha ido de muy buen humor..."
+    ali "He has left in a very good mood..."
     show alice sorprendida
-    ali "¡...!" with hpunch
+    ali "...!" with hpunch
     show alice enojada
-    ali "¡[pla_name]!" with hpunch
-    ali "¿¡Por qué le dijiste que Marissa quería su número!?"
-    pla "Por esto..."
+    ali "[pl_name]!" with hpunch
+    ali "Why did you tell him that Marissa wanted his number!?"
+    pla "For this..."
     show alice sorprendida
-    "Junto a mi respuesta, le enseñé a Alice mi bloc de notas."
-    ali "¿¡Entonces, tú querías el número de Neil!?" with hpunch
+    "Along with my answer, I showed Alice my notepad."
+    ali "So, you wanted Neil's number!?" with hpunch
     show alice pensando
-    ali "[pla_name], no sabía que tuvieras esos gustos..."
+    ali "[pla_name], I didn't know you had those tastes..."
     show alice sorprendida
-    pla "¡Te equivocas!" with hpunch
+    pla "You're wrong!" with hpunch
     show alice normal
-    ali "¿Entonces?"
-    pla "Le pedí a Neil que apuntara su número de celular,{nw}"
+    ali "So?"
+    pla "I asked Neil to write down his cell phone number, {nw}"
     play sound campana
-    extend " {amarillo}¡y con eso descubrí que Neil es zurdo!{/amarillo}" with flashbulb
+    extend " {amarillo}and with that I found out that Neil is left-handed!{/amarillo}" with flashbulb
     ali "..."
     show alice sorprendida
-    ali "¡Ah! {amarillo}¡En el perfil del acosador descubrimos que es zurdo!{/amarillo}"
-    pla "Shhhh no lo digas tan alto..."
-    $updateNote("Neil London (perfil)",ndesc="\n\nHe descubierto que Neil es zurdo.",add=True)
+    ali "Oh! {amarillo} In the stalker's profile we found out that he is left-handed! {/amarillo}"
+    pla "Shhh don't say it so loud..."
+    $ updateNote("Neil London (profile)",ndesc="\n\nI found out that Neil is left-handed.",add=True)
     show alice alegre at brinquitos
-    ali "¡Eres genial, [pla_name]!"
+    ali "You're great, [pla_name]!"
     show alice sonriendo
-    # pla "Pero sí, Neil también es zurdo..."
+
     play music ambiente2 fadein 3
-    ali "Uhm... hemos avanzado bastante... ya deberíamos ser capaces de llegar a una solución."
+    ali "Uhm... we've come a long way... we should be able to come up with a solution by now."
     show alice alegre at brinquitos
-    ali "Segun mi experiencia, viene siendo hora de realizar{nw}"
+    ali "According to my experience, it's about time to perform{nw}"
     play sound campana
-    extend " {amarillo}un debate escolar.{/amarillo}" with flashbulb
-    pla "¿Debate escolar?"
+    extend " {amarillo}a school debate.{/amarillo}" with flashbulb
+    pla "School debate?"
     show alice sonriendo
-    ali "Cuando mis superiores tenían un caso donde había mucha información que parecía no encajar..."
-    ali "Ellos realizaban un debate con casi todos los involucrados en el caso."
+    ali "When my superiors had a case where there was a lot of information that didn't seem to fit..."
+    ali "They held a debate with almost everyone involved in the case."
     show alice normal
-    ali "Primero, se establecía una interrogante, y luego los integrantes del debate {amarillo}comenzaban a dar ideas uno por uno.{/amarillo}"
-    ali "O también expresábamos opiniones..."
-    ali "Al final, las contradicciones salían a flote."
-    ali "Y así lográbamos tener nuevas pistas importantes con las cuales resolver el caso."
+    ali "First, a question was established, and then the members of the debate {amarillo} began to give ideas one by one.{/amarillo}"
+    ali "And we also expressed our opinions..."
+    ali "In the end, the contradictions surfaced."
+    ali "And so we managed to have new important clues to solve the case."
     show alice alegre
-    ali "Incluso... ¡Hasta mis superiores atrapaban al culpable en el mismo debate!" with hpunch
-    pla "Eh..."
-    pla "Eso es una buena idea... necesitamos hacer algo así."
+    ali "And even... my superiors sometimes caught the culprit in the same debate!" with hpunch
+    pla "Uhh..."
+    pla "That's a good idea... we need to do something like that."
     show alice sonriendo at brinquitos
-    ali "Claro, es algo que se le ocurrió al fundador del club."
-    ali "Es una persona muy inteligente y astuta."
+    ali "Yeah, it's something that the founder of the club came up with."
+    ali "He is a very smart and cunning person."
     pla "..."
-    pla "Así que en ese debate, deben estar todos los involucrados..."
+    pla "So in that debate, everyone should be involved..."
     show alice pensando
-    ali "Sí... tenemos a Marissa, la profesora Harrow, Beck, Neil y nosotros..."
+    ali "Yes… we have Marissa, Professor Harrow, Beck, Neil and us..."
     show alice normal
-    ali "En total somos seis personas."
-    pla "¿Es necesario que todos estén en el debate?"
-    ali "No es necesario."
-    ali "Pero si se establece que su presencia es importante, se tendría que mandar a llamar."
+    ali "In total we are six people."
+    pla "Is it necessary for everyone to be in the debate?"
+    ali "There's no need."
+    ali "But if it is established that his presence is important, we would have to call him."
     show alice pensando
-    ali "Claro que cuando eramos un club reconocido... teníamos permiso de la dirección {amarillo}para obligar a cualquier alumno unirse al debate.{/amarillo}"
-    pla "Eh... me lo imagino..."
-    pla "Hay que trabajar con lo que tenemos..."
-    pla "Habrá que avisar con tiempo a todos, de que podríamos llamarlos para ir al salón del club..."
+    ali "Of course, when we were a recognized club... we had permission from the school management {amarillo}to force any student to join the debate.{/amarillo}"
+    pla "Uh... I see..."
+    pla "We have to work with what we have..."
+    pla "We will have to notify everyone in advance, that maybe we could need to call them to go to the club room..."
     show alice normal
-    ali "Si, hay que preparar todo con tiempo."
-    ali "Yo me encargaría de limpiar el salón, ya que está algo desordenado..."
-    pla "En fin, ya hablaremos de eso con más calma, ahora quiero ir a la cafetería antes de que el receso..."
+    ali "Yes, you have to prepare everything in time."
+    ali "I could take care of cleaning the club room, since it is somewhat messy..."
+    pla "Anyway, we'll talk about it more calmly, now I want to go to the cafeteria before the recess is ov..."
     stop music
     play sound campana_escuela
     show alice sorprendida
     pause 4
-    ali "El receso ya ha terminado."
+    ali "The recess has already ended."
     show alice alegre
-    ali "¡Nos vemos, [pla_name]!"
+    ali "See you, [pla_name]!"
     hide alice with dissolve
-    pla "¿¡Ehhh!?" with hpunch
-    pla "Ah... qué hambre tengo..."
+    pla "Huh!?" with hpunch
+    pla "Ah... I feel like I'm going to starve to death..."
     stop music fadeout 3
     scene bg negro with dissolve
-    "Le envié un mensaje a Marissa, resumiéndole lo que Alice y yo hemos avanzado, y también le comenté sobre que mañana haríamos un debate."
-    "Ella no tardó en contestar, diciendo que por ella estaría bien."
+    "I sent Marissa a message, summarizing what Alice and I have come up with, and also told her that we would have a discussion tomorrow."
+    "She didn't take long to answer, saying that it would be fine for her."
 
     scene bg negro with slow_dissolve
     hide screen quick_menu
-    $quick_menu=False
+    $ quick_menu=False
     window hide
     pause 2
-    $hora=17
-    $estadoj="Libre"
-    $quick_menu=True
+    $ hora=17
+    $ estadoj="Free"
+    $ quick_menu=True
     window show
     scene bg escuela edificio principal corredor with dissolve
 
     play music ambiente fadein 2
-    "Son las cinco de la tarde."
-    "Después que las clases terminaron, fui al salón del club, para arreglar con Alice todo lo necesario para realizar un debate."
-    "Y ahora, estaba pasando por el edificio principal de la escuela, cuando..."
+    "It's five o'clock in the afternoon."
+    "After classes ended, I went to the club room, to arrange with Alice all the necessary to hold a debate."
+    "And then, I was passing the main school building, when..."
     show beck sonriendo with dissolve
     pause 1
-    pla "¿Beck?"
-    "Me encontré con Beck, {amarillo}quien había salido del salón de maestros.{/amarillo}"
+    pla "Beck?"
+    "I ran into Beck, {amarillo}, who had come out of the teachers' lounge.{/amarillo}"
     show beck sorprendido
-    bec "¿Eh? ¿[pla_name]?"
+    bec "Huh? [pla_name]?"
     show beck sonriendo
-    bec "¿Qué pasa? ¿Cómo va la investigación?"
-    pla "Eh... pues avanzando... oye, ¿estabas hablando con la profesora Harrow?"
+    bec "What's up? How's the investigation going?"
+    pla "Uh... well moving on... hey, were you talking to Professor Harrow?"
     show beck sorprendido
-    bec "¿¡Eh!? ¿¡Cómo lo sabes!?" with hpunch
-    pla "Ah... solo dije lo primero que se me vino a la cabeza..."
+    bec "Hey!? How do you know!?" with hpunch
+    pla "Ah... I just said the first thing that came to my mind..."
     hide beck with dissolve
     show mary normal with dissolve
-    "Y también vi a la profesora Harrow..."
-    mary "¿[pla_name]? Qué milagro verte a estas horas por la escuela..."
-    pla "Sí, he estado algo ocupado con las actividades del club."
+    "And I also saw Professor Harrow..."
+    mary "[pla_name]? What a miracle to see you at this hour at school..."
+    pla "Yes, I've been a bit busy with club activities."
     show mary pensando
     mary "..."
-    mary "Espero que no te estés olvidando que tienes tareas que hacer para mañana."
-    pla "¡Cla- claro que no lo he olvidado!" with hpunch
-    "A decir verdad, lo había olvidado, por estar pensando demasiado en el caso de Marissa..."
-    mary "En fin, me voy."
+    mary "I hope you're not forgetting that you have homework to do for tomorrow."
+    pla "Of course I haven't forgotten!" with hpunch
+    "To tell the truth, I had forgotten, thinking too much about Marissa's case..."
+    mary "Ok then, I'm leaving."
     show mary normal
-    mary "Hasta mañana, [pla_name]."
+    mary "See you tomorrow, [pla_name]."
     hide mary with dissolve
     show beck sorprendido with dissolve
     bec "..."
     extend " ..."
     extend " ..."
-    bec "¿¡Son ideas mías, o tuviste una charla casual con la profesora Harrow!?" with hpunch
-    pla "Ehm... sí... supongo..."
+    bec "Am I imagining things, or did you just have a casual chat with Professor Harrow!?" with hpunch
+    pla "Uhm... yeah... I guess did..."
     show beck pensando
-    bec "¿Cómo puedes hablar tan tranquilamente con la profesora Harrow?"
-    pla "Pues... este... ella es como una amiga de la familia..."
-    # pla "Así que... bueno..."
-    pla "La profesora Harrow ha estado pendiente de mis calificaciones desde que entré a esta escuela."
+    bec "How can you talk so calmly with Professor Harrow?"
+    pla "Well... uh... she's like a friend of my family..."
+
+    pla "Professor Harrow has been watching my grades ever since I entered this school."
     show beck sorprendido
-    bec "¿La profesora Harrow es amiga de tu familia?"
+    bec "Professor Harrow is a friend of your family?"
     show beck pensando
-    bec "Ah... qué suerte tienes..."
-    # pla "..."
-    pla "¿Suerte?"
-    pla "No creo que me sienta tan afortunado por eso..."
-    bec "Cuánto {amarillo}desearía recibir ese tipo de atención por parte de la profesora Harrow...{/amarillo}"
-    # pla "Oye Beck... ¿Te gusta la profesora Harrow?"
-    pla "¿Qué?"
+    bec "Oh... how lucky you are..."
+
+    pla "Lucky?"
+    pla "I don't think I feel very lucky about it..."
+    bec "Oh… how much {amarillo} would I like to receive that kind of attention from Professor Harrow...{/amarillo}"
+
+    pla "What?"
     show beck sorprendido
-    bec "¿¡Eeeeh!? No- no, nada..." with hpunch
+    bec "Huuuh!? No-no, nothing..." with hpunch
     show beck sonrojado
-    # bec "Cla- claro que no..."
+
     bec "..."
     pla "..."
-    # bec "..."
-    bec "¿Qué? No me mires así..."
+
+    bec "What? Don't look at me like that..."
     menu:
-        "Seguir viendo fijamente a Beck":
+        "Keep Staring at Beck":
             bec "..."
             show beck pensando
-            bec "Lo siento [pla_name], pero yo no juego de ese lado, solo me interesan las mujeres."
-            $updateStat("carisma","+",2)
-            $renpy.notify("Carisma +2")
-            pla "¿¡Qué!? No soy gay..." with hpunch
-            bec "Si tú lo dices..."
-            "Ah, cielos..."
-        "Seguir hablando":
-            $updateStat("carisma","-",1)
-            $renpy.notify("Carisma -1")
-    
+            bec "Sorry [pla_name], but I don't play on that side, I'm only interested in women."
+            $ updateStat("charisma","+",2)
+            $ renpy.notify("Charisma +2")
+            pla "What!? I'm not gay..." with hpunch
+            bec "If you say so..."
+            "Oh dear..."
+        "Keep talking":
+            $ updateStat("charisma","-",1)
+            $ renpy.notify("Charisma -1")
+
     show beck preocupado
-    bec "Hey... ¿de casualidad no sabes si ella tiene novio?"
-    pla "¿Que si la profesora Harrow tiene novio?"
+    bec "Hey... do you happen to know if she has a boyfriend?"
+    pla "Are you asking me if Professor Harrow has a boyfriend?"
     show beck sorprendido
-    bec "No- no es lo que piensas." with hpunch
+    bec "It's not what you think!" with hpunch
     show beck pensando
-    bec "Solo estaba pensando en voz alta, es que tengo curiosidad."
-    bec "Si una persona como ella tiene pareja..."
+    bec "I was just thinking out loud, I'm just curious."
+    bec "If a person like her has a partner..."
     bec "..."
-    
-    # bec "No- no sé de lo que estás hablando... Solo tenía curiosidad..."
-    # pla "¿QUde las chicas que están siempre pendientes de ti te gusta?"
-    # bec "Pues... no..."
-    # bec "Si las trato con amabilidad, es solo por cortesía, {amarillo}pero ninguna chica de esta escuela me gusta.{/amarillo}"
-    # pla "Vaya... no me quiero imaginar la depeción que tendrán cuando se enteren..."
-    # show beck sorprendido
-    # bec "¡Oye! ¡Tampoco se lo digas a nadie!" with hpunch
-    # show beck sonrojado
-    # bec "Es... vergonzoso..."
-    # "... ya desearía tener un poco de su popularidad..."
+
+
+
+
+
+
+
+
+
+
+
     show beck sonriendo
-    bec "¿Entonces? ¿La profesora Harrow tiene novio?"
-    pla "Pues... no que yo sepa."
+    bec "So? Does Professor Harrow have a boyfriend?"
+    pla "Well... not that I know of."
     show beck sorprendido
     bec "..."
     show beck sonriendo
-    bec "¡Genial!"
+    bec "Great!"
     show beck pensando
-    bec "¡Ejem! Quiero decir, interesante..." with hpunch
-    "Beck en serio es pésimo para mentir..."
+    bec "Ahem! I mean interesting..." with hpunch
+    "Beck seriously sucks at lying..."
     show beck guino
-    bec "Bueno, me tengo que ir. ¡Nos vemos, [pla_name]!"
+    bec "Well I have to go. See you, [pla_name]!"
     hide beck with dissolve
-    "Sin perder tiempo, Beck se escapó..."
-    $updateNote("Beck Doran (perfil)",ndesc="\n\nTengo la sospecha de que Beck está enamorado de la profesora Harrow. Vaya... quién lo diría...",add=True)
-    "¿Debería decirle que a la profesora Harrow solo le interesan los hombres inteligentes?"
-    "Uhmm... nah. Estoy cansado, ya quiero irme a mi casa."
+    "Wasting no time, Beck ran away..."
+    $ updateNote("Beck Doran (profile)",ndesc="\n\nI have a suspicion that Beck is in love with Professor Harrow. Wow... who would have thought...",add=True)
+    "Should I tell him that Professor Harrow is only interested in intelligent men?"
+    "Uhmm... nah. I'm tired, I want to go home now."
     stop music fadeout 2
     scene bg negro with slow_dissolve
     hide screen quick_menu
-    $quick_menu=False
+    $ quick_menu=False
     window hide
     pause 2
-    $dia="Mar."
-    $hora=14
-    $fecha="Febrero 25"
-    $quick_menu=True
+    $ dia="Tuesday."
+    $ hora=14
+    $ fecha="February 25"
+    $ quick_menu=True
     window show
     play music ambiente2 fadein 3
     scene bg salon club detectives with dissolve
 
     jump caso1_predebate
-
