@@ -6,9 +6,9 @@ label d1r2_incorrecto_beck:
     $clearDebateText()
     $quick_menu_bajo=False
     show beck enojado
-    bec "¿Eh?"
+    bec "¿Huh?"
     $restCorazones()
-    bec "¿Qué rayos pretendes demostrar con eso?" with hpunch
+    bec "What on earth do you intend to prove with that?" with hpunch
     jump inicio_d1r2
 
 label d1r2_correcto:
@@ -16,43 +16,43 @@ label d1r2_correcto:
     $clearDebateText()
     $change_cursor()
     $addCorazones()
-    $showplay_excl("esonoescierto")
+    $showplay_excl("that'snottrue ")
     $quick_menu_bajo=False
     # $quick_menu_gameplay = False
     hide screen debateArgumento
     $hide_gameplay_layout()
     play music tiempo_muerto fadein 2
-    pla "Te equivocas, Beck."
-    bec "¿Eh? Explícate..."
-    pla "No creo que sea posible que el acosador sea del mismo club que Marissa..."
-    pla "Alice, ¿recuerdas lo que nos dijo ella cuando vino a pedirnos ayuda?"
+    pla "You are wrong , Beck."
+    bec "¿Huh? Explain yourself ..."
+   pla "I don't think it's possible that the stalker is from the same club as Marissa..."
+    pla "Alice, do you remember what she told us when she came to us for help?"    
     show beck:
         ease .5 mleft
     show alice pensando at mright with dissolve
-    ali "Uhm..."
+    ali "Hum..."
     show alice sorprendida
     play sound campana
-    extend " ¡Ah! {amarillo}Nos contó en qué lugares se sentía acosada.{/amarillo}" with flashbulb
-    pla "Exacto, y el único lugar que no mencionó es el {amarillo}club de cocina.{/amarillo}"
+    extend " Ah! {amarillo}She told us in which places she felt stalked.{/amarillo}" with flashbulb
+    pla "That's right, and the only place she didn't mention is the {amarillo}cooking club..{/amarillo}"
     show beck:
         ease .5 left
     show alice:
         ease .5 right
     show marissa normal with dissolve
-    mar "Ahora lo recuerdo..."
-    mar "Es cierto, tenía esa sensación que solo en el club me sentía segura..."
+    mar "I remember now..."
+    mar "It's true, I had that feeling that only in the club I felt safe..."
     show beck sorprendido
-    bec "¿Una sensación?"
+    bec "A feeling?"
     show beck pensando
-    bec "Lo veo algo flojo como para ser una pista o algo por el estilo..."
-    pla "Lo sé, pero es lo que tenemos."
-    pla "Pienso que es buena idea {amarillo}partir desde ese punto de vista.{/amarillo}"
+    bec "I see it kind of loose for a clue or something like that..."
+    pla "I know, but it's what we have."
+    pla "I think it's a good idea {amarillo}to start from that point of view. {/amarillo}"
     show beck preocupado
-    bec "Está bien..."
-    bec "Ustedes son los \"detectives\", deben saber lo que están haciendo..."
+    bec "Okay..."
+    bec "You're the \"detectives\", you should know what you're doing..."
     bec "..."
     $renpy.choice_for_skipping()
     $renpy.save("checkpoint")
     show beck pensando
-    bec "De lo que [pla_name] me ha contado... hay algo que no entiendo..."
-    jump caso1_debate_rnd3
+    bec "From what [pla_name] has told me... there is something I don't understand..."
+    jump case1_debate_rnd3
