@@ -12,7 +12,7 @@ label caso1_debate_rnd6:
     $ debate_args.append(6)## id de la ronda del debate
     $ debate_args.append(15)## cual id de frase es la correcta
     $ debate_args.append(3)## cual id de argumento es el correcto
-    $ argumentos = ["Neil London (perfil)","Diagrama de correlación","Cancha en fin de semana","Prof. Harrow (perfil)","Papel y casillero","Tropiezo"]  
+    $ argumentos = ["Neil London (profile)", "Correlation diagram", "Field on weekends", "Prof. Harrow (profile)", "Paper and locker", "Stumble"].
     $ show_gameplay_layout(600)
     play music debate
 
@@ -40,7 +40,7 @@ label inicio_d1r6:
     show screen debateCharPanel("neil")
 
     $ frase_args.append(0)## el id de la frase (desde cero)
-    $ frase_args.append("Primero, recomiendo que...")
+    $ frase_args.append("First, I recommend that...")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r2f0)## qué animacion usar
     $ frase_args.append(False)## si es clickeable (True o False)
@@ -50,7 +50,7 @@ label inicio_d1r6:
     $ renpy.pause(2.4,hard=True)
 
     $ frase_args.append(1)## el id de la frase (desde cero)
-    $ frase_args.append("le den un nuevo vistazo a la carta.")
+    $ frase_args.append("you take another look to the letter").
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r6f1)## qué animacion usar
     $ frase_args.append(False)## si es clickeable (True o False)
@@ -60,7 +60,7 @@ label inicio_d1r6:
     $ renpy.pause(2.2,hard=True)
 
     $ frase_args.append(2)## el id de la frase (desde cero)
-    $ frase_args.append("{amarillo}Tal vez puede haber nuevas pistas ahí.{/amarillo}")
+    $ frase_args.append("{amarillo} Perhaps there may be new clues there.{/amarillo}")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r6f2)## qué animacion usar
     $ frase_args.append(True)## si es clickeable (True o False)
@@ -82,7 +82,7 @@ label inicio_d1r6:
     show screen debateCharPanel("alice")
 
     $ frase_args.append(3)## el id de la frase (desde cero)
-    $ frase_args.append("{azul}Pero no hay nada más en la carta...{/azul}")
+    $ frase_args.append("{azul} But there's nothing else on the letter...{/azul}")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r6f1)## qué animacion usar
     $ frase_args.append(True)## si es clickeable (True o False)
@@ -104,7 +104,7 @@ label inicio_d1r6:
     show screen debateCharPanel("marissa")
 
     $ frase_args.append(4)## el id de la frase (desde cero)
-    $ frase_args.append("Además, han dicho que {p}{amarillo}fue una persona zurda...{/amarillo}")
+    $ frase_args.append("Also, you have said that the author was{p}{amarillo} a left-handed person...{/amarillo}")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r6f4)## qué animacion usar
     $ frase_args.append(True)## si es clickeable (True o False)
@@ -115,7 +115,7 @@ label inicio_d1r6:
     $ renpy.pause(3,hard=True)
 
     $ frase_args.append(5)## el id de la frase (desde cero)
-    $ frase_args.append("Sino fue Neil, ¿quién escribió la carta?")
+    $ frase_args.append("If it wasn't Neil, who wrote the letter?")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r6f5)## qué animacion usar
     $ frase_args.append(False)## si es clickeable (True o False)
@@ -137,7 +137,7 @@ label inicio_d1r6:
     show screen debateCharPanel("neil")
 
     $ frase_args.append(6)## el id de la frase (desde cero)
-    $ frase_args.append("Sería mejor...")
+    $ frase_args.append("It would be better to...")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r6f6)## qué animacion usar
     $ frase_args.append(False)## si es clickeable (True o False)
@@ -147,7 +147,7 @@ label inicio_d1r6:
     $ renpy.pause(2,hard=True)
 
     $ frase_args.append(7)## el id de la frase (desde cero)
-    $ frase_args.append("{amarillo}enfocarse en el contenido de la carta.{/amarillo}")
+    $ frase_args.append("{amarillo} focus on the content of the letter.{/amarillo}")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r6f7)## qué animacion usar
     $ frase_args.append(True)## si es clickeable (True o False)
@@ -169,7 +169,7 @@ label inicio_d1r6:
     show screen debateCharPanel("marissa")
 
     $ frase_args.append(8)## el id de la frase (desde cero)
-    $ frase_args.append("¿Qué podría haber{p}escondido en el {p}contenido?")
+    $ frase_args.append("What could there be {p}hidden in the {p}content?")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r1f0)## qué animacion usar
     $ frase_args.append(False)## si es clickeable (True o False)
@@ -179,7 +179,7 @@ label inicio_d1r6:
     $ renpy.pause(3,hard=True)
 
     $ frase_args.append(9)## el id de la frase (desde cero)
-    $ frase_args.append("{azul}¿Tal vez un código secreto?{/azul}")
+    $ frase_args.append("{azul}Maybe a secret code?{/azul}")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r1f1)## qué animacion usar
     $ frase_args.append(True)## si es clickeable (True o False)
@@ -201,7 +201,7 @@ label inicio_d1r6:
     show screen debateCharPanel("beck")
 
     $ frase_args.append(10)## el id de la frase (desde cero)
-    $ frase_args.append("Viendo la forma en la que fue escrita...")
+    $ frase_args.append("Seeing the way it was written...")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r6f10)## qué animacion usar
     $ frase_args.append(False)## si es clickeable (True o False)
@@ -214,7 +214,7 @@ label inicio_d1r6:
     hide screen debateText1
 
     $ frase_args.append(11)## el id de la frase (desde cero)
-    $ frase_args.append("Tal vez el autor {amarillo}es un poeta...{/amarillo}")
+    $ frase_args.append("Perhaps the author {amarillo}is a poet....{/amarillo}")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r1f8)## qué animacion usar
     $ frase_args.append(True)## si es clickeable (True o False)
@@ -224,7 +224,7 @@ label inicio_d1r6:
     $ renpy.pause(2.5,hard=True)
 
     $ frase_args.append(12)## el id de la frase (desde cero)
-    $ frase_args.append("Ya que no tiene un físico destacado...")
+    $ frase_args.append("Since he does not have an outstanding figure...").
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r4f4)## qué animacion usar
     $ frase_args.append(False)## si es clickeable (True o False)
@@ -234,7 +234,7 @@ label inicio_d1r6:
     $ renpy.pause(2,hard=True)
 
     $ frase_args.append(13)## el id de la frase (desde cero)
-    $ frase_args.append("{amarillo}Esa es su única manera{p} para ligar con chicas.{/amarillo}")
+    $ frase_args.append("{amarillo} That's his only way to pick up girls.{/amarillo}")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r6f13)## qué animacion usar
     $ frase_args.append(True)## si es clickeable (True o False)
@@ -256,7 +256,7 @@ label inicio_d1r6:
     show screen debateCharPanel("alice")
 
     $ frase_args.append(14)## el id de la frase (desde cero)
-    $ frase_args.append("{amarillo}Hay algo en la carta que no concuerda...{/amarillo}")
+    $ frase_args.append("{amarillo} There's something in the letter that doesn't match...{/amarillo}")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r6f1)## qué animacion usar
     $ frase_args.append(True)## si es clickeable (True o False)
@@ -266,7 +266,7 @@ label inicio_d1r6:
     $ renpy.pause(3,hard=True)
 
     $ frase_args.append(15)## el id de la frase (desde cero)
-    $ frase_args.append("{azul}Es como si se tratara de otra persona...{/azul}")
+    $ frase_args.append("{azul} It's as if it were about another person....{/azul}")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r6f2)## qué animacion usar
     $ frase_args.append(True)## si es clickeable (True o False)
@@ -278,7 +278,7 @@ label inicio_d1r6:
     show alice normal
 
     $ frase_args.append(16)## el id de la frase (desde cero)
-    $ frase_args.append("{azul}¿Neil no es el acosador?{/azul}")
+    $ frase_args.append("{azul}Is Neil not the stalker?{/azul}")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r0f0)## qué animacion usar
     $ frase_args.append(True)## si es clickeable (True o False)
@@ -290,7 +290,7 @@ label inicio_d1r6:
     show alice pensando
 
     $ frase_args.append(17)## el id de la frase (desde cero)
-    $ frase_args.append("{amarillo}Todo es tan confuso...{/amarillo}")
+    $ frase_args.append("{amarillo} Everything is so confusing...{/amarillo}")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r6f5)## qué animacion usar
     $ frase_args.append(True)## si es clickeable (True o False)
@@ -307,6 +307,6 @@ label inicio_d1r6:
     hide screen debateArgumento
     hide screen debateArgs
     $renpy.choice_for_skipping()
-    "Tal como dijo Neil, debería leerme de nuevo la carta y {amarillo}entender mejor el contenido{/amarillo} de esta."
-    "No quiero confiar en él, pero si dice que hay algo más en la carta... ¡Debo confirmarlo!"
+    "Just as Neil said, I should read the letter again and {amarillo}understand the contents{/amarillo} of it better."
+    "I don't want to trust him, but if he says there is something else in the letter... I must confirm it!"
     jump inicio_d1r6
