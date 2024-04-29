@@ -1,172 +1,172 @@
 label caso1_interrogatorio3_final:
 
-    $fase_titulo.append("Interrogatorio de Beck")
-    $fase_tipo_vida.append("cantidad")
-    $fase_corazones.append(cantidad_corazones)
-    $fase_multiplicador.append(10)
+    $ fase_titulo.append("Beck's interrogation")
+    $ fase_tipo_vida.append("amount")
+    $ fase_corazones.append(cantidad_corazones)
+    $ fase_multiplicador.append(10)
 
     stop music fadeout 5
-    # pla     necestio preguntarte algo
 
-    # bec     jum... que cosa?
 
-    # menu:
-    # Sobre el castigo de Marissa
-    # -menos inteligencia
-    # Sobre lo que pasó despues
-    # -menos inteligencia
-    # Sobre el chico
-    # --correcto
+
+
+
+
+
+
+
+
+
     show beck sonriendo
     show alice normal
-    bec "Lo siento por eso, pero ya lo tengo claro..."
-    bec "Ese día sí tuvimos un tiempo libre, pero fue antes de que nos tocara Matemáticas."
-    bec "Así como dices, {amarillo}yo estuve en el salón de maestros.{/amarillo}"
-    bec "Después la profesora Harrow se fue al salón."
-    bec "Yo en cambio tardé un poco más, ya que algunas chicas llegaron para hablar conmigo."
+    bec "I'm sorry about that, but it's clear to me now..."
+    bec "We did have some free time that day, but it was before Math."
+    bec "As you say, {amarillo} I was in the teachers' room.{/amarillo}"
+    bec "Then Professor Harrow went to the classroom."
+    bec "I, on the other hand, took a little longer, since some girls came to talk to me."
     show beck pensando
-    bec "Creo que tardé como tres o cinco minutos para llegar al salón."
+    bec "I think it took me about three or five minutes to get to the classroom."
     show beck guino
-    bec "Fui corriendo... ya sabes, no hay que hacer enojar a la profesora Harrow..."
+    bec "I ran... you know, there's no need to make Professor Harrow angry..."
     show beck preocupado
-    bec "Pero al llegar... {amarillo}la encontré en el suelo, junto a Marissa recogiendo algunos papeles.{/amarillo}"
+    bec "But when I got there... {amarillo}I found her on the floor, next to Marissa, picking up some papers.{/amarillo}"
     show beck pensando
-    bec "Ahora que lo recuerdo..."
+    bec "Now that I remember..."
     play sound campana
-    extend " {amarillo}había un chico que no era de nuestra sección.{/amarillo}" with flashbulb
+    extend " {amarillo}there was a boy who was not from our classroom.{/amarillo}" with flashbulb
     show beck serio
-    bec "Cuando llegué, ya habían recogido la mayoría de papeles."
-    bec "Al parecer, ese chico estuvo ayudándolas."
-    bec "Y la profesora Harrow no perdió tiempo para castigar a Marissa."
-    bec "Yo me enteré de todos los detalles de lo que pasó, después de que mandaran a Marissa a la biblioteca."
-    "Bien, es hora de preguntarle lo que necesito saber..."
-    $addintel=True
+    bec "When I arrived, they had already collected most of the papers."
+    bec "Apparently, that boy was helping them."
+    bec "And Professor Harrow wasted no time for punishing Marissa."
+    bec "I learned all the details of what happened after Marissa was sent to the library."
+    "Well, it's time to ask him what I need to know..."
+    $ addintel=True
     label saber_mas_de_chico_o_castigo:
         show beck sonriendo
         show alice normal
         menu:
-            "Sobre el castigo de Marissa":
-                pla "¿Qué clase de castigo recibió Marissa?"
+            "About Marissa's punishment":
+                pla "What kind of punishment did Marissa receive?"
                 show beck sorprendido
-                bec "Eh... bueno... si no me equivoco, la mandaron a resolver cien ejercicios de álgebra en la biblioteca."
+                bec "Uh... well... if I'm not mistaken, she sent her to solve a hundred algebra exercises in the library."
                 show alice pensando
-                ali "Eso debió ser terrible..."
+                ali "That must have been terrible..."
                 show beck preocupado
-                bec "Ni que lo digas... yo apenas aguanto resolviendo unos cuatro o menos... Al menos trato de resolverlos..."
+                bec "You don't need to say it... I barely stand solving four or less... At least I try to solve them..."
                 # -menos inteligencia
-                $addintel=False
+                $ addintel=False
                 jump saber_mas_de_chico_o_castigo
-            "Después del tropiezo...":
-                pla "Después de que Marissa se tropezó con la profesora Harrow..."
-                pla "Ellas recogieron las cosas que se les había caído..."
-                pla "Y la profesora Harrow después no tardó en castigar a Marissa..."
-                pla "¿Qué pasó después de eso?"
+            "After the crash...":
+                pla "After Marissa bumped into Professor Harrow..."
+                pla "They picked up the things they had dropped..."
+                pla "And then Professor Harrow wasted no time in punishing Marissa..."
+                pla "What happened after that?"
                 show beck pensando
-                bec "No mucho... recibimos clases de matemáticas como si nada hubiera pasado."
-                bec "Marissa llegó hasta después de que la profesora Harrow se fue del salón."
-                pla "Entiendo..."
-                # -menos inteligencia
-                $addintel=False
+                bec "Not much... we received math classes as if nothing had happened."
+                bec "Marissa arrived after Professor Harrow had left the room."
+                pla "I understand..."
+
+                $ addintel=False
                 jump saber_mas_de_chico_o_castigo
-            "Sobre el chico":
+            "About the boy":
                 if addintel:
-                    $updateStat("intel","+",1)
-                    $renpy.notify("Inteligencia +1")
-                $addintel=False
+                    $ updateStat("intel","+",1)
+                    $ renpy.notify("Intelligence +1")
+                $ addintel=False
                 play sound campana
-                "Eso era a lo que quería llegar..." with flashbulb
-                pla "Hey, Beck, ¿conoces a ese chico?"
+                "That's where I wanted to get to..." with flashbulb
+                pla "Hey, Beck, do you know that guy?"
                 show beck pensando
-                bec "Uh... no. {amarillo}No lo conozco para nada...{/amarillo}"
-                pla "¿Podrías describirnos a esta persona?"
-                bec "Solo sé que era alguien que se miraba muy delgado y pálido..."
+                bec "Uh... no. {amarillo}I don't know him at all...{/amarillo}"
+                pla "Could you describe him for us?"
+                bec "I only know that he was someone who looked very skinny and pale..."
                 show beck guino
-                bec "Algo así como un cerebrito, de esos que son muy malos en los deportes ja, ja, ja."
-                pla "Oh... entiendo..."
+                bec "He looked like a smart guy, one of those who are very bad at sports ha ha ha."
+                pla "Oh I understand..."
                 show alice pensando
-                ali "[pla_name]... Pregúntale si no notó nada raro con ese chico..."
-                pla "Ehm... bueno..."
-                pla "Beck, ¿y notaste algo fuera de lugar con esa persona que llegó a ayudar?"
+                ali "[pla_name]...Ask him if he didn't notice anything weird with that guy..."
+                pla "Um...well..."
+                pla "Beck, and did you notice anything out of place with that person who came to help?"
                 show beck pensando
                 bec "..."
                 show beck sorprendido
                 show alice sorprendida
                 play sound campana
-                bec "¡Ah!" with flashbulb
-                pla "¿Has recordado algo?"
+                bec "Oh!" with flashbulb
+                pla "Have you remembered something?"
                 show beck pensando
                 show alice normal
-                bec "Creo..."
-                "Beck miró a los lados, como asegurándose de que nadie lo escuchara a parte de nosotros."
+                bec "I believe..."
+                "Beck looked around, as if making sure no one heard him apart from us."
                 show beck preocupado
-                bec "No sé si eran ideas mías..."
+                bec "I'm not sure if I was imagining things..."
                 play sound campana
-                bec "{amarillo}Pero ese chico no dejaba de ver a Marissa.{/amarillo}" with flashbulb
-                bec "Estaba como embobado viéndola..."
-                $updateNote("Neil London (perfil)",ndesc="\n\nSegún lo que ha dicho Beck, Neil parecía \"embobado\" viendo a Marissa.",add=True)
-                pla "¿¡Ehh!?"
+                bec "{amarillo}But that boy kept looking at Marissa.{/amarillo}" with flashbulb
+                bec "He was stunned watching her..."
+                $ updateNote("Neil London (profile)",ndesc="\n\nAccording to what Beck said, Neil seemed \"to gawk\" at Marissa.",add=True)
+                pla "Huh!?"
                 show alice pensando
-                ali "Uhm... habrá que investigar más sobre ese chico."
-                pla "Eso parece..."
+                ali "Uhm... we will have to investigate more about that boy."
+                pla "So it seems..."
 
     hide alice with dissolve
     show beck sonriendo:
         ease .5 center
-    bec "Bien, creo que ya he contestado muchas preguntas..."
+    bec "Well, I think I've already answered a lot of questions..."
     stop music fadeout 5
-    bec "Déjame ahora hacerte una..."
+    bec "Now let me make you one..."
     show beck serio
-    bec "El caso que ustedes están investigando... ¿tiene que ver con Marissa?"
+    bec "The case you're investigating... does it have to do with Marissa?"
     # pla "..."
-    pla "Eh... sí..."
+    pla "Uh yes..."
     show beck sorprendido
-    bec "¿Y qué le pasó a ella?"
-    pla "No puedo decirte nada más..."
+    bec "And what happened to her?"
+    pla "I can't tell you... I already said too much"
     show beck pensando
-    bec "Uh... ella no ha dicho nada..."
-    bec "Pero, sabes..."
+    bec "Uh...she hasn't told me anything..."
+    bec "But you know..."
     show beck serio
-    bec "No estaré tranquilo si uno de mis amigos está en problemas..."
-    bec "Mira, si necesitas ayuda en algo, solo dímelo."
-    bec "¿Te parece bien si intercambiamos números?"
-    pla "Uh, claro..."
+    bec "I won't be calm if one of my friends is in trouble..."
+    bec "Look, if you need help with anything, just let me know."
+    bec "Is it okay with you if we exchange numbers?"
+    pla "Uh, sure..."
     show beck sonriendo
-    bec "¡Genial!"
-    bec "Bueno, creo que ya tengo que irme."
+    bec "Great!"
+    bec "Well, I think I should go now."
     show beck guino
-    bec "Suerte con la investigación je, je, je."
+    bec "Good luck with the investigation heh heh heh."
     hide beck with dissolve
-    "Dicho esto, después de intercambiar números, Beck se fue de buen humor."
-    if pla_stat["carisma"]>1:
+    "With that said, after exchanging numbers, Beck left in a good mood."
+    if pla_stat["charisma"]>1:
         show alice alegre with dissolve
-        ali "Oh... [pla_name], te viste genial."
-        ali "¡¡¡Ya pareces todo un detective!!!"
-        pla "Eh... tampoco es para tanto..."
+        ali "Oh... [pla_name], you looked great."
+        ali "You already look like a real detective!!!"
+        pla "Uh... I didn't do that much either..."
         # "Vaya, me dejado llevar en esta investigación..."
-        "Qué bien se siente ser halagado..."
-        pla "Aunque hubiera sido más rápido contar con tu ayuda..."
+        "It feels good to be flattered..."
+        pla "Although it would have been faster to have your help..."
         show alice sonrojada at decaer
-        ali "Eh... lo siento..."
-        pla "Descuida, ya obtuvimos varias pistas interesantes..."
+        ali "Uh... sorry..."
+        pla "Don't worry, we already got several interesting clues..."
         show alice sonriendo at reponerse
     else:
         show alice normal with dissolve
-    ali "Y ahora, ¿qué hacemos?"
-    pla "¿Que qué hacemos? Pues a descansar. Ya se ha hecho demasiado tarde."
+    ali "So, what can we do now?"
+    pla "What do we do? Well, we rest. It's already very late."
     show alice pensando
-    ali "Uh... Cierto..."
+    ali "Uh... Right..."
     show alice sonriendo
-    ali "Al menos hemos avanzado bastante..."
-    pla "Claro. Ya el lunes podremos buscar a ese tal Neil, y hacerle algunas preguntas."
+    ali "At least we've come a long way..."
+    pla "Sure. On Monday we can find this Neil guy and ask him a few questions."
     scene bg negro with slow_dissolve
     hide screen quick_menu
-    $quick_menu=False
+    $ quick_menu=False
     window hide
     pause 2
-    $hora=7
-    $dia="Lun."
-    $fecha="Febrero 24"
-    $estadoj="Libre"
-    $quick_menu=True
+    $ hora=7
+    $ dia="Mon."
+    $ fecha="February 24"
+    $ estadoj="Free"
+    $ quick_menu=True
     window show
     jump caso1_investigacion2
