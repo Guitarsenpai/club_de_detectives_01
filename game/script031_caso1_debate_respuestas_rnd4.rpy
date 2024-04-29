@@ -6,10 +6,10 @@ label d1r4_incorrecto_alice:
     $clearDebateText()
     $quick_menu_bajo=False
     show alice sonriendo
-    ali "[pla_name], me alegra que estés tan involucrado en el debate..."
+    ali "[pla_name], I'm glad you're so involved in the debate..."
     $restCorazones()
     show alice enojada
-    ali "¡Pero ese argumento no explica muy bien sobre cómo llegó la carta a Marissa!" with hpunch
+    ali "But that argument doesn't explain very well how the letter got to Marissa!" with hpunch
     jump inicio_d1r4
 
 label d1r4_incorrecto_beck:
@@ -20,7 +20,7 @@ label d1r4_correcto:
     $clearDebateText()
     $change_cursor()
     $addCorazones()
-    $showplay_excl("esoescierto")
+    $showplay_excl("that’strue")
     $quick_menu_bajo=False
     # $quick_menu_gameplay = False
     hide screen debateArgumento
@@ -29,30 +29,30 @@ label d1r4_correcto:
 
     show alice sorprendida
     
-    pla "Tienes razón, Alice."
-    ali "¿Eh?"
-    pla "La carta no llegó hasta Marissa{nw}"
+    pla "You're right, Alice."
+    ali "Huh?"
+    pla "The letter didn't get to Marissa{nw}"
     play sound campana
-    extend " {amarillo}dentro del salón...{/amarillo}" with flashbulb
-    pla "Sino afuera, específicamente {amarillo}en la entrada.{/amarillo}"
-    show alice normal:
+    extend " {amarillo}inside the classroom...{/amarillo}" with flashbulb
+    pla "It was outside, specifically {amarillo}at the entrance...{/amarillo}"    
+  show alice normal:
         ease .5 mright
     show marissa preocupada sudor at mleft with dissolve
-    mar "¿¡En la entrada!?" with hpunch
-    mar "¿Cómo puede ser posible?"
+    mar "At the entrance!?" with hpunch
+    mar "How could that be?"
     show alice sorprendida
     play sound campana
-    ali "{amarillo}¡El momento cuando Marissa se tropezó{/amarillo} con la profesora Harrow!" with flashbulb
-    pla "Correcto."
+    ali "{amarillo}¡ The moment when Marissa bumped into {/amarillo} Professor Harrow!" with flashbulb
+    pla "That’s right ."
     show alice normal:
         ease .5 right
     show marissa normal:
         ease .5 center
     show beck sorprendido at left with dissolve
-    bec "¿¡Ehhh!? ¡E- espera! ¿¡De qué están hablando!?" with hpunch
+    bec "Uhhh!? W-wait! What are you talking about!?" with hpunch
     $renpy.choice_for_skipping()
-    bec "¿Cómo pueden estar seguros de eso?"
-    pla "Posiblemente, alguien..."
+    bec "How can you be so sure about that?"
+    pla "Possibly, someone..."
     show beck preocupado
     $renpy.save("checkpoint")
     label tropiezo_alguien_pudo:
@@ -60,25 +60,26 @@ label d1r4_correcto:
         if cantidad_corazones==0:
             jump d1_gameover
         menu:
-            "\"... aprovechó el momento.\"":
-                mar "Así que me estás diciendo que..."
+            "\"... took advantage of the moment.\"":
+                mar "So you’re telling me that ..."
                 $renpy.save("checkpoint")
                 show screen corazones
                 show marissa preocupada sudor
-                mar "¿Alguien aprovechó la confusión del momento y metió la carta en mi bolso?"
+                mar " Someone took advantage of the confusion of the moment and slipped the letter into my purse?"
                 show marissa normal
-                mar "Uhm... eso explicaría mucho..."
+                mar "Uhm... that would explain a lot..."
                 show marissa preocupada
-                mar "¿Y quién pudo haberlo hecho?"
-            "\"... tomó el bolso de Marissa.\"":
+
+                mar "And who could have done it?"
+            "\"… took Marissa's purse.\"":
                 show marissa preocupada
-                mar "Creo que en ningún momento mencioné eso."
-                $restCorazones()
-                pla "¿En serio?" with hpunch
-                pla "Perdón, error mío..."
+                mar "I don't think I mentioned that at any point."
+               $restCorazones()
+                pla "Really?" with hpunch
+                pla "Sorry, my mistake..."
                 jump tropiezo_alguien_pudo
 
-    pla "Es muy fácil, esa persona es..."
+    pla "It's very easy, that person is..."
     
     label esa_persona_es:
         show screen corazones
@@ -87,20 +88,20 @@ label d1r4_correcto:
         menu:
             "Beck Doran":
                 show beck sorprendido
-                bec "¿Es una broma, no?"
+                bec "¿Is a joke, rigth?"
                 show beck enojado
                 $restCorazones()
-                bec "Yo ni siquiera estuve tan cerca como para hacer eso." with hpunch
+                bec " I wasn't even close enough to do that.." with hpunch
                 show beck preocupado
                 jump esa_persona_es
-            "Profesora Harrow":
+            "Professor Harrow":
                 show marissa sorprendida
-                mar "¿¡EEEEEEEHHHH!?" with hpunch
-                mar "¿¡La- la- la- la profesora Harrow me dio esa carta!?"
+                mar "WHAAAT!?" with hpunch
+                mar "You- you- you’re saying  Professor Harrow gave me that letter!!!?"             
                 show alice enojada
                 $restCorazones()
-                ali "¡[pla_name]! ¡No es hora de estar bromeando!" with hpunch
-                pla "Eh- pe- perdón..."
+                ali "¡[pla_name]! This is no time to be joking!" with hpunch
+                pla "Huh- so- sorry..."
                 show alice normal
                 show marissa normal
                 jump esa_persona_es
@@ -108,17 +109,17 @@ label d1r4_correcto:
                 play sound campana
                 show marissa sorprendida
                 mar "¿Neil London?" with flashbulb
-                mar "¿De quién estás hablando?"
-            "Fui yo":
+                mar "Who are you talking about?"
+            "It was me":
                 show beck serio
                 bec "..."
                 show marissa enojada
                 mar "..."
                 show alice enojada
                 ali "..."
-                pla "Je- je- je..."
+                pla "Heh- heh- heh..."
                 $restCorazones()
-                pla "Qué momento más incómodo..." with hpunch
+                pla "What an awkward moment..." with hpunch
                 show alice normal
                 show marissa normal
                 jump esa_persona_es
@@ -126,30 +127,29 @@ label d1r4_correcto:
     $addCorazones()
     pause 2
     hide screen corazones
-    pla "La persona que ayudó a la profesora Harrow y a ti a recoger las cosas que se cayeron al suelo cuando ustedes tropezaron."
+    pla "The person who helped Professor Harrow and you pick up the things that fell on the floor when you tripped."
     show marissa preocupada sudor
-    mar "¿Eh? ¿Hablas de esa persona? ¿Acaso lo conocías?"
-    pla "No, pero estuve hablando con él..."
-    bec "Eh..."
-    bec "Así que ese es el sospechoso."
-    pla "Algo así..."
-    ali "[pla_name]... ¿no pensarás llamarlo, o sí?"
-    pla "No hay de otra..."
-    mar "¿¡Eeehh!?" with hpunch
+    mar "Huh? Are you talking about that person? Did you know him?"
+    pla "No, but I have been talking to him..."
+    bec "Uh..."
+    bec "So that's the suspect."
+    pla "Sort of..."
+    ali "[pla_name]... you're not thinking of calling him, are you?"
+    pla "There's no other way..."
+    mar "Uuhh!?" with hpunch
     show marissa normal
     show beck guino
-    bec "No te preocupes Marissa, si ese tipo se te acerca yo te defenderé."
-    mar "Beck... gracias..."
+    bec "Don't worry Marissa, if that guy comes near you I will defend you."
+    mar "Beck... thank you..."
     pla "..."
-    pla "No tardaré, llamaré a Neil para que venga a este salón."
+    pla "I won't be long, I'll call Neil to come to this room."
     stop music fadeout 3
     $hora=15
     scene bg negro with fade
     $quick_menu_gameplay=False
-    "Al salir del salón, busqué en mi bloc de notas el número que Neil había escrito, y lo llamé."
-    "Le dije que necesitaba hablar con él acerca del tropiezo en el salón del club."
-    "Y para sorpresa mía, él aceptó felizmente..."
-
+    "As I left the lounge, I looked in my notepad for the number Neil had written down, and called him."
+    "I told him I needed to talk to him about the stumble in the club room."
+    "And to my surprise, he happily agreed..."
     scene bg salon club detectives with dissolve
 
     show neil normal with dissolve
@@ -158,35 +158,35 @@ label d1r4_correcto:
         ease .5 mleft
     show marissa preocupada sudor at mright with dissolve
     nei "..."
-    mar "E- eres tú..."
-    "Marissa se puso a la defensiva al ver a Neil."
-    nei "Eh... hola..."
-    nei "¿Por qué me ves de esa manera?"
+    mar "I- it’s you..."
+    "Marissa became defensive when she saw Neil."
+    nei "Uh... hi..."
+    nei "Why do you look at me that way?"
     show neil:
         ease .5 left
     show marissa normal:
         ease .5 right
     show beck enojado with dissolve
-    bec "Oye, no te le acerques."
+    bec "Hey, don't go near her."
     show neil sorprendido
-    nei "¿Eh? ¿Qué está pasando?"
-    nei "Hey, [pla_name], ¿por qué todos me están viendo como si hubiera hecho algo malo?"
-    nei "¿Acaso no me llamaste para hablar acerca del tropiezo de la profesora Harrow?"
-    pla "Eh... pues algo así..."
+    nei "Huh? What's going on?"
+    nei "Hey, [pla_name], why is everyone looking at me like I did something wrong?"
+    nei "Didn't you call me to talk about Professor Harrow's stumble?"
+    pla "Uh... well something like that..."
     pla "Neil,{nw}"
     play sound campana
-    extend " {amarillo}eres sospechoso de acosar a Marissa.{/amarillo}" with flashbulb
+    extend " {amarillo} you are suspicious of stalking Marissa.{/amarillo}" with flashbulb
     show neil pensativo
     nei "..."
-    nei "¿Disculpa?"
+    nei "¿Excuse me?"
     show neil sorprendido
-    nei "¿¡Yo!? ¿Que estoy acosando a... Marissa?" with hpunch
-    nei "¿Qué pruebas tienes de eso?"
+    nei "Me!? That I am stalking.... Marissa?" with hpunch
+    nei "What proof do you have of that?"
     show neil pensativo
-    pla "Mira, solo queremos resolver el problema de Marissa, si tú no eres el acosador, puedes decirnos solamente la verdad."
+    pla "Look, we just want to solve Marissa's problem, if you are not the stalker, you can just tell us the truth."
     $renpy.choice_for_skipping()
     $renpy.save("checkpoint")
     nei "..."
-    nei "Está bien, jugaré a su juego."
-    pla "Oye... esto no es un juego..."
+    nei "Okay, I'll play your game."
+    pla "Hey... this is not a game..."
     jump caso1_debate_rnd5
