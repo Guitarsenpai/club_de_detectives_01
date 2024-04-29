@@ -1,236 +1,236 @@
 label caso1_predebate:
-    "Al llegar al salón del club, me encontré con Alice, quien estaba sacando una pizarra acrílica."
-    pla "¿Y esa pizarra?"
+    "Arriving at the club room, I was met by Alice, who was taking out a whiteboard."
+    pla "And that whiteboard?"
     show alice sonriendo with dissolve
-    ali "Ah, [pla_name]. Te quería mostrar esto, en la hora de receso hice un{nw}"
+    ali "Oh, [pla_name]. I wanted to show you this, during break time I did a {nw}"
     play sound campana
-    extend " {amarillo}diagrama de correlación.{/amarillo}" with flashbulb
-    pla "¿Un diagrama de correlación?"
-    ali "Mira..."
+    extend " {amarillo}correlation diagram.{/amarillo}" with flashbulb
+    pla "A correlation diagram?"
+    ali "Look..."
 
     hide screen quick_menu
-    $quick_menu=False
+    $ quick_menu=False
     window hide
     scene caso1_diagrama1 with dissolve
     pause 6
-    $quick_menu=True
+    $ quick_menu=True
     window show
 
-    pla "Oh... ¿eso tú lo dibujaste?"
-    ali "Je, je."
-    "Alice sonrió con orgullo al mostrarme su trabajo."
-    "Si ella no estuviera en el club de detectives, no le iría mal en el club de arte..."
-    pla "Uhm... Así que {amarillo}Neil no es conocido de Marissa o de Beck...{/amarillo}"
-    pla "No está nada mal... aunque le falta algo..."
+    pla "Oh... did you draw that?"
+    ali "He he."
+    "Alice smiled proudly as she showed me her work."
+    "If she wasn't in the detective club, she wouldn't do badly in the art club..."
+    pla "Uhm... So {amarillo}Neil is not known to Marissa or Beck...{/amarillo}"
+    pla "It's not bad at all... although something is missing..."
 
     hide screen quick_menu
-    $quick_menu=False
+    $ quick_menu=False
     window hide
     pause 1
     scene caso1_diagrama2 with dissolve
     pause 3
-    $quick_menu=True
+    $ quick_menu=True
     window show
 
-    ali "¿Eh?"
-    ali "¿¡Beck está enamorado de la profesora Harrow!?" with hpunch 
-    pla "Sí, ayer en la tarde me lo encontré, y descubrí eso..."
-    pla "Claro que no me lo dijo directamente, pero estaba claro que Beck tiene gustos {amarillo}peligrosos.{/amarillo}"
-    $addNote("Diagrama de correlación","Un diagrama de correlación dibujado por Alice. No le quedó nada mal.{p}{p}En este se resume que Marissa y Beck son compañeros, Neil parece estar interesado en Marissa, Marissa y la profesora Harrow tropezaron afuera del salón de clases. Además, Beck seguramente está enamorado de la profesora Harrow.","diagrama",True)
-    ali "Oh... no me imaginaba que a él le gustara a alguien así..."
-    ali "Las chicas que lo siguen seguramente se decepcionarían al saber eso..."
+    ali "Huh?"
+    ali "Beck has a crush on Professor Harrow!?" with hpunch
+    pla "Yes, yesterday afternoon I ran into him, and I discovered that..."
+    pla "He didn't tell me directly, but it was clear to me that Beck has {amarillo} dangerous taste.{/amarillo}"
+    $ addNote("correlation diagram","A correlation diagram drawn by Alice. It doesn't look bad at all.{p}{p} This summarizes that Marissa and Beck are classmates, Neil seems to be interested in Marissa, Marissa and Professor Harrow bumped into each other outside the classroom. And besides, Beck surely has a crush on Professor Harrow.","diagram",True)
+    ali "Oh... I didn't imagine that he would like someone like that..."
+    ali "The girls who follow him would surely be disappointed to hear that..."
     scene bg salon club detectives with dissolve
     show alice normal with dissolve
-    ali "Al final llegamos..."
+    ali "In the end we arrived..."
     show alice sonriendo
-    ali "Estoy segura de que hoy daremos con la solución del caso."
-    pla "Sí, eso espero..."
+    ali "I am sure that today we will find the solution of the case."
+    pla "Yes I hope so..."
     show alice pensando
-    ali "Es tan nostálgico... esta vez estaré en un debate, ahora sin mis superiores..."
+    ali "It's so nostalgic... this time I'll be in a debate, now without my superiors..."
     show alice asustada at temblor
-    ali "Qué nervios."
+    ali "I'm feeling nervous"
     hide alice
     show alice sorprendida
     show sherinford pequeño at center with dissolve:
         ypos .200
         xoffset 10
-    she "¡Pío, pío, pío!"
+    she "Twit, twit, twit!"
     ali "Sherinford..."
     show alice sonriendo
-    ali "Gracias por animarme."
-    pla "No hay por que estar nerviosa, ¿acaso no se han hecho muchos debates aquí?"
-    show alice normal 
-    ali "Claro que sí."
-    show alice alegre
-    ali "Mis superiores se veían geniales demostrando contradicciones, presentando pruebas o atrapando al culpable aquí mismo."
-    show alice pensando
-    ali "Y por eso, es que hasta se formaba algún escándalo o discusión..."
-    pla "Me lo imagino..."
+    ali "Thanks for cheering me up."
+    pla "There is no reason to be nervous, haven't there been many debates here?"
     show alice normal
-    ali "Sí, menos mal que teníamos a algún profesor para mantener el orden."
-    pla "Espero que ese no sea nuestro caso..."
+    ali "Of course."
+    show alice alegre
+    ali "My superiors looked great at proving contradictions, presenting evidence, or catching the culprit right here."
+    show alice pensando
+    ali "And for that reason, it is that sometimes there was even a scandal or discussion..."
+    pla "I can imagine that..."
+    show alice normal
+    ali "Yes, luckily we had a teacher to keep order."
+    pla "I hope that is not our case now..."
     show alice:
         ease .5 mright
-    show sherinford pequeño :
+    show sherinford pequeño:
         ypos .200
         xoffset 10
         ease .5 xpos 0.650
     show marissa normal at mleft with dissolve
     pause .6
     show marissa alegre hablando at brinquitos
-    mar "¡Hooola!"
+    mar "Hello!"
     show marissa alegre
-    mar "¿He llegado puntual, no?"
-    pla "Ah, hola Marissa."
+    mar "I have arrived on time, right?"
+    pla "Oh hello Marissa."
     stop music fadeout 2
-    pla "Bien, creo que con nosotros tres, podemos comenzar."
-    ali "Así es."
+    pla "Well, I think with the three of us, we can start."
+    ali "That's right."
     hide sherinford with dissolve
     show alice sonriendo
-    ali "Quedate aquí, Sherinford, sé un buen chico."
+    ali "Stay here, Sherinford, be a good boy."
     play music tiempo_muerto fadein 3
     show marissa normal
-    mar "¿Y qué vamos a hacer exactamente?"
+    mar "And what are we going to do exactly?"
     show alice normal
-    ali "Veamos..."
-    ali "Lo primero, sería tener claro un resumen de los hechos."
-    ali "Mis superiores siempre decían que hay que tener bases sólidas para resolver un caso."
+    ali "Let's see..."
+    ali "The first thing would be to have a clear summary of the facts."
+    ali "My superiors always said that you have to have solid foundations to solve a case."
     # ali "¿[pla_name]?"
     # pla "Sí..."
-    "Con que un resumen... Solo por si acaso, {amarillo}debería darle una ojeada a mis apuntes...{/amarillo}"
-    $quick_menu_gameplay=True
-    ali "Bien [pla_name]. Lo primero es..."
+    "So a summary... Just in case, {amarillo} I should take a look at my notes...{/amarillo}"
+    $ quick_menu_gameplay=True
+    ali "Good [pla_name]. The first thing is..."
 
     label predebate1_preg1:
 
-        ali "¿Quién es nuestro cliente?"
+        ali "Who is our client?"
 
         menu:
             "Alice Baskerville":
                 show alice enojada
                 play sound golpe
-                $updateStat("intel","-",1)
-                $renpy.notify("Inteligencia -1")
-                ali "¿Estás bromeando?" with hpunch
-                ali "[pla_name], te lo preguntaré de nuevo..."
+                $ updateStat("intel","-",1)
+                $ renpy.notify("Intelligence -1")
+                ali "Is it a joke?" with hpunch
+                ali "[pla_name], I'll ask you again..."
                 jump predebate1_preg1
             "Marissa Doran":
                 show marissa normal
-                mar "Ehm... ¿Doran?"
+                mar "Uhm...Doran?"
                 play sound golpe
-                $updateStat("intel","-",1)
-                $renpy.notify("Inteligencia -1")
-                ali "[pla_name], eres un olvidadizo..." with hpunch
-                ali "¿Podrías al menos leer bien tus apuntes?"
+                $ updateStat("intel","-",1)
+                $ renpy.notify("Intelligence -1")
+                ali "[pla_name], you are forgetful..." with hpunch
+                ali "Could you at least read your notes properly?"
                 jump predebate1_preg1
             "Neil London":
                 show alice enojada
                 play sound golpe
-                $updateStat("intel","-",1)
-                $renpy.notify("Inteligencia -1")
-                ali "[pla_name], ese no es nuestro cliente." with hpunch
-                ali "Una vez más..."
+                $ updateStat("intel","-",1)
+                $ renpy.notify("Intelligence -1")
+                ali "[pla_name], that's not our client." with hpunch
+                ali "One more time..."
                 jump predebate1_preg1
             "Marissa Morstan":
-                pla "Pues obvio es {amarillo}Marissa Morstan.{/amarillo}"
+                pla "Well, obviously it's {amarillo}Marissa Morstan.{/amarillo}"
                 show marissa alegre at brinquitos
                 play sound campana
-                mar "{amarillo}¡Din, din!{/amarillo} ¡Correcto!" with flashbulb
+                mar "{amarillo}Din, din!{/amarillo} That's right!" with flashbulb
                 show marissa normal
-                mar "Pero... ¿era necesario preguntar esto?"
-                $updateStat("intel","+",1)
-                $renpy.notify("Inteligencia +1")
+                mar "But... was it necessary to ask that?"
+                $ updateStat("intel","+",1)
+                $ renpy.notify("Intelligence +1")
                 show alice asustada at temblor
-                ali "Eh- eh sí... ¡Si- siempre es bueno tener claro las cosas básicas!"
+                ali "Uh- Uh yes... Yes- it's always good to be clear about the basics stuff!"
                 hide alice
                 show alice pensando at mright
                 show marissa normal
-                mar "Entiendo..."
+                mar "I understand..."
 
     show alice sonriendo
-    ali "Bien, [pla_name], siguiente pregunta..."
+    ali "Okay, [pla_name], next question..."
 
     label predebate1_preg2:
 
-        ali "¿Cuál es el problema de nuestra cliente?"
-        
+        ali "What is our client's problem?"
+
         menu:
-            "Encontrar el amor de su vida":
+            "Find the love of her life":
                 show marissa alegre at brinquitos
-                mar "Je, je, je."
+                mar "Hehehe."
                 show marissa enojada
                 play sound golpe
-                $updateStat("intel","-",1)
-                $renpy.notify("Inteligencia -1")
-                mar "[pla_name], puedes ser un bromista en otro momento." with hpunch
-                pla "Pe- perdón..."
+                $ updateStat("intel","-",1)
+                $ renpy.notify("Intelligence -1")
+                mar "[pla_name], you can be a prankster in another moment." with hpunch
+                pla "S- sorry..."
                 jump predebate1_preg2
-            "Tiene bajas calificaciones":
+            "Has low grades":
                 show marissa enojada
                 play sound golpe
-                $updateStat("intel","-",1)
-                $renpy.notify("Inteligencia -1")
-                mar "¿Así que el chico listo pretende también echarme en cara mis bajas calificaciones?" with hpunch
-                pla "¡Ah! Pe- perdón..."
+                $ updateStat("intel","-",1)
+                $ renpy.notify("Intelligence -1")
+                mar "So the smart guy wants to throw me in the face my low grades?" with hpunch
+                pla "Oh! S- sorry..."
                 jump predebate1_preg2
-            "Está siendo acosada por un fan":
+            "She is being stalked by a fan":
                 show alice normal
-                ali "Uhm... ¿qué pistas tenemos para deducir que el acosador es un fan de Marissa?"
-                pla "Ehm... ninguna..."
+                ali "Uhm... what clues do we have to deduce that the stalker is a fan of Marissa's?"
+                pla "Um... none..."
                 show alice enojada
                 play sound golpe
-                $updateStat("intel","-",1)
-                $renpy.notify("Inteligencia -1")
-                ali "¿Entonces?" with hpunch
-                ali "Vamos, te haré de nuevo la pregunta..."
+                $ updateStat("intel","-",1)
+                $ renpy.notify("Intelligence -1")
+                ali "So?" with hpunch
+                ali "Come on, I'll ask you the question again..."
                 jump predebate1_preg2
-            "Está siendo acosada por alguien":
+            "She is being stalked by someone":
                 show alice alegre
                 play sound campana
-                $updateStat("intel","+",1)
-                $renpy.notify("Inteligencia +1")
-                ali "Exacto." with flashbulb
-            "El horno de su club se ha dañado":
+                $ updateStat("intel","+",1)
+                $ renpy.notify("Intelligence +1")
+                ali "Exactly." with flashbulb
+            "The furnace of her club has been damaged":
                 show marissa sorprendida
-                mar "Eh... bueno, sí, se ha dañado el horno de mi club..."
+                mar "Uh... well, yes, my club's oven has been damaged..."
                 show marissa normal
-                mar "Pero no por eso he venido a pedirles ayuda."
+                mar "But that's not why I've come to ask for your help."
                 play sound golpe
-                $updateStat("intel","-",1)
-                $renpy.notify("Inteligencia -1")
-                pla "Cierto, cierto..." with hpunch
+                $ updateStat("intel","-",1)
+                $ renpy.notify("Intelligence -1")
+                pla "True, true..." with hpunch
                 jump predebate1_preg2
 
     show alice pensando
-    ali "Y ese acosador seguramente sea la misma persona que escribió la carta."
+    ali "And that stalker is probably the same person who wrote the letter."
     show alice normal
-    ali "Y nuestro trabajo consiste en {amarillo}descubrir la identidad de esa persona.{/amarillo}"
+    ali "And our job is {amarillo} to discover the identity of that person.{/amarillo}"
     show alice pensando
-    ali "Ahora... es momento de comenzar el debate."
+    ali "Now... it's time to start the debate."
     show marissa alegre at brinquitos
-    mar "Qué emoción je, je, je."
+    mar "It's exciting heh, heh, heh."
     stop music fadeout 1
     hide marissa with dissolve
     hide alice with dissolve
-    $quick_menu_gameplay=False
-    $ argumentos = ["Argumento #1","Argumento #2","Argumento #3"]
-    tuto "Ahora, pasaremos al {amarillo}debate escolar.{/amarillo}"
-    tuto "En este minijuego, los participantes estarán hablando uno por uno..."
+    $ quick_menu_gameplay=False
+    $ argumentos = ["argument #1","argument #2","argument #3"]
+    tuto "Now, we will move onto the {amarillo}school debate.{/amarillo}"
+    tuto "In this minigame, the participants will be talking one by one..."
     if renpy.variant("small"):
-        tuto "Y lo que estén diciendo se mostrará como {amarillo}frases flotantes.{/amarillo} que puedes tocar."
+        tuto "And what they're saying will show up as {amarillo}floating phrases.{/amarillo} that you can tap on."
     else:
-        tuto "Y lo que estén diciendo se mostrará como {amarillo}frases flotantes {/amarillo} a las que puedes {amarillo}disparar.{/amarillo}"
+        tuto "And what they're saying will show up as {amarillo}floating phrases {/amarillo} that you can {amarillo} shoot at.{/amarillo}"
     show screen debateArgumento
-    tuto "A la derecha tendrás un {amarillo}botón de argumento.{/amarillo}"
-    tuto "Si lo tocas, se desplegará una serie de argumentos que puedes intercambiar."
+    tuto "On the right you will have a {amarillo}argument button.{/amarillo}"
+    tuto "If you touch it, a series of arguments will be displayed that you can exchange."
     hide screen debateArgumento
-    tuto "Las frases de los participantes tendrán {amarillo}palabras resaltadas{/amarillo} en amarillo o azul."
-    tuto "Si una frase está resaltada en {amarillo}amarillo{/amarillo}, eso quiere decir que puedes {amarillo}señalar una contradicción{/amarillo} con el argumento que tengas seleccionado."
-    tuto "En cambio, si la frase está resaltada en {amarillo}azul{/amarillo}, entonces {amarillo}estarás reafirmando la frase.{/amarillo}"
-    tuto "Si te equivocas al contradecir, o reafirmar, entonces perderás un corazón."
-    tuto "Asegúrate de enfocarte en las frases que te parezcan importantes, ya que {amarillo}algunas te restarán segundos si las tocas{/amarillo}, así que ten cuidado."
-    tuto "Si aciertas con la respuesta, {amarillo}recuperarás un corazón.{/amarillo}"
-    tuto "Un debate consta de varias rondas, y tendrás que pasar a través de todas estas rondas, {amarillo}con los corazones que te queden.{/amarillo}"
-    tuto "Buena suerte."
+    tuto "The participants' sentences will have {amarillo}words highlighted{/amarillo} in yellow or blue."
+    tuto "If a sentence is highlighted in {amarillo}yellow{/amarillo}, that means you can {amarillo}point out a contradiction{/amarillo} with the argument you have selected."
+    tuto "On the other hand, if the phrase is highlighted in {amarillo}blue{/amarillo}, then {amarillo}you will be reaffirming the phrase.{/amarillo}"
+    tuto "If you are wrong to contradict, or reaffirm, then you will lose a heart."
+    tuto "Be sure to focus on the phrases that feel important to you, as {amarillo}some will subtract seconds from you if you tap{/amarillo} on them, so be careful."
+    tuto "If you get the answer right, {amarillo} you will get a heart back.{/amarillo}"
+    tuto "A debate consists of several rounds, and you will have to go through all these rounds, {amarillo}with the hearts you have left.{/amarillo}"
+    tuto "Good luck."
 
     jump caso1_debate_rnd0
