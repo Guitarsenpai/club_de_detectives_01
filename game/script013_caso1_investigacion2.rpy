@@ -1,36 +1,36 @@
 label caso1_investigacion2:
     play music ambiente fadein 5
     scene bg escuela frente dia with dissolve
-    "Al día siguiente, me encontré con Marissa afuera de la escuela, poco más de media hora antes de que comenzaran las clases."
+    "The next day, I ran into Marissa outside the school, just about half an hour before school started."
     show marissa alegre with dissolve
-    mar "¡[pla_name], buenos días!"
-    "Frente a mí, estaba una Marissa totalmente diferente a la que yo vi frente a la profesora Harrow."
-    pla "Buenos días, Marissa."
+    mar "[pla_name] good morning!"
+    "In front of me was a totally different Marissa than the one I saw in front of Professor Harrow."
+    pla "Good morning, Marisa."
     show marissa alegre hablando
-    mar "¿Y cómo va la investigación?"
-    pla "Eh... bien... vamos avanzando."
+    mar "And how is the investigation going?"
+    pla "Uh... well... we're moving forward."
     show marissa normal
-    mar "¿Con que es así?"
+    mar "Is that so?"
     show marissa alegre at brinquitos
-    mar "¡Qué bueno!"
-    pla "Y la verdad, es que ayudó bastante enterarme de tu incidente con la profesora de matemáticas..."
+    mar "Excellent!"
+    pla "And the truth is that it helped a lot to find out about your incident with the math teacher..."
     show marissa apenada at decaer
-    mar "Ah, eso..."
-    pla "Hubiera sido mejor que nos lo hubiera contado antes..."
+    mar "Oh that..."
+    pla "It would have been better if you had told us earlier..."
     show marissa preocupada sudor at reponerse
-    mar "Bueno..."
-    extend " no pensé que fuera importante..."
+    mar "Well..."
+    extend " I didn't think it was important..."
     show marissa apenada
-    mar "Además, es algo vergonzoso lo que pasó..."
-    pla "Aunque sea vergonzoso, ahora necesito que me contestes algunas preguntas."
+    mar "Besides, it's kind of embarrassing what happened..."
+    pla "Even if it's embarrassing, I need you to answer some questions."
     show marissa sorprendida
-    mar "¿Eh? ¿Aquí?"
-    "Marissa vio a sus alrededores..."
-    "Tomando en cuenta lo que nos dijo a Alice y a mí, sobre lo de mantener esto con la mayor discreción posible..."
-    "Obviamente no podemos seguir hablando acá."
+    mar "Huh? Here?"
+    "Marissa looked around her..."
+    "Taking into account what she told me and Alice about keeping this as low key as possible..."
+    "Obviously we can't keep talking here."
     show marissa normal
-    pla "Vamos al salón del club, ahí nos está esperando Alice."
-    mar "E- está bien..."
+    pla "We will go to the club room, Alice is waiting for us."
+    mar "O-okay..."
     scene bg negro with slow_dissolve
     pause 1.5
     scene bg salon club detectives with dissolve
@@ -40,9 +40,9 @@ label caso1_investigacion2:
     show sherinford pequeño at center with dissolve:
         ypos .200
         xoffset 10
-    ali "Buenos días, [pla_name]."
-    she "¡Pío, pío, pío!"
-    pla "Buenos días a los dos..."
+    ali "Good morning, [pla_name]."
+    she "Twit, twit, twit!"
+    pla "Good morning to both of you..."
     show alice normal:
         ease .5 mright
     show sherinford pequeño:
@@ -51,23 +51,23 @@ label caso1_investigacion2:
         xoffset 10
 
     show marissa alegre at mleft with dissolve
-    mar "¡Hola, buenos días, Alice!"
-    mar "¡Hola, pollito!"
+    mar "Hello, good morning, Alice!"
+    mar "Hello chick!"
     show alice pensando
-    ali "Bu- buenos días..."
+    ali "Go- good morning..."
     show alice normal
     show marissa normal
-    pla "Bien, vayamos directo al grano."
-    mar "¿Qué necesitan saber?"
+    pla "Ok, let's get straight to the point."
+    mar "What do you need to know?"
     # pla "Sabemos lo que pasó el viernes, pero ahora..."
     play sound campana
     show marissa preocupada sudor
-    pla "Tienes que contarnos todo {amarillo}sobre ese incidente.{/amarillo}" with flashbulb
-    pla "Específicamente, desde el tiempo libre que ustedes tuvieron."
+    pla "You have to tell us {amarillo} everything about that crash.{/amarillo}" with flashbulb
+    pla "Specifically, starting from the free time you guys had."
     hide sherinford with dissolve
     hide alice with dissolve
     show marissa normal:
         ease .5 center
-    mar "Está bien..."
+    mar "Alright..."
     stop music fadeout 1.5
     jump caso1_testimonio4
