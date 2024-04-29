@@ -1,38 +1,39 @@
 label caso1_investigacion3:
-    $estadoj="Libre"
+    $ estadoj="Free"
     play music ambiente2 fadein 4
     scene bg escuela corredor with dissolve
     show alice normal with dissolve
     ali "..."
-    pla "¿Estás lista?"
-    pla "Aprovecharemos esta hora de receso para buscar a nuestro {amarillo}sospechoso...{/amarillo}"
+    pla "Are you ready?"
+    pla "We will take advantage of this hour of recess to look for our {amarillo}suspect...{/amarillo}"
     show alice pensando
     ali "..."
-    ali "Estoy algo nerviosa..."
-    ali "Creo que no seré de mucha ayuda otra vez..."
-    pla "Descuida..."
-    pla "Haces lo mejor que puedes, no te preocupes."
+    ali "I'm a little nervous..."
+    ali "I guess I won't be of much help again..."
+    pla "Don't worry..."
+    pla "You do the best you can, don't worry."
     show alice sonrojada
     ali "..."
-    pla "En fin, solo debemos no alertarlo..."
-    ali "Tienes razón..."
-    ali "Bien, andando."
+    pla "Anyway, we just have to not alert him..."
+    ali "You're right..."
+    ali "Alright, let's go."
     hide alice with dissolve
-    $renpy.choice_for_skipping()
-    "Alice y yo fuimos recorriendo la escuela, en busca del estudiante llamado Neil..."
-    "Después de algunos minutos..."
+    $ renpy.choice_for_skipping()
+    "Alice and I went around the school, looking for the student named Neil..."
+    "After a few minutes..."
+   
+ ## cada elemento es el sprite de un personaje
 
-    ## cada elemento es el sprite de un personaje
     $ chars=["images/chars/unk1.png","images/chars/claire/normal.png","images/chars/unk2.png","images/chars/neil/normal.png","images/chars/jane/normal.png"]
     ## cada elemento define a qué etiqueta saltar cuando se selecciona el personaje de la lista anterior
     $ chars_labels=["elec_unk1","elec_alice_resp","elec_unk2","elec_neil","elec_alice_resp"]
 
     label quien_es_neil:
-        show screen btnHelpTextBox("¿Quién es Neil London?")
+        show screen btnHelpTextBox("Who is Neil London?")
         $ quick_menu_bajo=True
         ## llamamos pantalla de seleccion
         call screen char_select(chars,chars_labels) with dissolve
-        
+
         label elec_alice_resp:
             hide screen char_select
             pause 1.8
@@ -40,10 +41,10 @@ label caso1_investigacion3:
             hide screen btnHelpTextBox
             $ quick_menu_bajo=False
             show alice enojada with dissolve
-            ali "¿Es una broma, [pla_name]?"
-            $updateStat("intel","-",1)
-            $renpy.notify("Inteligencia -1")
-            pla "Eh... lo siento."
+            ali "Are you kidding, [pla_name]?"
+            $ updateStat("intel","-",1)
+            $ renpy.notify("Intelligence -1")
+            pla "Uh...sorry."
             hide alice with dissolve
             jump quien_es_neil
 
@@ -53,8 +54,8 @@ label caso1_investigacion3:
             $ hide_select_chars()
             hide screen btnHelpTextBox
             $ quick_menu_bajo=False
-            $updateStat("intel","+",1)
-            $renpy.notify("Inteligencia +1")
+            $ updateStat("intel","+",1)
+            $ renpy.notify("Intelligence +1")
             jump eleccion_de_neil_correcta
 
         label elec_unk1:
@@ -64,15 +65,15 @@ label caso1_investigacion3:
             hide screen btnHelpTextBox
             $ quick_menu_bajo=False
             show unk1 with dissolve
-            pla "Hola, disculpa..."
-            pla "¿Eres Neil London?"
-            unk "¿Eh? No..."
+            pla "Hello excuse me..."
+            pla "Are you Neil London?"
+            unk "Huh? No..."
             hide unk1 with dissolve
             show alice pensando with dissolve
-            ali "¿Qué te hizo pensar que él era Neil London?"
-            $updateStat("intel","-",1)
-            $renpy.notify("Inteligencia -1")
-            pla "Ah, no... nada. Mi error..."
+            ali "What made you think he was Neil London?"
+            $ updateStat("intel","-",1)
+            $ renpy.notify("Intelligence -1")
+            pla "Oh no... nothing. My mistake..."
             hide alice with dissolve
             jump quien_es_neil
 
@@ -83,164 +84,163 @@ label caso1_investigacion3:
             hide screen btnHelpTextBox
             $ quick_menu_bajo=False
             show unk2 with dissolve
-            pla "Hola, disculpa..."
-            pla "¿Eres Neil London?"
-            unk "¿Eh? No..."
+            pla "Hello excuse me..."
+            pla "Are you Neil London?"
+            unk "Huh? No..."
             hide unk2 with dissolve
             show alice pensando with dissolve
-            ali "¿Qué te hizo pensar que él era Neil London?"
-            $updateStat("intel","-",1)
-            $renpy.notify("Inteligencia -1")
-            pla "Ah, no... nada. Mi error..."
+            ali "What made you think he was Neil London?"
+            $ updateStat("intel","-",1)
+            $ renpy.notify("Intelligence -1")
+            pla "Oh no... nothing. My mistake..."
             hide alice with dissolve
             jump quien_es_neil
-        
+
     label eleccion_de_neil_correcta:
         show neil normal with dissolve
-        pla "Hola... ¿eres Neil London?"
+        pla "Hello... are you Neil London?"
         show neil pensativo
         unk "..."
 
         #agregamos thumb a perfil de neil
-        $lstNotepad_thumb[ lstNotepad_titulo.index("Neil London (perfil)") ]="neil"
+        $ lstNotepad_thumb[ lstNotepad_titulo.index("Neil London (profile)") ]="neil"
 
-        nei "Sí... yo soy."
+        nei "Yes, I am."
         show neil serio
-        nei "¿Te conozco de algún lado?"
-        pla "Eh... no."
-        pla "Yo soy [pla_name], y ella es Alice."
+        nei "Do I know you from somewhere?"
+        pla "Uh no."
+        pla "I am [pla_name], and she is Alice."
         show neil:
             ease .5 mleft
         show alice pensando at mright with dissolve
-        ali "Ho- hola..."
+        ali "He- hello..."
         show neil sorprendido
-        nei "¿Qué quieren?"
-        "Neil ahora se mostró a la defensiva."
-        pla "Solo venimos a hacerte algunas preguntas."
+        nei "What do you want?"
+        "Neil was now defensive."
+        pla "We just want to ask you about something."
         show neil pensativo
         # nei "¿Quienes son ustedes?"
-        nei "¿¡He hecho algo malo!?" with hpunch
-        pla "¡Ah, no! No es nada en serio..."
-        "Rayos, ya se ha puesto alerta..."
+        nei "Have I done something wrong!?" with hpunch
+        pla "Oh no! It's nothing serious..."
+        "Damn, he's already in defense mode..."
         show neil serio
         nei "Uh..."
-        nei "Creo que tengo que irme."
+        nei "I think I have to go."
         show alice sorprendida
-        pla "¡E- espera!" with hpunch
+        pla "W-wait!" with hpunch
         show neil preocupado hablando
-        nei "¿Qué?"
-        nei "No pueden obligarme a nada."
+        nei "What?"
+        nei "You can't force me to do anything."
         show alice normal
         ali "..."
         show alice pensando
-        ali "[pla_name]... ¿deberíamos decirle?"
-        "Alice detrás de mí, me sujetó de la chaqueta a la vez que me susurraba."
+        ali "[pla_name]...should we tell him?"
+        "Alice was behind me, she grabbed my jacket as she whispered to me."
         pla "..."
-        "No hay de otra..."
+        "There is no other choice..."
         show alice normal
-        pla "Eh, Neil, verás..."
+        pla "Hey Neil, you'll see..."
         play sound campana
-        pla "{amarillo}Alice y yo somos del club de detectives.{/amarillo}" with flashbulb
-        pla "Y necesitamos que nos contestes algunas preguntas..."
+        pla "{amarillo}Alice and I are from the detective club.{/amarillo}" with flashbulb
+        pla "And we need you to answer some questions..."
         show neil sorprendido
         # pla "Eso es todo."
         # nei "..."
-        nei "¿De- detectives?"
+        nei "Detectives?"
         show neil serio hablando
-        nei "Uhm... me cuesta creerlo..."
+        nei "Uhm... I find it hard to believe..."
         show alice pensando at decaer
         ali "..."
-        ali "Si tan solo fueramos reconocidos como un verdadero club..."
+        ali "If only we were recognized as a true club..."
         hide neil with dissolve
         show alice:
             parallel:
                 ease .5 center
             parallel:
                 reponerse
-        pla "¿Qué pasa, Alice?"
+        pla "What's wrong Alice?"
         show alice normal
-        ali "Si fueramos reconocidos como un club, tendríamos algunas ventajas..."
-        ali "Como poder obligar a un estudiante que conteste nuestras preguntas..."
-        ali "Siempre y cuando sea relacionado con el caso en investigación."
-        pla "Vaya..."
-        pla " Qué loco..."
-        "De todas formas, no tenemos esa ventaja..."
+        ali "If we were recognized as a club, we would have some advantages..."
+        ali "We could force a student to answer our questions..."
+        ali "As long as it is related to the case under investigation."
+        pla "Wow..."
+        pla " That's crazy..."
+        "We don't have that advantage anyway..."
         show alice:
             ease .5 mright
         show neil serio at mleft with dissolve
-        pla "Hey, Neil... en serio necesitamos que nos contestes..."
-        pla "Solo son algunas preguntas, no tardaremos mucho."
+        pla "Hey, Neil... we really need you to answer us..."
+        pla "It's just a few questions, it won't be long."
         nei "..."
         extend " ..."
         extend " ..."
-        "Ah... no tiene caso..."
+        "Oh...it's no use..."
         show neil serio hablando
-        nei "Si quieren saber algo por mi parte..."
+        nei "If you want to know something from me..."
         stop music fadeout 3
-        nei "Podría hablar,{nw}"
+        nei "I could talk, {nw}"
         play sound campana
         show alice sorprendida
-        extend " {amarillo}pero con una condición...{/amarillo}" with flashbulb
+        extend " {amarillo}but with one condition...{/amarillo}" with flashbulb
         ali "..."
         show alice pensando
-        ali "Está bien..."
-        ali "¿Cuánto hay que pagar?"
+        ali "Alright..."
+        ali "How much do we have to pay?"
         show neil sorprendido
-        nei "¿Eh?"
-        nei "No, no estoy pidiendo dinero..."
+        nei "Huh?"
+        nei "No, I'm not asking for money..."
         show alice normal
-        pla "¿Entonces?"
+        pla "And then?"
         show neil sonriendo hablando
         play sound campana
-        nei "{amarillo}Un acertijo.{/amarillo}" with flashbulb
+        nei "{amarillo}A riddle.{/amarillo}" with flashbulb
         pla "..."
-        extend " ¿eh?"
+        extend " huh?"
         show neil normal
         show alice sorprendida
-        ali "¿Un acertijo?"
+        ali "A riddle?"
         show alice normal
-        nei "Sí, la condición es: {amarillo}que ustedes resuelvan un acertijo...{/amarillo}"
-        nei "Si logran resolverlo, {amarillo}pueden preguntarme lo que necesitan saber.{/amarillo}"
+        nei "Yes, the condition is: {amarillo}that you solve a riddle...{/amarillo}"
+        nei "If you manage to solve it, {amarillo}you can ask me what you need to know.{/amarillo}"
         show neil sonriendo hablando
-        nei "De lo contrario..."
-        nei "Si ustedes fallan cinco veces..."
+        nei "Otherwise..."
+        nei "If you fail five times..."
         play sound campana
-        nei "Mis labios estarán sellados." with flashbulb
+        nei "My lips will be sealed forever he he." with flashbulb
         show neil normal
-        pla "Pero qué..."
+        pla "But, what?..."
         show neil sonriendo hablando
-        nei "¿Qué pasa?"
-        nei "{amarillo}Un acertijo no debe ser ningún problema para los detectives{/amarillo} je, je, je..."
+        nei "What's wrong?"
+        nei "{amarillo}A riddle shouldn't be a problem for detectives{/amarillo} heh, heh, heh..."
         show neil normal
-        ali "Uno de mis superiores era un fanático de los acertijos..."
+        ali "One of my superiors was a fan of riddles..."
         show alice pensando
-        ali "Lástima que ya se graduó."
+        ali "Too bad he already graduated."
         "..."
-        extend " Un acertijo..."
+        extend " A riddle..."
         show alice enojada
-        ali "¡Lo- lo haremos!" with hpunch
-        pla "¿¡Eh!? ¿¡Estás segura, Alice!?"
-        ali "No tenemos de otra, hay que jugar su juego..."
-        ali " ¡Y demostrarle que de verdad somos del club de detectives!" with hpunch
+        ali "We- we will do it!" with hpunch
+        pla "Huh!? Are you sure Alice!?"
+        ali "We have no other choice, we have to play his game..."
+        ali " And show him that we really are from the detective club!" with hpunch
         show neil sonriendo hablando
-        nei "Jee... esa es la actitud."
-        nei "Muy bien..."
+        nei "Hee... that's the attitude."
+        nei "Very well..."
         play sound campana
-        nei "Es hora de jugar." with flashbulb
+        nei "It's time to play." with flashbulb
         hide alice with dissolve
         hide neil with dissolve
 
-        $quick_menu_gameplay=True
+        $ quick_menu_gameplay=True
 
-        $estadoj="Acertijo"
-        # $acertijo1_txt="Los ratones son famosos por su capacidad para multiplicarse a velocidades de vértigo.{p}{p}El tipo de ratón que tenemos aquí pare 12 bebés una vez al mes. Las crías de ratón, a su vez, pueden tener sus propias crías dos meses después de haber nacido.{p}{p}Has comprado una ratoncita en una tienda de mascotas y te lo has llevado a casa el mismo día que ha nacido. ¿Cuántos ratones tendrás dentro de 10 meses?"
-        $acertijo1_txt="Los conejos pueden tener entre 4 y 12 crías por cada camada. Como pueden tener varias camadas en el año, el número de crías puede ascender hasta 80 en este tiempo.{p}{p}Considerando estos datos, si compras un conejo hembra en una tienda de mascotas y te lo llevas a tu casa, ¿cuántos conejos tendrías dentro de tres años?"
-        $showMinigameTitle(estadoj)
+        $ estadoj="Riddle"
+        $ acertijo1_txt="Rabbits can have between 4 and 12 pups per litter. Since they can have several litters in a year, the number of offspring can go up to 80 during this time.{p}{p}Considering these data, if you buy a female rabbit at a pet store and take it home, How many rabbits would you have in three years?"
+        $ showMinigameTitle(estadoj)
         play music tiempo_muerto2 fadein 2
-        $initCorazones()
+        $ initCorazones()
         show screen corazones
 
-        $numpad_cifra="0000"
+        $ numpad_cifra="0000"
         label puzzle_conejos1:
             scene bg conejos1base with slow_dissolve
             show conejos1:
@@ -248,127 +248,127 @@ label caso1_investigacion3:
                 ypos 0.2
                 xpos 0.370
                 linear 0.8 alpha 1
-            $quick_menu_bajo=True
-            call screen numpad("puzzle_conejos1_resp",acertijo1_txt) with dissolve
+            $ quick_menu_bajo=True
+            call screen numpad("puzzle_rabbits1_answer",acertijo1_txt) with dissolve
 
         label puzzle_conejos1_gameover:
             stop music fadeout 3
             hide screen corazones
-            $quick_menu_bajo=False
+            $ quick_menu_bajo=False
             scene bg escuela corredor
             show neil serio with dissolve
-            nei "Qué decepción..."
+            nei "What a disappointment..."
             show neil serio hablando
-            nei "Ya les he dado suficiente oportunidades y no han acertado con la respuesta."
-            nei "Lo siento, pero tengo que irme."
-            pla "¿¡Eh!? ¡Espera!" with hpunch
+            nei "I've already given you enough chances and you haven't gotten the right answer."
+            nei "I'm sorry but I have to go."
+            pla "Hey!? Wait!" with hpunch
             hide neil with dissolve
             # "Sin hacerme caso, Neil se fue..."
-            "Ah, he fallado..."
+            "Ah, I have failed..."
             jump caso1_gameover
 
         label puzzle_conejos1_resp:
-            $quick_menu_bajo=False
+            $ quick_menu_bajo=False
             scene bg escuela corredor
             if numpad_cifra !="0001":
                 show neil serio with dissolve
-                nei "¿Esa es tu respuesta?"
+                nei "That's your answer?"
                 show neil serio hablando
-                nei "Ah... qué decepción..."
-                $restCorazones()
+                nei "Oh... what a disappointment..."
+                $ restCorazones()
                 if cantidad_corazones==0:
                     jump puzzle_conejos1_gameover
                 else:
-                    "Agghhh... ¿¡entonces cuál es la respuesta!?" with hpunch
+                    "Agghhh... so what's the right answer!?" with hpunch
                     if cantidad_corazones==1:
                         show neil sonriendo hablando
-                        nei "Jee... ahora {amarillo}solo te queda una oportunidad...{/amarillo} piensa con cuidado lo que vas a contestar..."
+                        nei "Hee... now {amarillo}you only have one chance left...{/amarillo} think carefully what you are going to answer..."
                     else:
                         show neil normal
-                        nei "Jum... ahora {amarillo}te quedan [cantidad_corazones] oportunidades.{/amarillo}"
-                        nei "Veamos si esta vez no te equivocas..."
+                        nei "Heh... now {amarillo} you have [amount_hearts] chances left.{/amarillo}"
+                        nei "Let's see if this time you're not wrong..."
                     hide neil with dissolve
                 menu:
-                    "Pedir ayuda a Alice":
-                        $updateStat("intel","-",1)
-                        $renpy.notify("Inteligencia -1")
+                    "Ask Alice for help":
+                        $ updateStat("intel","-",1)
+                        $ renpy.notify("Intelligence -1")
                         show alice normal with dissolve
-                        pla "Alice... ¿tienes alguna idea de cuál es la respuesta?"
+                        pla "Alice... do you know the answer?"
                         show alice pensando
-                        ali "Uhmm... no..."
+                        ali "Uhmmm... no..."
                         show alice normal
                         play sound campana
-                        ali "Pero... hay algo que recordé." with flashbulb
-                        ali "Uno de mis superiores, que era aficionado a los acertijos, me había dicho que a veces no hay que pensarlo demasiado."
-                        pla "¿Eh? ¿Qué significa eso?"
-                        ali "Pues... hay una clase de {amarillo}acertijos que son tramposos.{/amarillo}"
-                        pla "¿Un acertijo tramposo?"
-                        ali "Sí. Antes de resolver un acertijo, es buena idea ver si este no tiene {amarillo}alguna trampa en su enunciado...{/amarillo}"
-                        ali "A veces, {amarillo}la respuesta es tan obvia que no la tomamos en cuenta.{/amarillo}"
-                        "Para esconder un árbol, lo mejor es un bosque, ¿eh?"
+                        ali "But... there's something I remembered." with flashbulb
+                        ali "One of my superiors, who was fond of riddles, had told me that sometimes you don't have to think about it too much."
+                        pla "Huh? What does that mean?"
+                        ali "Well... there is a type of {amarillo}riddles that are tricky.{/amarillo}"
+                        pla "A tricky riddle?"
+                        ali "Yes. Before solving one, it's a good idea to see if it doesn't have {amarillo}a trap in its statement...{/amarillo}"
+                        ali "Sometimes {amarillo}the answer is so obvious that we don't take it into account.{/amarillo}"
+                        "To hide a tree, the best is a forest, huh?"
                         show alice pensando at decaer
-                        ali "Aunque no sé si la respuesta a este acertijo es obvia... Perdón por no poder ayudarte."
-                        pla "No, tranquila, saber eso me ayudará."
+                        ali "Although I don't know if this is one of those riddles... Sorry I can't help you."
+                        pla "No, easy, knowing that will help me."
                         hide alice with dissolve
-                        "Tengo que intentarlo de nuevo..."
-                        "¡Esta vez sí leeré con detenimiento ese acertijo!"
-                    "Intentar de nuevo":
-                        "Debo leer con más calma las pistas del acertijo..."
+                        "I have to try again..."
+                        "This time I will read that riddle carefully!"
+                    "Try again":
+                        "I must read more carefully the riddle..."
                 jump puzzle_conejos1
             else:
 
-                $fase_titulo.append("Acertijo -Conejos-")
-                $fase_tipo_vida.append("cantidad")
-                $fase_corazones.append(cantidad_corazones)
-                $fase_multiplicador.append(10)
+                $ fase_titulo.append("Riddle -Rabbits-")
+                $ fase_tipo_vida.append("amount")
+                $ fase_corazones.append(cantidad_corazones)
+                $ fase_multiplicador.append(10)
 
-                $quick_menu_gameplay=False
+                $ quick_menu_gameplay=False
                 stop music fadeout 3
                 hide screen corazones
                 show neil normal with dissolve
-                pla "La respuesta es...{nw}"
+                pla "The answer is...{nw}"
                 play sound campana
-                extend " {amarillo}¡Solo un conejo!{/amarillo}" with flashbulb
+                extend " {amarillo}Just one rabbit!{/amarillo}" with flashbulb
                 show neil sonriendo hablando
-                nei "Jee... Correcto."
+                nei "Hee... That's Right."
 
-        ##agregamos puntos de intelgencia, en base a la cantidad de corazones restantes
-        $updateStat("intel","+",cantidad_corazones)
-        $renpy.notify("Inteligencia +"+str(cantidad_corazones))
+
+        $ updateStat("intel","+",cantidad_corazones)
+        $ renpy.notify("Intelligence +"+str(cantidad_corazones))
 
         show neil:
             ease .5 mleft
 
-        ## agregamos un elogio si no se ha perdido ningun corazon
+
         if cantidad_corazones==5:
             show alice sorprendida at mright with dissolve
-            ali "¡Wow, [pla_name]!"
-            ali "¡Lo has resuelto en un solo intento!" 
-            $updateStat("carisma","+",2)
-            $renpy.notify("Carisma +2")
+            ali "Wow, [pla_name]!"
+            ali "You solved it in one try!"
+            $ updateStat("charisma","+",2)
+            $ renpy.notify("Charisma +2")
             show alice alegre at brinquitos
-            ali "¡Eres increíble!"
+            ali "You are amazing!"
             show alice sonriendo
         else:
             show alice normal at mright with dissolve
 
-        nei "Je, je, je... encontraron {amarillo}la trampa del acertijo.{/amarillo} Era obvio que no tendrías más conejos sino hay un macho cerca je, je..."
+        nei "Heh, heh, heh... they found {amarillo}the riddle trap.{/amarillo} It was obvious that you wouldn't have any more rabbits if there wasn't a male nearby heh, heh..."
         show neil normal
-        nei "Bien, soy un hombre de palabra..."
-        nei "¿Qué necesitan saber?"
-        pla "Cuéntanos acerca del viernes de la semana pasada..."
+        nei "Well, I'm a man of word..."
+        nei "What do you need to know?"
+        pla "Tell us about Friday last week..."
         show neil pensativo
         nei "..."
-        nei "¿El viernes... de la semana pasada?"
-        nei "¿Por qué ese día?"
-        pla "No podemos contarte acerca del caso..."
-        pla "Pero ese día... hubo un tropiezo entre una estudiante y la profesora Harrow."
-        nei "... la profesora Harrow y una estudiante..."
+        nei "Friday... of last week?"
+        nei "Why that day?"
+        pla "We can't tell you about the case..."
+        pla "But that day... there was a run-in between a student and Professor Harrow."
+        nei "... Professor Harrow and a student..."
         show neil sorprendido
-        nei "Oh... eso..."
+        nei "Oh... that..."
         show neil normal
-        nei "Entiendo."
-        nei "Veamos... por dónde comienzo..."
+        nei "I understand."
+        nei "Let's see... where do I start..."
         hide alice with dissolve
         hide neil with dissolve
         jump caso1_testimonio5
