@@ -14,10 +14,9 @@ label caso1_debate_rnd2:
     $ debate_args.append(2)## id de la ronda del debate
     $ debate_args.append(13)## cual id de frase es la correcta
     $ debate_args.append(3)## cual id de argumento es el correcto
-    $ argumentos = ["Arañazos en el casillero","Papel y casillero","Carta de amor","Sensación de ser observada","Perfil del sospechoso"]  
+    $ argumentos = ["Scratches in the Locker", "Paper and Locker", "Love Letter", "Feeling of Being Watched", "Suspect Profile"].   
     $ show_gameplay_layout(600)
     play music debate
-
 
 label inicio_d1r2:
     if cantidad_corazones==0:
@@ -40,7 +39,7 @@ label inicio_d1r2:
     show screen debateCharPanel("beck")
 
     $ frase_args.append(0)## el id de la frase (desde cero)
-    $ frase_args.append("Aunque sea un motivo de envidia...")
+    $ frase_args.append("Even if it is a source of envy...")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r2f0)## qué animacion usar
     $ frase_args.append(False)## si es clickeable (True o False)
@@ -50,7 +49,7 @@ label inicio_d1r2:
     $ renpy.pause(2,hard=True)
 
     $ frase_args.append(1)## el id de la frase
-    $ frase_args.append("Ser acechado por mujeres es algo que termina cansando.")
+    $ frase_args.append("Being stalked by women is something that gets tiring.")    
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r2f1)## qué animacion usar
     $ frase_args.append(False)## si es clickeable (True o False)
@@ -60,7 +59,7 @@ label inicio_d1r2:
     $ renpy.pause(2,hard=True)
 
     $ frase_args.append(2)## el id de la frase
-    $ frase_args.append("{amarillo}Te sientes vigilado...{/amarillo}")
+    $ frase_args.append("{amarillo} You feel watched...{/amarillo}")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r2f2)## qué animacion usar
     $ frase_args.append(True)## si es clickeable (True o False)
@@ -78,7 +77,7 @@ label inicio_d1r2:
     show beck pensando
 
     $ frase_args.append(3)## el id de la frase
-    $ frase_args.append("{amarillo}Llaman mucho a tu celular...{/amarillo}")
+    $ frase_args.append("{amarillo} They call to your cell phone a lot...{/amarillo}")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r2f0)## qué animacion usar
     $ frase_args.append(True)## si es clickeable (True o False)
@@ -88,7 +87,7 @@ label inicio_d1r2:
     $ renpy.pause(2,hard=True)
 
     $ frase_args.append(4)## el id de la frase
-    $ frase_args.append("{azul}Te envían tantos mensajes...{/azul}")
+    $ frase_args.append("{azul} They send you so many messages...{/azul}")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r2f4)## qué animacion usar
     $ frase_args.append(True)## si es clickeable (True o False)
@@ -98,7 +97,7 @@ label inicio_d1r2:
     $ renpy.pause(2,hard=True)
 
     $ frase_args.append(5)## el id de la frase
-    $ frase_args.append("Sabes, {amarillo}a veces uno necesita su espacio.{/amarillo}")
+    $ frase_args.append("You know , {amarillo} sometimes you need your space.{/amarillo}")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r2f2)## qué animacion usar
     $ frase_args.append(True)## si es clickeable (True o False)
@@ -120,7 +119,7 @@ label inicio_d1r2:
     show screen debateCharPanel("marissa")
 
     $ frase_args.append(6)## el id de la frase (desde cero)
-    $ frase_args.append("Te entiendo.")
+    $ frase_args.append("I get you.")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r0f0)## qué animacion usar
     $ frase_args.append(False)## si es clickeable (True o False)
@@ -130,7 +129,7 @@ label inicio_d1r2:
     $ renpy.pause(2,hard=True)
 
     $ frase_args.append(7)## el id de la frase (desde cero)
-    $ frase_args.append("Yo también necesito un tiempo a solas.")
+    $ frase_args.append("I also need some time alone.")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r2f7)## qué animacion usar
     $ frase_args.append(False)## si es clickeable (True o False)
@@ -140,7 +139,7 @@ label inicio_d1r2:
     $ renpy.pause(2,hard=True)
 
     $ frase_args.append(8)## el id de la frase (desde cero)
-    $ frase_args.append("Si yo ya me siento fatal con un acosador...")
+    $ frase_args.append("If I already feel terrible with a stalker...")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r0f2)## qué animacion usar
     $ frase_args.append(False)## si es clickeable (True o False)
@@ -157,7 +156,7 @@ label inicio_d1r2:
     show marissa apenada
 
     $ frase_args.append(9)## el id de la frase (desde cero)
-    $ frase_args.append("No me quiero imaginar tu situación...")
+    $ frase_args.append("I don't want to imagine your situation...")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r1f12)## qué animacion usar
     $ frase_args.append(False)## si es clickeable (True o False)
@@ -179,7 +178,7 @@ label inicio_d1r2:
     show screen debateCharPanel("alice")
 
     $ frase_args.append(10)## el id de la frase (desde cero)
-    $ frase_args.append("Una conversación de chicos populares...")
+    $ frase_args.append("A conversation between popular people...")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r0f0)## qué animacion usar
     $ frase_args.append(False)## si es clickeable (True o False)
@@ -190,7 +189,7 @@ label inicio_d1r2:
     $ renpy.pause(2.5,hard=True)
 
     $ frase_args.append(11)## el id de la frase (desde cero)
-    $ frase_args.append("Qué envidia...")
+    $ frase_args.append("What an envy...")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r2f11)## qué animacion usar
     $ frase_args.append(False)## si es clickeable (True o False)
@@ -211,7 +210,7 @@ label inicio_d1r2:
     show screen debateCharPanel("beck")
 
     $ frase_args.append(12)## el id de la frase (desde cero)
-    $ frase_args.append("Los acosadores...{p}{amarillo}buscan maneras de acercarse a su objetivo.{/amarillo}")
+    $ frase_args.append("Stalkers...{p}{ amarillo} look for ways to get closer to their target {/ amarillo}").
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r2f0)## qué animacion usar
     $ frase_args.append(True)## si es clickeable (True o False)
@@ -224,7 +223,7 @@ label inicio_d1r2:
     show beck serio
 
     $ frase_args.append(13)## el id de la frase (desde cero)
-    $ frase_args.append("¡Te aseguro que {amarillo}ese acosador{p} está en tu club!{/amarillo}")
+    $ frase_args.append("I assure you, {amarillo}that stalker{p}is in your club!{/amarillo}").    
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r1f12)## qué animacion usar
     $ frase_args.append(True)## si es clickeable (True o False)
@@ -246,7 +245,7 @@ label inicio_d1r2:
     show screen debateCharPanel("marissa")
 
     $ frase_args.append(14)## el id de la frase (desde cero)
-    $ frase_args.append("¿¡En mi club!?")
+    $ frase_args.append("In my club!?")    
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r1f0)## qué animacion usar
     $ frase_args.append(False)## si es clickeable (True o False)
@@ -258,7 +257,7 @@ label inicio_d1r2:
     show marissa preocupada
 
     $ frase_args.append(15)## el id de la frase (desde cero)
-    $ frase_args.append("Eso {azul}puede tener sentido...{/azul}")
+    $ frase_args.append("That {azul}might have sense ...{/azul}")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r1f1)## qué animacion usar
     $ frase_args.append(True)## si es clickeable (True o False)
@@ -276,7 +275,7 @@ label inicio_d1r2:
     hide screen debateArgumento
     hide screen debateArgs
     $renpy.choice_for_skipping()
-    "Veamos... el objetivo es buscar características para identificar al acosador de Marissa..."
-    "Ya tenemos algunas... {amarillo}¿pero qué sabemos sobre su vida en la escuela?{/amarillo}"
-    "¿Hay algo de lo que podemos estar seguros?"
-    jump inicio_d1r2
+    "Let's see... the goal is to look for characteristics to identify Marissa's stalker..."
+    "We already have some... {amarillo}but what do we know about his life at school {/amarillo}?"
+    "Is there anything we can be sure of?"    
+jump inicio_d1r2
