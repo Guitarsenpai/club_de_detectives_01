@@ -2,93 +2,93 @@ label d1r1_incorrecto_marissa:
     jump d1r0_incorrecto_marissa
 
 label d1r1_incorrecto_alice:
-    $change_cursor()
-    $clearDebateText()
-    $quick_menu_bajo=False
+    $ change_cursor()
+    $ clearDebateText()
+    $ quick_menu_bajo=False
     show alice enojada
     ali "[pla_name]..."
-    $restCorazones()
-    ali "No me contradigas, sé que hay otra cosa que averiguamos acerca del autor de la carta..." with hpunch
+    $ restCorazones()
+    ali "Don't contradict me, I know there's something else we found out about the author of the letter..." with hpunch
     show alice pensando
-    ali "Pero no sé exactamente qué es..."
+    ali "But I don't remember exactly what it is..."
     jump inicio_d1r1
 
 label d1r1_correcto:
     stop music fadeout 1
-    $clearDebateText()
-    $change_cursor()
-    $addCorazones()
-    $showplay_excl("esoescierto")
-    $quick_menu_bajo=False
+    $ clearDebateText()
+    $ change_cursor()
+    $ addCorazones()
+    $ showplay_excl("that'strue")
+    $ quick_menu_bajo=False
     # $quick_menu_gameplay = False
     hide screen debateArgumento
-    $hide_gameplay_layout()
+    $ hide_gameplay_layout()
     play music tiempo_muerto fadein 2
-    pla "Sí, descubrimos otra pista."
+    pla "Yeah, we found another lead."
     play sound campana
-    pla "{amarillo}El autor de la carta es zurdo.{/amarillo}" with flashbulb
+    pla "{amarillo}The author of the letter is left-handed.{/amarillo}" with flashbulb
     show marissa preocupada sudor
-    mar "¿Es... zurdo? Vaya, eso sí ayuda a identificarlo..."
-    mar "Tengo curiosidad, ¿cómo lo supiste?"
+    mar "He's left-handed? Wow, that does help to identify him..."
+    mar "I'm curious, how did you know?"
     show marissa normal
-    pla "Me fijé en la inclinación de la letra."
-    pla "Y cualquier diestro no dejaría ese tipo de inclinación al escribir."
+    pla "I noticed the slant of the lettering."
+    pla "Right-handed people do not leave that kind of inclination when writing."
     show marissa:
         ease .5 mleft
     show alice sorprendida at mright with dissolve
-    ali "¡Ah, cierto!"
-    ali "Se me había olvidado decirlo..."
+    ali "Oh, right!"
+    ali "I forgot to say it..."
     show alice pensando
-    ali "Es que Marissa empezó a decir muchas cosas y me puse nerviosa..."
+    ali "It's just that Marissa started saying a lot of things and I got nervous..."
     show marissa preocupada sudor
-    mar "¿¡Eh!? Pe- perdón..."
+    mar "Huh!? S- sorry..."
     show marissa preocupada
-    mar "Estaba algo emocionada..."
+    mar "I was kind of excited..."
     ali "..."
-    pla "En fin, si el autor de la carta es zurdo, eso también explicaría las manchas en el papel."
-    mar "La mano con la que escribe pasaría sobre la tinta fresca..."
+    pla "Anyway, if the author of the letter is left-handed, that would also explain the stains on the paper."
+    mar "The hand with which he writes would pass over the fresh ink..."
     show marissa alegre hablando at brinquitos
     show alice normal
-    mar "¡Wow! ¡Eso es increíble! ¡Tal como se esperaba del club de detectives!"
+    mar "Wow! That is incredible! Just as expected from the detective club!"
     show alice sonrojada
     ali "..."
-    "Por un momento, vi una ligera mueca de sonrisa en Alice..."
+    "For a moment, I saw a slight smile on Alice's face..."
     show alice normal
-    pla "Y con esta pista, se reduciría bastante la lista de sospechosos..."
-    "Aunque eso no es suficiente..."
+    pla "And with this clue, the list of suspects would be narrowed down a lot..."
+    "Although that's not enough..."
     show marissa normal
-    mar "Bueno, ya está claro sobre la personalidad y una característica especial de esa persona..."
-    mar "Pero... no entiendo."
-    mar "Cómo una persona que escribió la carta con nervios y además se sentía inseguro..."
-    mar "¿Llegó hasta el punto de acosarme?"
+    mar "Well, now we are clear about the personality and a special characteristic of the person in question..."
+    mar "But… I do not understand."
+    mar "How a person who wrote a letter with nerves and also felt insecure..."
+    mar "Got to the point of stalking me?"
     show alice pensando
     ali "..."
-    pla "La verdad, eso es algo que no podemos llegar a entender..."
-    pla "Marissa, cuando nos pediste ayuda, dijiste que fueramos discretos en este caso..."
+    pla "Honestly, that's something we can't understand..."
+    pla "Marissa, when you asked us for help, you said to be discreet on this one..."
     show alice normal
     show marissa preocupada
-    mar "Así es, no me gustaría esto vaya a propagarse como un rumor..."
-    pla "Eh, sí... pero creo que necesitamos involucrar a otras personas."
+    mar "That's right, I wouldn't want this to spread like a rumor..."
+    pla "Uh, yeah... but I think we need to get other people involved."
     show alice normal
-    mar "¿Ah, sí?"
-    pla "Sabes, creo que Beck podría ayudarnos a entender mejor a este acosador."
+    mar "Yeah?"
+    pla "You know, I'm thinking Beck could help us better understand this stalker."
     mar "..."
     stop music
     play sound campana
     show marissa preocupada sudor
-    mar "¡Ah! ¡Beck tiene {amarillo}experiencia lidiando con acosadoras{/amarillo}!" with flashbulb
+    mar "Oh! Beck has {amarillo}experience dealing with stalkers{/amarillo}!" with flashbulb
     mar "..."
     show marissa alegre
-    mar "¡No hay problema!"
+    mar "No problem!"
     show marissa alegre hablando
-    mar "Conozco a Beck desde el año pasado, y estoy segura que no es alguien de los que va iniciando rumores."
-    mar "Y él puede entender cómo me siento al respecto..."
-    pla "Perfecto entonces, lo mandaré a llamar."
+    mar "I've known Beck for the past year, and I'm sure he's not someone who goes around starting rumors."
+    mar "And he can understand how I feel about it..."
+    pla "Perfect then, I'll go for him."
     $quick_menu_gameplay=False
     scene bg negro with dissolve
-    "Corrí hacia la cancha de la escuela, no tardé en encontrar a Beck, quien estaba a un lado de la cancha charlando con unos amigos."
-    "Le dije que necesitábamos de su ayuda para resolver el problema de Marissa."
-    "Y él aceptó ir conmigo al salón del club."
+    "I ran towards the school field, it didn't take me long to find Beck, who was on the side of the field chatting with some friends."
+    "I told him that we needed his help to solve Marissa's problem."
+    "And he agreed to go with me to the club room."
     play music ambiente fadein 3
     scene bg salon club detectives with dissolve
     show beck preocupado with dissolve
@@ -96,60 +96,60 @@ label d1r1_correcto:
     show beck:
         ease .5 mleft
     show marissa alegre hablando at mright with dissolve
-    mar "Hola Beck."
-    bec "Hey, Marissa..."
-    bec "[pla_name] me estuvo contando en el camino..."
-    bec "Sobre lo de que recibiste una carta de amor, y después de eso empezaste a ser acosada..."
+    mar "Hi Beck."
+    bec "Hey Marissa..."
+    bec "[pla_name] was telling me along the way..."
+    bec "About how you got a love letter, and after that you started getting stalked..."
     show marissa normal
-    mar "Eh... así es..."
+    mar "Yeah... that's right..."
     show beck pensando
-    bec "Marissa, me hubieras pedido ayuda."
-    bec "Puede ser peligroso lidiar con un acosador."
-    mar "Lo sé..."
-    mar "Pero por eso, es que pedí ayuda al club de detectives."
-    mar "Sé por experiencia que ellos son discretos, además..."
-    mar "Solo he pedido que identificaran al acosador."
-    mar "Con las pruebas suficientes pediré ayuda a un maestro, incluso al director."
+    bec "Marissa, you should have asked me for help."
+    bec "It can be dangerous to deal with a stalker."
+    mar "I know..."
+    mar "But that's why I asked the detective club for help."
+    mar "I know from experience that they are discreet, besides..."
+    mar "I only asked that the stalker be identified."
+    mar "With enough evidence I will ask a teacher, even the principal, for help."
     bec "..."
-    bec "No... incluso llegar a ese punto..."
+    bec "Well... Getting to that point..."
     show beck preocupado
-    bec "¿Y tienen a algún sospechoso?"
-    "Las miradas de Marissa y Beck se dirigieron a mí, y luego pasaron a Alice, en busca de respuestas..."
+    bec "And do you have any suspect?"
+    "Marissa's and Beck's gazes flicked to me, then to Alice, searching for answers…"
     show beck sorprendido
     show marissa sorprendida
-    pla "Eh... pues sí tenemos un sospechoso..."
-    bec "¿¡En serio!?"
-    bec "¿Quién es?"
+    pla "Uh... well, we do have a suspect..."
+    bec "Oh really!?"
+    bec "Who is it?"
     show beck preocupado
     show marissa normal
-    pla "Preferiría no decirlo por ahora, no hasta tener información suficiente."
-    pla "Y por eso es que te he llamado."
+    pla "I would prefer not to say it for now, not until I have enough information."
+    pla "And that's why I called you."
     show beck:
         ease .5 left
     show marissa:
         ease .5 center
     show alice pensando at right with dissolve
-    ali "E- estoy de acuerdo con [pla_name]..."
-    ali "Lo mejor, es no lanzar acusaciones si una base sólida..."
-    ali "E- eso es lo que me enseñaron mis superiores..."
-    bec "Uhm..."
+    ali "I- I agree with [pla_name]..."
+    ali "The best thing is not to launch accusations without a solid base..."
+    ali "T- that's what my superiors taught me..."
+    bec "Hum..."
     show alice normal
-    bec "Bien... ¿y qué necesitan saber?"
-    pla "Sobre tu experiencia."
+    bec "Well... and what do you need to know?"
+    pla "About your experience."
     show beck sorprendido
-    bec "¿Mi experiencia?"
-    pla "Todos conocemos que eres alguien muy popular."
-    pla "Una persona que constantemente está en compañía de otras personas..."
-    pla "Creo que en este salón, tú eres el único quien tiene experiencia lidiando con acosadoras."
+    bec "My experience?"
+    pla "We all know that you are someone very popular."
+    pla "A person who is constantly in the company of other people..."
+    pla "I think in this room, you're the only one who has experience dealing with stalkers."
     show beck pensando
     bec "..."
     # bec "¡Ah, cierto!"
-    bec "Con que yo soy el experto en ser acosado..."
-    bec "No me gusta como suena..."
+    bec "So I'm the expert in being stalked..."
+    bec "I don't like how it sounds..."
     show beck guino
-    bec "Pero tienes razón."
-    $quick_menu_gameplay=True
-    $renpy.choice_for_skipping()
-    $renpy.save("checkpoint")
-    bec "Bien, es hora de que la voz de la experiencia hable."
+    bec "But you're right."
+    $ quick_menu_gameplay=True
+    $ renpy.choice_for_skipping()
+    $ renpy.save("checkpoint")
+    bec "Well, it's time for the voice of experience to speak."
     jump caso1_debate_rnd2
