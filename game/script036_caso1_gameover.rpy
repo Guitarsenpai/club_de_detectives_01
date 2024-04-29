@@ -5,9 +5,9 @@ label caso1_gameover:
     $quick_menu_gameplay = True
     $quick_menu_timescr=False
     scene bg negro with slow_dissolve
-    "Al final, no pudimos ayudar a Marissa a resolver su problema."
-    "Después de esto, no llegó otro caso al club."
-    "El tiempo pasó... y entonces... El comité estudiantil cerró el club de detectives."
+    "In the end, we were unable to help Marissa solve her problem."
+    "After that, no other case came to the club."
+    "Time went by...and then.... The student committee closed the detective club."
     hide screen quick_menu
     $quick_menu=False
     window hide
