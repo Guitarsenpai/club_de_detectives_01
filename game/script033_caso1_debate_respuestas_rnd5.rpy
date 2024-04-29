@@ -6,10 +6,10 @@ label d1r5_incorrecto_neil:
     $clearDebateText()
     $quick_menu_bajo=False
     show neil sonriendo hablando
-    nei "[pla_name], me alegra saber que estás de mi parte..."
+    nei "[pla_name], I'm glad to know you're on my side..."
     show neil serio
     $restCorazones()
-    nei "Pero ese argumento no me ayuda en nada." with hpunch
+    nei "But that argument doesn't help me at all." with hpunch
     jump inicio_d1r5
 
 label d1r5_correcto:
@@ -17,7 +17,7 @@ label d1r5_correcto:
     $clearDebateText()
     $change_cursor()
     $addCorazones()
-    $showplay_excl("esoescierto")
+    $showplay_excl("that'sright ")
     $quick_menu_bajo=False
     # $quick_menu_gameplay = False
     hide screen debateArgumento
@@ -26,61 +26,61 @@ label d1r5_correcto:
     show beck serio:
         ease .5 mleft
     show neil serio at mright with dissolve
-    pla "Neil, no tienes por qué mentir..."
-    pla "Hay una prueba que demuestra que estás interesado en Marissa."
-    pla "¿Recuerdas esto?"
+    pla "Neil, you don't have to lie..."
+    pla "There's proof that you're interested in Marissa."
+    pla  "Remember this?"
     show neil pensativo
-    nei "Es mi número de celular..."
+    nei "It's my cell phone number..."
     # nei "Eh... ¡Pero si me dijiste que ella estaba interesada en hablarme!"
     # nei "..."
     # nei "¡Ah!"
     show beck guino
-    bec "¡Ja! ¡Tú lo has dicho! Ese es tu número de celular..."
+    bec "Ha! You said it! That's your cell phone number..."
     show beck pensando
     bec "..."
     show beck preocupado
-    bec "No entiendo... ¿Y eso qué significa?"
+    bec "I don't understand... What does that mean?"
     show beck:
         ease .5 center
     show neil:
         ease .5 right
     show marissa normal at left with dissolve
-    mar "Yo tampoco... ¿qué tiene de especial ese número?"
+    mar "Me neither... what's so special about that number?"
     # pla "Es el número de Neil..."
-    pla "Cuando estuve hablando con él, le mentí."
-    pla "Le dije que estabas interesada en hablar con él, como agradecimiento por haberte ayudado."
-    pla "Alice puede confirmarlo."
+    pla "When I was talking to him, I lied to him."
+    pla "I told him you were interested in talking to him, as a thank you for his help."
+    pla "Alice can confirm that."
     hide beck with dissolve
     show alice pensando with dissolve
-    ali "... sí... él mismo escribió su número en la libreta..."
+    ali "... yes... he wrote his own number in the notebook..."
     nei "..."
     show neil serio
-    nei "Bien... no puedo negarlo..."
+    nei "Well... I can't deny it..."
     show neil sonriendo hablando at brinquitos
     play sound campana
-    nei "Me gusta Marissa." with flashbulb
+    nei "I like Marissa." with flashbulb
     show alice sorprendida
     show marissa sorprendida
-    ali "¡Lo ha dicho!" with hpunch
-    mar "¿¡Eeeehh!?"
-    mar "¿¡Yo- yo te gusto!?" with hpunch
+    ali "He said it!" with hpunch
+    mar "¿¡Whaat!?"
+    mar "Do-do you like me!?" with hpunch
     show neil normal
-    nei "Sí... me enamoré a primera vista..."
-    "Es tan cliché que hasta me cuesta creerlo."
+    nei "Yes... I fell in love at first sight..."
+    "It's so cliché that even I find it hard to believe."
     show neil pensativo
-    nei "Pero no te he acosado en ningún momento, y tampoco he escrito ninguna carta."
+    nei "But I haven't stalked you at any time, and I haven't written any letters either."
     show neil serio hablando
-    nei "Es más, {amarillo}ni siquiera sabía tu nombre{/amarillo} o de qué salón eras."
+    nei "What's more, {amarillo}I didn't even knew your name{/amarillo} or what classroom were you from."
     show neil pensativo
-    nei "Además, de que me culpen de algo así... solo por qué me gusta ella... Es exagerado."
+    nei "Besides, for me to be blamed of something like that... just because I like her.... It's over the top."
     show neil normal
-    nei "¿O es que {amarillo}tienen otra prueba{/amarillo} de que demuestre que yo sea el culpable?"
+    nei "Or do you {amarillo} have other evidence{/yellow} to prove that I am the guilty one?"
     show marissa normal
-    "Una prueba más aparte del número que él escribió, veamos..."
+    "One more piece of evidence apart from the number he wrote, let's see..."
     $renpy.choice_for_skipping()
     $renpy.save("checkpoint")
-    "Cuando Neil escribió su número en mi libreta, descubrí algo sobre {amarillo}su forma de escribir...{/amarillo}"
-    "Y eso, debe estar conectado con otra cosa en mi bloc de notas..."
+    "When Neil wrote his number on my notepad, I noticed something about {amarillo}his way of writing...{/yellow}"
+    "And that must be connected to something else in my notepad..."
 
     label neilpideotraprueba:
         if cantidad_corazones==0:
@@ -88,98 +88,98 @@ label d1r5_correcto:
             jump d1_gameover
         show screen corazones
         menu:
-            "Neil London (perfil)":
+            "Neil London (profile)":
                 show neil serio
-                nei "[pla_name], ¿y eso qué significa?"
+              nei "[pla_name], and what does that mean?"
                 $restCorazones()
-                pla "Eh, perdón... lo intentaré de nuevo" with hpunch
+                pla "Uh, sorry... I'll try again" with hpunch
                 jump neilpideotraprueba
-            "Carta de amor":
+             "Love letter":
                 show neil serio
-                nei "[pla_name], no entiendo a lo que quieres llegar con eso..."
+                nei "[pla_name], I don't understand what you're getting at with that..."
                 $restCorazones()
-                pla "Eh, perdón... lo intentaré de nuevo" with hpunch
+                pla "Uh, sorry... I'll try again" with hpunch
                 jump neilpideotraprueba
-            "Perfil del sospechoso":
+             "Suspect's profile":
                 # $addCorazones()
                 # pause 1
                 hide screen corazones
                 jump neilpideotraprueba_fin
-            "Sombra misteriosa":
+             "Mysterious shadow":
                 show neil serio
-                nei "[pla_name], ¿eso es lo mejor que puedes hacer?"
+                nei "[pla_name], Is that the best you can do?"
                 $restCorazones()
-                pla "Eh, perdón... lo intentaré de nuevo" with hpunch
+                pla "Uh, sorry... I'll try again" with hpunch
                 jump neilpideotraprueba
 
     label neilpideotraprueba_fin:            
-        pla "Después de analizar la carta, Alice y yo concluimos que el autor es zurdo."
-        pla "Y tú, al escribir tu número, vi que {amarillo}también eres zurdo.{/amarillo}"
+        pla "After analyzing the letter, Alice and I concluded that the author is left-handed."
+        pla "And you, when writing your number, I saw that {amarillo}you are also left-handed.{/amarillo}"
         show neil pensativo
-        nei "Eh... sí, soy zurdo, pero..."
+        nei "Uh... yes, I'm left-handed, but..."
         show neil normal
-        nei "Sigue siendo flojo."
-        nei "¿Esto es todo lo que tiene el club de detectives?"
+        nei "It's still loose."
+        nei "Is this all the detective club has?"
         show alice enojada
-        ali "¡N- no es cierto!" with hpunch
-        ali "También sabemos que quien escribió la carta... es alguien que estaba nervioso{nw}"
+        ali "It- it's not true!" with hpunch
+        ali "We also know that whoever wrote the letter... is someone who was nervous{nw}"
         show alice pensando
-        extend " y no es una persona segura de sí misma."
+        extend " and is not a self-confident person."
         play sound campana
-        nei "Y claramente {amarillo}yo no soy esa persona.{/amarillo}" with flashbulb
+        nei "And clearly {amarillo}I am not that person.{/amarillo}" with flashbulb
         show alice sorprendida
-        ali "¿Eh?"
-        nei "Vamos, he admitido ante todos ustedes que de verdad me gusta Marissa."
-        nei "No tengo necesidad de declararme por medio de una carta, ni que fuerámos niños de primaria."
-        nei "Además, si quieren, pueden revisar mis cuadernos, y comparar mi caligrafía con la de la carta."
+        ali "Huh?"
+        nei "Come on, I've admitted to all of you that I really like Marissa."
+        nei "I don't need to declare myself through a letter, it's not like we're elementary school kids."
+        nei "Besides, if you want, you can check my notebooks, and compare my handwriting with the one in the letter."
     scene bg negro with fade
     stop music fadeout 2
-    "Con total confianza, Neil me mostró algunos de sus cuadernos."
-    "Los comparé con la carta..."
-    "Y al final, la caligrafía de Neil no se parecía en nada a la de la carta."
-    "Hemos regresado al punto de inicio..."
+    "With complete confidence, Neil showed me some of his notebooks."
+    "I compared them to the letter..."
+    "And in the end, Neil's handwriting looked nothing like the letter."
+    "We're back to the starting point..."
     scene bg salon club detectives with fade
     show neil normal with dissolve
-    nei "¿Qué pasa con esa cara larga, [pla_name]?"
-    nei "¿Decepcionado de que yo no sea el culpable?"
-    "Neil se mostró tan tranquilo al decir eso..."
+    nei "What's with that long face, [pla_name]?"
+    nei "Disappointed that I'm not the culprit?"
+    "Neil was so calm while saying that..."
     show neil pensativo
-    nei "Vaya, esperaba algo más sólido para basar tu acusación..."
-    nei "Creo que estoy perdiendo el tiempo aquí..."
-    pla "E- espera, no te vayas todavía." with hpunch
+    nei "Wow, I was hoping you had something more solid to base your accusation on..."
+    nei "I think I'm wasting my time here..."
+    pla "W-wait, don't go yet." with hpunch
     show neil normal
     nei "Uhm..."
-    nei "[pla_name], ¿podrías mostrarme la carta por un momento?"
-    pla "¿Eh?"
-    "Algo confundido, hice lo que él me pidió."
-    "No tardó demasiado y entonces comenzó a murmurar mientras recorría con la vista el salón del club."
+    nei "[pla_name], could you show me the letter for a moment?"
+    pla "Huh?"
+    "A bit confused, I did as he asked."
+    "It didn't take too long, and then he started mumbling as he looked around the club room."
     show neil sonriendo hablando
-    nei "Je..."
-    "Y sonrió con una pizca de malicia."
-    "¿Qué está tramando?"
-    nei "Creo que podría ayudarles a resolver el misterio..."
+    nei "Heh..."
+    "And he smiled with a hint of mischief."
+    "What is he up to?"
+    nei "I think I might be able to help you solve the mystery..."
     show neil:
         ease .5 mleft
     show alice sorprendida at mright with dissolve
-    ali "¿¡En serio!?" with hpunch
+    ali "Really!?" with hpunch
     show alice normal
-    pla "Ajá... dinos qué es lo que has pensado..."
+    pla "Uh-huh... tell us what you've been thinking..."
     show neil normal
-    nei "No tan rápido, puedo quedarme si tú, o tu compañera,{nw}"
+    nei "Not so fast, I can stay if you, or your partner,{nw}"
     play sound campana
-    extend " logran resolver {amarillo}otro acertijo.{/amarillo}" with flashbulb
+    extend "manage to solve {amarillo}another riddle. {/amarillo}" with flashbulb
     show alice sorprendida
-    ali "¿Eh, otro?"
+    ali "¿Huh, another one?"
     show alice enojada
-    ali "¡Vamos, [pla_name]! Si dijo que iba ayudar, hay que hacer que se quede y que nos diga qué ha descubierto."
-    pla "E- está bien..."
-    nei "Bueno, este acertijo se me ocurrió cuando yo estaba estudiando en la noche, y se fue la luz..."
+    ali "Come on, [pla_name]! If he said he was going to help, you've got to make him stay and tell us what he found out."
+    pla "O-okay..."
+    nei "Well, this riddle came to me when I was studying at night, and the power went out..."
     hide alice with dissolve
     hide neil with dissolve
 
 
     $estadoj="Acertijo"
-    $acertijo1_txt="En la casa de Neil, se fue la luz en la noche mientras él estaba estudiando. Entonces Neil encendió diez velas para poder seguir estudiando.{p}{p}Una ráfaga de viento que entró por la ventana apagó tres velas.{p}{p}Al cabo de un rato, Neil se dio cuenta de que se apagó otra vela.{p}{p}Para asegurarse de que no se apague otra más, él cerró las ventanas de la habitación.{p}{p}Si damos por hecho de que el viento no apagó otra vela, ¿cuántas velas quedaron al final?"
+    $acertijo1_txt="At Neil's house, the power went out at night while he was studying. So Neil lit ten candles so that he could continue studying.{p}{p}A blast of wind coming through the window blew out three candles.{p}{p}After a while, Neil noticed that another candle went out.{p}{p}To make sure that another one did not go out, he closed the windows in the room.{p}{p}If we assume that the wind did not blow out another candle, how many candles were left in the end?"
     $showMinigameTitle(estadoj)
     play music tiempo_muerto2 fadein 2
     show screen corazones
@@ -196,10 +196,10 @@ label d1r5_correcto:
         $quick_menu_bajo=False
         scene bg salon club detectives with dissolve
         show neil serio with dissolve
-        nei "Qué decepción..."
+        nei "How disappointing..."
         show neil serio hablando
-        nei "Ya les he dado suficiente oportunidades y no han acertado con la respuesta."
-        nei "Lo siento, pero tengo que irme."
+        nei "I've given you guys enough chances and you haven't gotten the answer right."
+        nei "I'm sorry, but I have to go."
         jump caso1_gameover
 
     label puzzle_velas1_resp:
@@ -207,17 +207,17 @@ label d1r5_correcto:
         scene bg salon club detectives with dissolve
         if numpad_cifra !="0004":
             show neil serio with dissolve
-            nei "¿Esa es tu respuesta?"
+            nei "¿Is that your answer?"
             show neil serio hablando
-            nei "Ah... qué decepción..."
+            nei "How disappointing..."
             $restCorazones()
             if cantidad_corazones==0:
                 jump puzzle_velas1_gameover
             else:
-                "Agghhh... ¿¡entonces cuál es la respuesta!?" with hpunch
+                "Agghhh... so what's the answer!!!?" with hpunch
                 hide neil with dissolve
                 if cantidad_corazones<4 and addCarisma:
-                    "Si me cuesta resolver este acertijo... Debería confíar en Alice, después de todo... {amarillo}ella es mi compañera{/amarillo}."
+                    "If I'm having a hard time solving this riddle.... I should trust Alice, after all.... {amarillo}she is my partner{/amarillo}."
             menu:
                 "Pedir ayuda a Alice":
                     if cantidad_corazones<4 and addCarisma:
@@ -225,51 +225,50 @@ label d1r5_correcto:
                         $renpy.notify("Carisma +3")
                         $addCarisma=False
                     show alice normal with dissolve
-                    pla "Alice... ¿tienes alguna idea de cuál es la respuesta?"
+                    pla "Alice... do you have any idea what the answer is?"
                     ali "Uhm... no."
-                    ali "Pero, creo que en ese tipo de acertijos, es mejor {amarillo}imaginárselos como si estuvieran ocurriendo de verdad.{/amarillo}"
-                    pla "¿Qué significa eso?"
+                    ali "But, I think in these kinds of riddles, it's best to {amarillo}imagine them as if they're really happening. {/amarillo}"
+                    pla "What does that mean?"
                     show alice pensando
-                    ali "Por ejemplo... {amarillo}¿cómo terminaría una vela encendida?{/amarillo}"
-                    ali "O cuál sería {amarillo}la diferencia con una vela que no está encendida.{/amarillo}"
-                    ali "Además... esa pregunta al final, creo que ahí está el truco..."
-                    pla "Uhm... {amarillo}la pregunta final...{/amarillo}"
-                    "Se podría interpretar esa pregunta como... ¿cuántas velas quedaron? Si una vela encendida se deja sola... {amarillo}¿qué pasaría?{/amarillo}"
+                    ali "For example... {amarillo}how would a lit candle end up {/amarillo}?"
+                    ali "Or what would be {amarillo}the difference with a candle that is not lit. {/amarillo}"
+                    ali "Also... that question at the end, I think that's where the trick is..."
+                    pla "Uhm... {amarillo}the final question... {/amarillo}"
+                    "You could interpret that question as.... how many candles were left? If a lit candle is left alone.... {amarillo}what would happen... {/amarillo}"
                     hide alice with dissolve
-                "Intentar de nuevo":
+                "Try again":
                     pass
             jump puzzle_velas1
         else:
             stop music fadeout 3
             hide screen corazones
             show neil normal with dissolve
-            pla "La respuesta es...{nw}"
+            pla "The answer is...{nw}"
             play sound campana
-            extend " {amarillo}¡Cuatro velas!{/amarillo}" with flashbulb
+            extend " {amarillo}¡Four candles!{/amarillo}" with flashbulb
             show neil sonriendo hablando
-            nei "Jee... Correcto."
+            nei "He... That’s correct."
             show neil normal
-            nei "Si dejamos que las velas sigan encendidas, se terminarán consumiendo y dejarían de existir."
-            nei "Por lo tanto, {amarillo}solo las velas que fueron apagadas quedan al final.{/amarillo}"
-
+            nei "If we let the candles continue to burn, they would eventually burn out and cease to exist."
+            nei "Therefore, {amarillo}only the candles that were blown out are left at the end.{/amarillo}"
     ##agregamos puntos de intelgencia, en base a la cantidad de corazones restantes (no, ya no)
     $updateStat("intel","+",2)
-    $renpy.notify("Inteligencia +2")
+    $renpy.notify("Inteligence +2")
     $estadoj="Debate"
-    nei "Lo han hecho de nuevo..."
+    nei "You have done it again..."
     show neil:
         ease .5 mleft
     show beck enojado at mright with dissolve
-    bec "Oye, ¡déjate de tonterías!" with hpunch
-    bec "Está claro que tú eres el acosador, ¡solo nos estás haciendo perder el tiempo!"
+    bec "Hey, cut the crap!" with hpunch
+    bec "It's clear you're the stalker, you're just wasting our time!"
     show neil normal
-    nei "Eh... estás equivocado."
-    bec "¿Ah?"
+    nei "Uh... you're wrong."
+    bec "¿Huh?"
     $renpy.choice_for_skipping()
     $renpy.save("checkpoint")
-    nei "[pla_name], Alice... en un caso, es un grave problema tener {amarillo}solo a un sospechoso.{/amarillo}"
-    pla "¿Eh? ¿Qué quieres decir con eso?"
+    nei "[pla_name], Alice... in a case, it's a serious problem to have {amarillo}only one suspect.{/amarillo}"
+    pla "Huh? What do you mean by that?"
     show neil sonriendo hablando
-    nei "Je, je, je... ya lo verás..."
+    nei "Heh, Heh, Heh... you will see..."
 
     jump caso1_debate_rnd6
