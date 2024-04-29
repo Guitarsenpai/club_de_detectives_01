@@ -9,10 +9,10 @@ label d1r6_incorrecto_alice:
     $clearDebateText()
     $quick_menu_bajo=False
     show alice alegre
-    ali "[pla_name], me alegra ver que estás muy metido en el debate..."
+    ali "[pla_name], I'm glad to see you're deep into the debate..."
     show alice enojada
     $restCorazones()
-    ali "Pero ese argumento no ayuda en nada." with hpunch
+    ali "But that argument doesn't help me in anything." with hpunch
     jump inicio_d1r6
 
 label d1r6_incorrecto_neil:
@@ -20,10 +20,10 @@ label d1r6_incorrecto_neil:
     $clearDebateText()
     $quick_menu_bajo=False
     show neil serio hablando
-    nei "[pla_name], ¿qué quieres demostrar con ese argumento?"
+    nei "[pla_name], what do you want to prove with that argument?"
     show neil serio
     $restCorazones()
-    nei "Piensa antes de hablar." with hpunch
+    nei "Think before you speak." with hpunch
     jump inicio_d1r6
 
 label d1r6_correcto:
@@ -31,7 +31,7 @@ label d1r6_correcto:
     $clearDebateText()
     $change_cursor()
     $addCorazones()
-    $showplay_excl("esoescierto")
+    $showplay_excl("that'sright")
     $quick_menu_bajo=False
     # $quick_menu_gameplay = False
     hide screen debateArgumento
@@ -39,33 +39,32 @@ label d1r6_correcto:
     play music tiempo_muerto fadein 2
     pla "¡Alice, eso es!"
     show alice sorprendida
-    ali "¿¡Ehhh!? ¿Qué?"
-    pla "¡Todo este tiempo... hemos estado equivocados!"
+    ali "Uhhh!? What?"
+    pla "All this time... we've been wrong!"
     show alice normal
-    ali "[pla_name]... ¿qué pasa? No entiendo..."
+    ali "[pla_name]... what's the matter? I don't understand..."
     show alice sorprendida
-    pla "La carta no pudo haber sido escrita para Marissa, {amarillo}sino para alguien más.{/amarillo}"
+    pla "The letter could not have been written to Marissa, {amarillo}but to someone else.{/amarillo}"
     show alice:
         ease .5 mleft
     show marissa sorprendida at mright with dissolve
-    mar "¿¡Eeehhh!?" with hpunch
-    mar "¿No era para mí la carta?"
+    mar "What?!" with hpunch
+    sea "Wasn't the letter for me?"
     # mar "Pero si ahí está mi nombre..."
     # pla "No, estás en un error..."
-    pla "La forma en la que el autor describe a su gran amor {amarillo}no concuerda con tu forma de ser.{/amarillo}"
+    pla "The way the author describes his great love {amarillo} does not match the way you are.{/amarillo}"
     show marissa normal
     show alice normal
     mar "..."
-    mar "Ahora que lo dices.. Eso tendría sentido..."
+    mar " Now that you mention it... That would make sense..."
     show alice sorprendida at brinquitos
-    ali "¡Ah!"
-    "Parece que Alice ya terminó de comprenderlo."
-    "Gracias a lo que Alice dijo... entendí que la verdadera destinataria es..."
-
+    ali "¡Oh!"
+    "It seems that Alice has already finished understanding."
+    "Thanks to what Alice said... I understood that the real addressee is..."
     # show screen corazones
 
     # ##ahora se debe seleccionar un item del bloc de notas, usaremos como id, el titulo del elemento
-    # $idevidencia_correcta="Prof. Harrow (perfil)"
+    # $idevidencia_correcta="Prof. Harrow (profile)"
 
     # label mostrar_evidencia2:
 
@@ -80,17 +79,17 @@ label d1r6_correcto:
     #     if idevidencia_mostrar==idevidencia_correcta:
     #         jump evidencia_mostrada2_correcto
     #     else:
-    #         mar "No entiendo... ¿eso qué demuestra?"
+    #         mar " I don't understand... what does that prove?"
     #         $restCorazones()
-    #         pla "Ah, lo siento... me he equivocado." with hpunch
+    #         pla "Ah, sorry... I made a mistake." with hpunch
     #         jump mostrar_evidencia2
 
     # label evidencia_mostrada2_gameover:
     #     hide screen corazones
     #     stop music fadeout 1
     #     show marissa preocupada
-    #     mar "¿Qué estás intentando hacer, [pla_name]?"
-    #     pla "La verdad, es que ni yo lo sé..."
+    #     mar "What are you trying to do, [pla_name]?"
+    # pla "The truth is, I don't even know..."
     #     stop music
     #     scene bg negro with dissolve
     #     "Game over"
@@ -99,30 +98,30 @@ label d1r6_correcto:
     # label evidencia_mostrada2_correcto:
     #     stop music fadeout 2
     #     hide screen corazones
-    #     $showplay_excl("esoes")
+    #     $showplay_excl("that'sit ")
     #     $addCorazones()
     #     $updateStat("intel","+",1)
     #     $renpy.notify("Inteligencia +1")
 
     # #presentar evidencia: mary
-    # # pla "Mary Harrow... es la profesora Harrow a quien iba dirigida la carta."
+    # # pla "Mary Harrow...it is Professor Harrow to whom the letter was addressed."
     stop music fadeout 2
     play sound campana
-    pla "La profesora de matemáticas." with flashbulb
-    mar "¿La profesora Harrow?"
+    pla "The math teacher." with flashbulb
+    mar "Professor Harrow?"
     show marissa sorprendida
     play sound campana
-    mar "¡Ah!" with flashbulb
-    mar "La profesora se llama {amarillo}Mary{/amarillo} Harrow... Así que el nombre manchado, {amarillo}no era el mío.{/amarillo}"
+    mar "¡Oh!" with flashbulb
+    mar " The teacher's name is {amarillo}Mary{/amarillo} Harrow.... So the stained name, {amarillo}wasn't mine.[/amarillo}"
     show alice:
         ease .5 left
     show marissa:
         ease .5 right
     show neil sonriendo hablando with dissolve
-    nei "Jee... ¡Muy bien hecho, [pla_name]... ahora estaría claro cómo fue que llegó la carta a la persona equivocada..."
+    nei "Hee... Very well done, [pla_name]... now it would be clear how it was that the letter got to the wrong person..."
     $renpy.choice_for_skipping()
     $renpy.save("checkpoint")
-    pla "Sí... la carta llegó hasta Marissa..."
+    pla "Yes... the letter got to Marissa..."
 
     label lacartallegoel:
         if cantidad_corazones==0:
@@ -130,49 +129,49 @@ label d1r6_correcto:
             jump d1_gameover
         show screen corazones
         menu:
-            "\"... durante las clases.\"":
+            "\"... during classes.\"":
                 $restCorazones()
-                "Nope... no era eso..." with hpunch
+                "Nope... it wasn't that..." with hpunch
                 jump lacartallegoel
-            "\"... durante el tropiezo.\"":
+            "\"... during the stumbling.\"":
                 # $addCorazones()
                 # pause 1
                 hide screen corazones
                 pass
-            "\"... antes del tropiezo.\"":
+            "\"... before the stumbling.\"":
                 $restCorazones()
-                "Nope... no era eso..." with hpunch
+                "Nope... it wasn't that..." with hpunch
                 jump lacartallegoel
-            "\"... el sábado.\"":
+            "\"... on saturday.\"":
                 $restCorazones()
-                "Nope... no era eso..." with hpunch
+                "Nope... it wasn't that..." with hpunch
                 jump lacartallegoel
 
-    pla "Cuando Marissa y la profesora Harrow tropezaron, también se confundieron un papel en especial, la carta."
+    pla "When Marissa and Professor Harrow stumbled, they also mistook one particular piece of paper, the letter."
     hide alice with dissolve
     show beck enojado at left with dissolve
-    bec "Eso es muy sospechoso... ¡Neil, tú tuviste algo que ver con eso!" with hpunch
+    bec "That's very suspicious... Neil, you had something to do with that!" with hpunch
     show neil normal
-    nei "Je, je, je... No, para nada fue eso..."
-    nei "Simplemente recordé el momento cuando fui a ayudarlas a recoger los papeles..."
-    nei "Se me ocurrió que había una alta probalidad de que algún papel se pudo haber confundido de dueña."
-    nei "Sabiendo ahora a quién iba dirigida la carta, será más fácil encontrar a un nuevo sospechoso, ¿verdad, [pla_name]?"
+    nei "Heh, heh, heh... No, it wasn't that at all..."
+    nei "I just remembered the moment when I went to help them pick up the papers..."
+nei "It occurred to me that there was a high probability that some paper would get to the wrong owner." nei "It occurred to me that there was a high probability that some paper would get to the wrong owner.
+    nei "Knowing now who the letter was addressed to, it will be easier to find a new suspect, won't it, [pla_name]?"
 
     menu:
-        "\"Al contrario.\"":
-            nei "¿Eh?"
-            nei "Bueno, si tú lo dices..."
+        "\"On the contrary.\"":
+            nei "¿Huh?"
+            nei " Well, if you say so..."
             jump d1_gameover
-        "\"Así es.\"":
+        "\"That's right.\"":
             $updateStat("carisma","+",1)
             $renpy.notify("Carisma +1")
-        "\"Posiblemente.\"":
+        "\"Possibly.\"":
             $updateStat("carisma","-",1)
             $renpy.notify("Carisma -1")
-            nei "¿Qué pasa con esa poca confianza?"
-        "\"Eso no ayuda.\"":
-            nei "¿En serio?"
-            nei "Supongo que tu cerebro no da para más..."
+            nei "What's with that little confidence?"
+        "\"That doesn't help.\"":
+            nei "Really?"
+            nei "I guess your brain can't handle any more..."
             jump d1_gameover
 
     show beck:
@@ -181,8 +180,8 @@ label d1r6_correcto:
         ease .5 mleft
     show alice normal at left with dissolve
 
-    ali "Eso explicaría por qué parecía tan confuso el caso... pero entonces..."
-    ali "¿Quién sería nuestro nuevo sospechoso?"
+    ali " That would explain why the case seemed so confusing... but then..."
+    ali "Who would be our new suspect?"
 
     # scene bg salon club detectives
     hide alice
@@ -198,7 +197,7 @@ label d1r6_correcto:
     label quien_es_nuevosospechoso:
         if cantidad_corazones==0:
             jump d1_gameover
-        show screen btnHelpTextBox("Si la destinataria es la profesora, entonces quien escribió la carta es...")
+        show screen btnHelpTextBox("If the addressee is the teacher, then the person who wrote the letter is...").
         $ quick_menu_bajo=True
         ## llamamos pantalla de seleccion
         call screen char_select(chars,chars_labels) with dissolve
@@ -211,7 +210,7 @@ label d1r6_correcto:
         $ quick_menu_bajo=False
         show screen corazones
         $restCorazones()
-        "No es hora de juegos, ya tengo claro quien pudo escribir la carta..." with hpunch
+        "It's not time for games, it's already clear to me who might have written the letter...." with hpunch
         hide screen corazones
         jump quien_es_nuevosospechoso
 
@@ -227,38 +226,38 @@ label d1r6_correcto:
         hide screen corazones
         play music tiempo_muerto fadein 3
         show marissa normal with dissolve
-        pla "Creo que Beck es el autor de la carta..."
+        pla "I believe Beck is the author of the letter..."
         show marissa sorprendida
-        mar "¿¡Be- Beck!?" with hpunch
-        pla "Él está enamorado de la profesora Harrow."
-        mar "¿¡Aaahh!? ¿Beck está enamorado de ella?"
-        mar "N- no lo puedo creer..."
+        mar "Be-Beck!" with hpunch.
+        pla "He's in love with Professor Harrow."
+        mar "Whaaat!? Beck is in love with her?"
+        mar "I-I can't believe it..."
         show marissa normal:
             ease .5 mright
         show beck enojado at mleft with dissolve
-        bec "Sí, yo tampoco puedo creerlo." with hpunch
-        bec "¿Que yo estoy enamorado de una profesora?"
-        bec "¡Eso no es posible!"
-        "¿Eh? Pero qué le pasa a Beck... ahora piensa negarlo..."
+        bec "Yeah, I can't believe it either." with hpunch
+        bec "That I'm in love with a teacher?"
+        bec "That's not possible!"
+"Huh? But what's wrong with Beck... now he's going to deny it..."
         show beck:
             ease .5 left
         show marissa:
             ease .5 right
         show alice normal with dissolve
-        ali "Pero tú hablaste con [pla_name] y él dedujo que..."
+        ali "But you talked to [pla_name] and he deduced that..."
         show beck serio
-        bec "¿Que lo dedujo? Seguramente solo fue una suposición."
-        bec "La profesora es alguien respetable. Y es una gran mujer..."
+        bec " That he deduced it? Surely it was just a guess."
+        bec "The teacher is someone respectable. And she's a great woman..."
         show beck pensando
-        bec "Pero no estoy interesado en ella."
+        bec "But I'm not interested in her."
         show marissa preocupada sudor
-        mar "[pla_name], ¿estás seguro de que a Beck le gusta a la profesora Harrow?"
+        mar "[pla_name], are you sure Beck likes Professor Harrow?"
         # "Yo sí estoy seguro... pero no contaba con que Beck lo negara rotundamente."
         $renpy.choice_for_skipping()
         $renpy.save("checkpoint")
-        "Debe haber{nw}"
+        "There must be{nw}"
         play sound campana
-        extend " {amarillo}algo que demuestre el interés de Beck con la profesora Harrow...{/amarillo}" with flashbulb
+        extend " {amarillo} something that proves Beck's interest in Professor Harrow....{/amarillo}" with flashbulb
         show marissa normal
 
         # $quick_menu_gameplay=True
@@ -278,21 +277,21 @@ label d1r6_correcto:
             if idevidencia_mostrar==idevidencia_correcta:
                 jump evidencia_mostrada2_correcto
             else:
-                mar "No entiendo... ¿eso qué demuestra?"
+                mar "I don't understand... what does that prove?"
                 $restCorazones()
-                pla "Ah, lo siento... me he equivocado." with hpunch
+                pla "Oh, sorry... I made a mistake." with hpunch
                 jump mostrar_evidencia2
 
         label evidencia_mostrada2_gameover:
             hide screen corazones
             stop music fadeout 1
             show marissa preocupada
-            mar "¿Qué estás intentando hacer, [pla_name]?"
-            pla "La verdad, es que ni yo lo sé..."
+            mar "What are you trying to do, [pla_name]?"
+            pla "To tell you the truth, I don't even know..."
             jump d1_gameover
 
         label evidencia_mostrada2_correcto:
-            $showplay_excl("esoes")
+            $showplay_excl("that'sit ")
             $addCorazones()
             pause 1
             hide screen corazones
@@ -300,74 +299,73 @@ label d1r6_correcto:
 
         # $quick_menu_gameplay=False
 
-        pla "No Beck... hay una prueba que demuestra que sí estás interesado en la profesora."
-        bec "¿Ah, sí? Lo dudo mucho..."
+        pla "No Beck... there is a proof that you are interested in the teacher."
+        bec "Oh yeah? I doubt that very much..."
         # bec "A ver, muestráme esa prueba."
         # pla "No es una prueba física... más bien..."
         stop music fadeout 1
         play sound campana
-        pla "Entonces, ¿explícanos {amarillo}por qué pasas mucho tiempo en el salón de maestros{/amarillo}?" with flashbulb
+        pla "So explain to us, {amarillo}why you spend a lot of time in the teacher's lounge. {/amarillo}?" with flashbulb
         show beck sorprendido
-        bec "¿Eh?"
-        pla "Vamos, me refiero a que tú recibes tutoría con la profesora Harrow. Y no solo una vez..."
+        bec "¿Huh?"
+        pla "Come on, I mean you get tutoring with Professor Harrow. And not just once..."
         show beck pensando
-        bec "¿Y eso qué tiene de malo? Solo estoy preocupado por mis notas..."
-        pla "También podría ser una excusa para pasar más tiempo con ella..."
-        pla "Además, ese sería un momento oportuno para dejarle una carta a la profesora entre sus papeles sin que se diera cuenta."
+        bec "What's wrong with that? I'm just worried about my grades..."
+        pla "It could also be an excuse to spend more time with her..."
+         pla "Besides, that would be a perfect opportunity to leave a letter for the teacher among her papers without her noticing."
         show marissa sorprendida
         mar "Beck..."
         show beck sorprendido
-        bec "No... están en un error..."
-        "Parece que Beck sigue sin querer rendirse..."
+        bec "No... you are in a mistake ..."
+        "It looks like Beck still doesn't want to give up..."
         show marissa normal
         show beck serio
-        bec "Marissa, no es lo que piensas..."
+        bec "Marissa, it's not what you think..."
         show beck pensando
-        bec "Yo de ninguna manera escribí esa carta..."
-        mar "Pero Beck..."
-        mar "Ahora que lo pienso... Tú eres zurdo. Como la persona que escribió la carta."
-        bec "¿Y eso qué? No demuestra nada..."
-        mar "Además, vi al acosador el sábado y..."
+        bec "I by no means wrote that letter..."
+        mar "But Beck..."
+        mar "Come to think of it... You're left-handed. Just like the person who wrote the letter."
+        bec "So what? That doesn't prove anything..."
+        mar "Besides, I saw the stalker on Saturday and..."
         show beck serio
-        bec "¡Ni siquiera estuve en la escuela ese día!" with hpunch
-        "¿Beck no estuvo en la escuela el sábado?"
-        "Hay algo que demuestra lo contrario..."
+        bec "I wasn't even at school that day!" with hpunch.
+       "Beck wasn't at school on Saturday?"
+        "There's something to prove otherwise..."
         show alice enojada
-        $showplay_excl("esonoescierto")
+        $showplay_excl("that'snottrue ")
         play music debate fadein 4
-        "¿Eh?"
+        "¿Huh?"
         show marissa sorprendida
-        ali "E- eso... no es cierto..."
-        ali "Los fines de semana siempre hay partidos de fútbol."
+        ali " T-that's... not true..."
+        ali "On weekends there are always soccer games."
         show beck pensando
         show marissa normal
-        bec "Ah... bueno, eso..."
+        bec "Oh... well, that..."
         show beck preocupado
-        bec "Solo fue una casualidad."
-        pla "No hay por qué seguir negándolo, Beck..."
+        bec " It was just a coincidence."
+        pla "There's no reason to keep denying it, Beck..."
         show beck enojado
-        bec "Lo niego porque no es cierto."
-        pla "¿Y qué me dices de {amarillo}tu encuentro con Marissa en la cafetería el viernes?{/amarillo}"
-        bec "¿Qué con eso?"
+        bec "I deny it because it's not true."
+pla "What about {amarillo}your encounter with Marissa in the cafeteria on Friday {/amarillo}?"
+        bec "What about that?"
         show beck pensando
-        bec "Solo fue una casualidad."
+        bec "It was just a coincidence."
         show marissa preocupada sudor
-        mar "Pero ese café no es un lugar al que frecuentes ir."
+        mar "But that cafe is not a place you frequently go."
         $renpy.choice_for_skipping()
         $renpy.save("checkpoint")
-        bec "Ya te lo dije..."
+        bec "I told you..."
         play sound campana
-        bec "{amarillo}Me llamaron al celular algunos amigos,{/amarillo} para ir al café a conversar un rato." with flashbulb
-        bec "{amarillo}Estuvimos hablando sobre el partido del sábado.{/amarillo}"
-        "No, eso no es cierto..."
-        pla "¿Estás seguro de eso?"
+        bec "{amarillo} I got a call on my cell phone from some friends,{/amarillo} to go to the cafe to chat for a while.." with flashbulb
+        bec "{amarillo} We were talking about Saturday's match.{/amarillo}"
+       "No, that's not true..."
+        pla "Are you sure about that?"
         show marissa preocupada
         show alice normal
         show beck serio
-        bec "Sí."
-        pla "Qué raro, porque..."
-        "¡Hay algo que demuestra su contradicción!"
-
+        bec "Yes."
+        pla " How weird, because..."
+        "There's something that proves his contradiction!"
         # $quick_menu_gameplay=True
 
         # ##ahora se debe seleccionar un item del bloc de notas, usaremos como id, el titulo del elemento
@@ -386,9 +384,9 @@ label d1r6_correcto:
             if idevidencia_mostrar==idevidencia_correcta:
                 jump evidencia_mostrada3_correcto
             else:
-                mar "No entiendo... ¿qué quieres dar a entender con eso?"
+                mar "I don't understand... what do you mean by that?"
                 $restCorazones()
-                pla "Ah, lo siento... me he equivocado." with hpunch
+                pla "Ah, sorry... I made a mistake." with hpunch
                 jump mostrar_evidencia3
 
         label evidencia_mostrada3_correcto:
@@ -402,50 +400,50 @@ label d1r6_correcto:
         # $quick_menu_gameplay=False
         play music tiempo_muerto fadein 1
         
-        pla "Eso es muy extraño... El viernes, que fue cuando Marissa llegó al café, {amarillo}la red de telefonía estaba caída.{/amarillo}"
+        pla "That's very strange... On Friday, which was when Marissa arrived at the cafe, {amarillo}the phone network was down. {/amarillo}"
         play sound campana
-        pla "Ese viernes, no se podía llamar, ni enviar mensajes desde el celular."
+        pla "That Friday, you couldn't call or send messages from your cell phone."
         show marissa sorprendida
-        mar "Ah, cierto..."
+        mar "Ah, right..."
         show beck enojado
-        bec "No... no... Eso no es suficiente para acusarme..." with hpunch
-        "¡Aaaah qué terco es!" with vpunch
+        bec " No... no... That's not enough to accuse me..." with hpunch
+        "Aaaah how stubborn he is!" with vpunch
         show marissa normal
-        "¿Ahora qué mentira va a decir?"
+        "Now what lie is he going to tell?"
         stop music fadeout 1
         play sound campana
-        bec "{amarillo}Si yo fuera el acosador, Marissa me hubiera identificado desde un principio.{/amarillo}" with flashbulb
-        pla "¿Qué?"
+        bec "{amarillo}  If I were the stalker, Marissa would have identified me from the beginning..{/amarillo}" with flashbulb
+        pla "What?"
         show alice sorprendida
         show marissa sorprendida
 
-        mar "E- es... es cierto..."
-        mar "No pude identificar al acosador..."
-        mar "A Beck lo hubiera reconocido rápidamente..."
+        mar "I-it's... it's true..."
+        mar "I couldn't identify the stalker..."
+        mar "I would have quickly recognized Beck..."
         show beck serio
-        bec "¿Lo ves ahora?"
-        bec "Todo ha sido una serie de casualidades."
+        bec "Do you see it now?"
+        bec "It's all been a series of coincidences."
         show beck guino
-        bec "No soy el acosador. Y tampoco escribí esa carta de amor."
+        bec "I'm not the stalker. And I didn't write that love letter either."
 
         menu:
-            "Tiene razón":
+            "He is right":
                 jump caso1_gameover
-            "Hay algo más...":
+            "There is something more...":
                 show alice enojada
-                ali "¡[pla_name]! No podemos dejar pasar esta oportunidad." with hpunch
-                ali "El caso está a punto de ser resuelto."
+                ali "[pla_name]! We can't let this opportunity pass us by." with hpunch
+                ali "The case is about to be solved."
                 show alice pensando
-                pla "Pero... ¿cómo explicaríamos el hecho de que Marissa no pudo identificar al acosador?"
+                pla "But... how would we explain the fact that Marissa couldn't identify the stalker?"
                 $renpy.choice_for_skipping()
                 $renpy.save("checkpoint")
                 show alice enojada
-                ali "¡Debe haber algo que usó el acosador para evitar ser identificado!" with hpunch
+                ali "There must be something the stalker used to avoid being identified!" with hpunch
                 show alice pensando
-                ali "Pero no logro averiguar qué podría ser..."
+                ali "But I can't figure out what it could be..."
                 "Uhm..."
-                "Algo que el acosador usó..."
-                "Podría ser..."
+                "Something the stalker used..."
+                "It could be..."
                 $hora=16
                 $ruleta2_mas_facil=False
 
@@ -458,7 +456,7 @@ label d1r6_correcto:
         $ruleta_id=2
 
         #palabra a descubir
-        $palabra_ruleta="CAPUCHA"
+        $palabra_ruleta=" HOOD "
 
         #posicion de la letra a averiguar en palabra
         $posicionenpalabra=0
@@ -471,13 +469,13 @@ label d1r6_correcto:
                 lstLetrasActuales.append("_")
 
         if not ruleta2_mas_facil:
-            $letras1=["G","P","S","Y","H","E","R","A","J","U","E","R","O"]
-            $letras2=["I","T","Z","K","R","Ñ","U","M","W","C","P","H","B"]
+            $letras1=["G","P","S","O","H","E","R","A","J","U","E","R","O"]
+            $letras2=["I","T","Z","K","D","Ñ","U","M","W","C","P","H","B"]
         else:
-            $letras1=["C","S","P","X","U","H"]
-            $letras2=["A","S","P","C","A","H"]
+            $letras1=["C","S","O","X","U","H"]
+            $letras2=["A","O","D","C","A","H"]
 
-        $showMinigameTitle("Ruleta de la incógnita")
+        $showMinigameTitle("Roulette of the incognita")
         # $quick_menu_gameplay=True
         $quick_menu_bajo=True
         window hide
@@ -486,62 +484,62 @@ label d1r6_correcto:
         scene bg salon club detectives
         $renpy.show_screen("temporizador",185)#185
         
-        call screen ruleta_incognita(letras1,letras2,"Para no ser identificado, el acosador usó la...",palabra_ruleta) with dissolve
+        call screen ruleta_incognita(letras1,letras2"In order to not be identified, the stalker used the...",palabra_ruleta) with dissolve
 
         label ruleta2_gameover:
             $quick_menu_bajo=False
             stop music fadeout 3
             $change_cursor()
             if not ruleta2_mas_facil:
-                pla "No... no sé..."
+                pla "No... I don't know..."
                 show alice enojada
                 ali "¡[pla_name]!" with hpunch
-                ali "¡No puedes rendirte! Estamos cerca de resolver el caso."
+                ali "You can't give up! We're close to solving the case."
                 show alice sorprendida
-                pla "¿Es que no lo has escuchado? ¿Por qué Marissa no pudo identificar al acosador?"
-                pla "No encuentro explicación a eso..."
+                pla "Haven't you heard? Why couldn't Marissa identify the stalker?"
+                pla "I can't find an explanation for that..."
                 show alice enojada
-                ali "[pla_name], no estás solo..."
+                ali "[pla_name], you are not alone..."
                 show alice pensando
-                ali "Yo no quiero ser ninguna carga."
+                ali "I don't want to be any burden."
                 pla "Alice..."
-                ali "Solo hay que pensar con calmas las cosas."
+                ali "You just have to think things through."
                 show alice enojada
-                ali "Una buena deducción {amarillo}parte de las preguntas correctas.{/amarillo}"
-                pla "¿Y qué debo preguntarme entonces?"
+                ali "A good deduction {amarillo}starts from the right questions.{/amarillo}"
+                pla "So what should I ask myself then?"
                 show alice normal
-                ali "Bueno... ¿el problema es que Marissa no identificó a Beck, no?"
+                ali "Well... the problem is that Marissa didn't identify Beck, right?"
                 play sound campana
-                ali "Entonces, hay que preguntarse, {amarillo}¿qué usarías para evitar que algún conocido te identifique?{/amarillo}" with flashbulb
-                pla "Ehm... ¿Un disfraz?"
+                ali "So, you have to ask yourself, {amarillo}what would you use to prevent an acquaintance from identifying you {/amarillo}?" with flashbulb
+                pla "Uhm... A disguise?"
                 show alice:
                     ease .5 mright
                 show beck enojado at mleft with dissolve
-                bec "No irás a pensar que he usado un disfraz, ¿verdad?"
-                bec "Eso es ridículo."
+                bec "You're not going to think I wore a disguise, are you?"
+                bec "That's ridiculous."
                 show beck sorprendido
                 play sound campana
-                ali "Tal vez {amarillo}algo que haga lo mismo que un disfraz.{/amarillo}" with flashbulb
-                "Uhm... un disfraz... algo parecido... disfraz... ropa... algo para cubrir..."
+                ali "Maybe {amarillo}something that does the same thing as a disguise.{/amarillo}" with flashbulb.
+                "Uhm... a disguise... something like... disguise... clothing... something to cover up..."
                 show alice sorprendida
                 show sherinford pequeño with dissolve:
                     ypos .300
                     xoffset 10
                     xpos 0.650
-                she "¡Pío, pío, pío!" with hpunch
-                ali "¿Sherinford?"
+                she "Tweet, tweet, tweet!" with hpunch
+                ali "Sherinford?"
                 hide sherinford with dissolve
-                she "¡Pío, pío, pío!" with hpunch
-                bec "¿De donde ha salido ese pollo?"
-                "Sherinford apareció de repente, sacudió sus alas enérgicamente y luego comenzó a escalar por mi cuerpo, hasta posarse en mi cabeza."
-                ali "Sherinford... ¿También quieres ayudar?"
-                she "¡Pío!" with hpunch
+                she "Tweet, tweet, tweet!" with hpunch
+                bec "Where did that chicken come from?"
+                "Sherinford suddenly appeared, flapped his wings vigorously and then began to climb up my body, until he landed on my head."
+         ali "Sherinford... Do you want to help too?"
+                she ""Tweet!"" with hpunch
                 show alice alegre
-                ali "¡Muy bien! ¡Sherinford también estará apoyándote, [pla_name]!"
-                ali "Seguramente él te pasará un poco de su inteligencia."
-                "¿Que tendré más inteligencia por tener a este pollo encima de mi cabeza?"
-                "No creo que eso funcione..."
-                "Bien, una vez más..."
+                ali "Very good! Sherinford will be backing you up too, [pla_name]!"
+                ali "Surely he'll pass on some of his intelligence to you."
+                "That I'll have more intelligence by having this chicken on top of my head?"
+                "I don't think that's going to work..."
+                "Well, I'll try one more time..."
                 $ruleta2_mas_facil=True
                 $quick_menu_bajo=True
                 jump ruleta2_inicio
@@ -549,7 +547,7 @@ label d1r6_correcto:
                 jump ruleta1_gameover
 
     label ruleta2_fin:
-        $showplay_excl("esoes")
+        $showplay_excl("that'sit")
         stop music fadeout 3
         $estadoj="Debate"
         $quick_menu_gameplay=False
@@ -557,29 +555,28 @@ label d1r6_correcto:
         window show
         show alice sorprendida with dissolve
         play sound campana
-        pla "¡El acosador usó una capucha!" with flashbulb
-
-    pla "Beck usó {amarillo}la capucha del suéter{/amarillo} que trae puesto para ocultar su identidad."
+        pla "The stalker wore a hood!" with flashbulb
+    pla "Beck wore {amarillo}the hood of the sweater{/amarillo} he is wearing to hide his identity."
     if ruleta2_mas_facil:
-        pla "Gracias Sherinford, supongo que algo de tu inteligencia se me debió haber pegado."
+        pla "Thanks Sherinford, I guess some of your intelligence must have rubbed off on me."
         show sherinford grande behind alice at left with dissolve:
             xoffset -300
             on show:
                 linear 1 xoffset 20
-        she "Pío."
+        she "Tweet"
         hide sherinford with dissolve
     show alice normal:
         ease 1 right
     show marissa sorprendida at center with dissolve
     show beck pensando at left
-    mar "Eh..."
-    "Marissa se acercó atónita hacia Beck, y con la confianza que una amistad da, le puso la capucha encima de la cabeza..."
-    mar "¡Es él! ¡Es la sombra que miré! ¡Su silueta es idéntica!" with hpunch
-    "Beck se retiró la capucha, pero no dijo una sola palabra."
-    mar "Por qué... por qué pasó todo esto..."
-    pla "Creo poder explicarlo todo."
+    mar "Uh..."
+    "Marissa walked over to Beck in a daze, and with the confidence that a friendship brings, she pulled his hood over his head..."
+    mar "That's him! That's the shadow I looked at! His silhouette is identical!" with hpunch
+    "Beck pulled back his hood, but didn't say a word."
+    mar "Why... why did all this happen..."
+    pla "I think I can explain it all."
     show alice enojada
-    ali "¡Así se habla, [pla_name]!"
+    ali "That's the spirit, [pla_name]!".
 
     $fase_titulo.append("Debate + Acertijo + Ruleta de la incógnita")
     $fase_tipo_vida.append("cantidad")
@@ -592,94 +589,93 @@ label d1r6_correcto:
 
     play music tiempo_muerto fadein 3
 
-    pla "El viernes, Beck estaba en el salón de maestros con la profesora Harrow."
-    pla "Ya que él está enamorado de ella, le escribió una carta, algo cursi..."
-    pla "Pero él estaba consciente que no era alguien a quien podría impresionarla."
-    pla "Un alumno, declarándose a una profesora... Obviamente eso acarreaba mucha inseguridad y presión..."
-    pla "Por eso es que Beck seguramente dejó la carta entre los papeles de la profesora cuando estaban en el salón de maestros."
-    pla "Ese mismo día, la profesora Harrow se tropezó con Marissa."
-    pla "En medio de la confusión, la carta que era de la profesora, llegó a parar a Marissa sin que ella se diera cuenta..."
-    # pla "Sino hasta a final de las clases."
-    pla "Beck presenció parte de la escena, pero no estaba consciente todavía de lo que realmente pasó."
-    pla "Entonces cuando Beck y Marissa se encontraron en el café, es cuando beck lo entendió, la carta llegó a la persona equivocada."
+    pla " On Friday, Beck was in the teacher's lounge with Professor Harrow."
+    pla "Since he's in love with her, he wrote her a letter, kind of cheesy...."
+    pla "But he was aware that he wasn't someone who could impress her."
+    pla "A student, proposing to a teacher.... Obviously that carried a lot of insecurity and pressure...."
+    pla "That's why Beck probably left the letter among the teacher's papers when they were in the teacher's lounge."
+    pla "Earlier that day, Professor Harrow bumped into Marissa."
+    pla "In the midst of the confusion, the letter that was the teacher's, ended up with Marissa without her realizing it..."
+    # pla "But not until the end of class."
+    pla "Beck witnessed part of the scene, but was not yet aware of what really happened."
+    pla "Then when Beck and Marissa ran into each other at the coffee shop, that's when beck figured it out, the letter went to the wrong person."
     $quick_menu_gameplay=True
-    pla "El sábado, que es cuando Beck y Marissa estaban en la escuela..."
-    
+    pla "On Saturday, which is when Beck and Marissa were at school..."
     label beckfinal:
-        pla "Beck quiso forzar el casillero de Marissa..."
-        mar "¿Por qué Beck haría algo así?"
-        pla "Bueno..."
+        pla "Beck wanted to break into Marissa's locker..."
+        mar "Why would Beck do something like that?"
+        pla "Well..."
         menu:
-            "Quería dejarle una carta":
-                mar "¿Eh? ¿Por qué Beck quería dejarme una carta?"
+            "He wanted to leave you a letter":
+                mar "Huh? Why did Beck want to leave me a letter?"
                 $updateStat("intel","-",1)
                 $renpy.notify("Inteligencia -1")
                 play sound golpe
-                pla "Ehm... perdón, me he equivocado..." with hpunch
+                pla "Uhm... sorry, I made a mistake..." with hpunch
                 jump beckfinal
-            "Quería recuperar la carta":
+            "He wanted to recover the letter":
                 pass
-            "Quería el celular de Marissa":
-                mar "¿Mi celular? ¿Para qué Beck querría mi celular?"
-                pla "Está claro que..."
+            "He wanted Marissa's cell phone.":
+                mar "My cell phone? Why would Beck want my cell phone?"
+                pla "It's clear that..."
                 $updateStat("intel","-",1)
                 $renpy.notify("Inteligencia -1")
                 play sound golpe
-                extend " me he equivocado." with hpunch
+                extend " I made a mistake." with hpunch
                 jump beckfinal
-            "No sé":
+            "I don't know":
                 $updateStat("intel","-",1)
                 $renpy.notify("Inteligencia -1")
                 play sound golpe
                 ali "¡[pla_name]!" with hpunch
-                pla "Perdón... ahora lo tengo claro..."
+                pla "Sorry... now it's clear to me..."
                 jump beckfinal
     $quick_menu_gameplay=False
-    pla "Creo que Beck pensó que habías guardado la carta en tu casillero."
-    pla "Beck quería recuperar la carta, sin que te dieras cuenta, seguramente él se sentía demasiado avergonzado como para confesar la verdad."
-    pla "Eso también explicaría que te sintieras acosada."
-    pla "Y cuando lo viste, no lo pudiste identificar porque él llevaba su suéter con la capucha puesta."
-    pla "Al final, llegaste a nuestro club pensando que esa carta era para ti, pero simplemente era el nombre de la profesora Harrow manchado con tinta."
+    pla "I think Beck thought you had put the letter in your locker."
+    pla "Beck wanted the letter back, without you noticing, he was probably too embarrassed to confess the truth."
+    pla "That would also explain why you felt stalked."
+    pla "And when you saw him, you couldn't identify him because he was wearing his sweater with the hoodie on."
+    pla "In the end, you came to our club thinking that letter was for you, but it was simply Professor Harrow's name stained with ink."
     show beck preocupado
     stop music fadeout 2
     play sound campana
-    bec "Tienes razón... es tal como lo has dicho... ya no puedo seguir negándolo." with flashbulb
-    bec "Perdón Marissa, por haberte hecho pasar un mal momento..."
+    bec "You're right... it's just as you said... I can't deny it anymore." with flashbulb
+    bec "Sorry Marissa, for giving you a hard time..."
     mar "Beck..."
-    mar "Si tan solo me lo hubieras dicho..."
+mar "If only you had told me..."
     show beck pensando
-    bec "Lo siento, en serio... estaba tan nervioso y avergonzado... No pensé con claridad."
-    "Marissa respiró hondo, dejando ir un peso que llevaba encima..."
-    "Entonces, sacó la carta de su bolso y se lo entregó a Beck."
+    bec "I'm really sorry, ...I was so nervous and embarrassed.... I wasn't thinking clearly."
+    "Marissa took a deep breath, letting go of a weight she was carrying..."
+    "Then, she pulled the letter out of her purse and handed it to Beck."
     show marissa alegre
-    mar "Toma, tendrás que trabajar en tu falta de confianza si quieres intentarlo de nuevo..."
+    mar "Here, you'll have to work on your lack of confidence if you want to try again..."
     show beck sonrojado
-    bec "... sí..."
-    $estadoj="Libre"
+    bec "...yes..."
+    $estadoj="Free"
     play music ambiente fadein 4
     #marisa se dirige a neil
-    mar "Este... ¿Neil?"
+    mar "Uhm... Neil?"
     hide beck with dissolve
     show neil sorprendido at left with dissolve
-    nei "¿¡S- sí!?" with hpunch
-    mar "¿En serio te gusto?"
+    nei "Y-yes!?" with hpunch
+    mar "Do you really like me?"
     show neil sonriendo hablando
-    nei "¡Sí! ¡Me enamoré de ti a primera vista!" with hpunch
-    "Wow... qué directo."
+    nei "Yes! I fell in love with you at first sight!" with hpunch.
+    "Wow...how direct."
     show marissa sonrojada
-    mar "Entiendo."
-    mar "Pero, lo siento, no estoy interesada en tener un novio."
+    mar "I understand."
+    mar "But, I'm sorry, I'm not interested in having a boyfriend."
     show neil sorprendido
-    nei "¿¡Eeeeh!?" with hpunch
+    nei "What!?" with hpunch
     # nei "Ya veo..."
     show marissa alegre hablando at brinquitos
     play sound campana
-    mar "Pero podríamos ser amigos, y también podemos conocernos mejor..." with flashbulb
-    nei "¿E- en... serio?"
-    "Eso significa esperanza."
+    mar "But we could be friends, and we can also get to know each other better..." with flashbulb
+    nei "Re- really?"
+    "That means hope."
     show neil sonriendo hablando
-    nei "Je, je, je..."
-    "Y ahí va, Neil empezó a sonreír como idiota de nuevo."
+    nei "He, he, he..."
+    "And there he goes, Neil started smiling like an idiot again."
     hide neil with dissolve
     show marissa:
         ease .5 mleft
@@ -687,40 +683,40 @@ label d1r6_correcto:
         ease .5 mright
     mar "[pla_name], Alice..."
     show marissa at brinquitos
-    mar "¡Gracias por ayudarme!"
+    mar "Thanks for helping me!"
     show marissa sonrojada
-    mar "Aunque al final solo fue un error mío..."
+    mar "Though in the end it was just my mistake..."
     show alice sorprendida
-    ali "¡No- no te preocupes!" with hpunch
-    ali "Es lo que el club hace, ¡este club está para ayudar a las personas!"
+    ali "Do- don't worry!" with hpunch
+    ali "It's what the club does, this club is about helping people!"
     show marissa alegre
-    mar "Je, je, je. Es un gran club."
+    mar "Heh, heh, heh. It's a great club."
     show marissa alegre hablando
-    mar "Ya verán, les contaré a mis amigos que ustedes son geniales."
-    mar "Si alguien tiene un problema, ¡les diré que vengan a este club!"
-    ali "¿En serio?"
+    mar "You'll see, I'll tell my friends that you guys are great."
+    mar "If anyone has a problem, I'll tell them to come to this club!"
+    ali "Really?"
     show alice alegre at brinquitos
-    ali "¡Eso sería genial!"
+    ali "That'd be great!"
     hide marissa with dissolve
     show alice normal
     show beck preocupado at mleft with dissolve
-    bec "Oye, [pla_name], quiero disculparme por haberme comportado como un tonto."
+    bec "Hey, [pla_name], I want to apologize for acting like a jerk."
     show beck pensando
-    bec "Me siento mal por pedirlo, pero..."
+    bec "I feel bad for asking, but..."
     show beck preocupado
-    bec "¿Podrían mantener esto en secreto?"
-    pla "Claro, no le diremos a nadie de esto..."
-    ali "Yo- yo tampoco diré nada."
+    bec "Could you keep this a secret?"
+    pla "Sure, we won't tell anyone about this..."
+    ali "I-I won't say anything either."
     show beck sonrojado
-    bec "En serio, gracias..."
+    bec "Seriously, thank you..."
     hide alice with dissolve
     show neil pensativo at mright with dissolve
     show beck pensando
-    bec "A ti también te debo una disculpa..."
-    bec "Perdón por querer echarte la culpa de todo."
-    nei "Descuida."
-    bec "Espero que no le digas a nadie lo que ha pasado..."
-    nei "Pues yo no soy miembro de este club, así que no tengo ninguna obligación de guardar tu secreto..."
+    bec "I owe you an apology too..."
+    bec "Sorry for wanting to blame you for everything."
+    nei "It's okay."
+    bec "I hope you won't tell anyone what happened..."
+    nei "Well, I'm not a member of this club, so I don't have any obligation to keep your secret..."
     show beck:
         ease .5 left
     show neil:
@@ -728,100 +724,100 @@ label d1r6_correcto:
     show marissa normal with dissolve
     mar "Neil..."
     show neil sorprendido
-    nei "¡Aaahh! ¡Era una broma!" with hpunch
-    nei "No le diré a nadie, confía en mí."
+    nei "Aaahh! It was a joke!" with hpunch
+    nei "I won't tell anyone, trust me."
     show marissa alegre
-    mar "Es bueno saberlo."
+    mar "Good to know."
     hide neil with dissolve
     hide beck with dissolve
     show marissa alegre hablando
-    mar "Bueno, es hora de irme."
-    mar "Y no crean que es una despedida."
-    mar "¿Todavía podemos ser amigos?"
+    mar "Well, it's time to go."
+    mar "And don't think it's goodbye."
+    mar "Can we still be friends?"
     show marissa:
         ease .5 mleft
     show alice pensando at mright with dissolve
-    ali "¿Eh? Un amigo..."
+    ali "Huh? A friend..."
     show alice sonrojada
-    "Alice sonrió levemente, mientras su cara se ruborizaba."
-    pla "Claro, seremos amigos después de todo."
+    "Alice smiled lightly, as her face blushed."
+    pla "Sure, we'll be friends after all."
     show marissa alegre at brinquitos
-    mar "¡Genial, nos vemos, Alice, [pla_name]!"
+    mar "Great, see you, Alice, [pla_name]!"
     hide marissa with dissolve
     show beck pensando at mleft with dissolve
     show alice normal
-    bec "Yo también me voy."
-    show beck guino
-    bec "Ah, yo también les hablaré a mis amigos del club. Siempre y cuando ustedes mantengan su palabra."
-    pla "Claro, nuestros labios estarán sellados."
-    bec "Eso espero, adiós."
+    bec "I'm leaving too."
+    show beck guino 
+    bec "Ah, I'll talk to my friends at the club, too. As long as you guys keep your word."
+    pla "Sure, our lips will be sealed."
+    bec "I hope so, goodbye."
     hide beck with dissolve
     show neil pensativo at mleft with dissolve
-    nei "Ah... bien hecho."
+    nei "Ah... well done."
     show neil sonriendo hablando
-    nei "Han demostrado que de verdad pertenecen a un club de detectives."
-    nei "Bien, yo también me voy."
+    nei "You have shown that you really belong to a detective club."
+    nei "Well, I'm off too."
     hide neil with dissolve
     show alice normal:
         ease .5 center
-    "Y sin decir nada más, Neil se retiró."
-    "Nos quedamos Alice y yo en silencio."
-    "Yo por mi parte me tumbé a un banquillo, cansado de todo el trabajo hecho."
-    pla "Ah... me duele la cabeza."
-    ali "Has pensado mucho... es normal..."
-    pla "Pues espero no pensar más en lo que resta de la semana."
+    "And without another word, Neil left."
+    "Alice and I were left in silence."
+    "I for my part lay down on a bench, tired from all the work done."
+    pla "Ah... my head hurts."
+    ali "You've been thinking a lot... it's normal..."
+    pla "Well, I hope I won't think any more for the rest of the week."
     $quick_menu_btn_notepad=False
-    "Después dejé mi libreta en la mesa."
-    pla "Bien, es todo por hoy, me iré a casa."
+   "Then I left my notebook on the table."
+    pla "Well, that's it for today, I'm going home."
     show alice alegre
-    ali "Sí, buen trabajo, [pla_name]."
+    ali "Yes, good job, [pla_name]."
     hide alice with dissolve
-    "Fui en busca de mi mochila, y cuando ya me estaba dirigiendo a la puerta..."
+    "I went in search of my backpack, and as I was already heading to the door..."
     stop music fadeout 3
     show katherine normal with dissolve
     "..."
-    extend " ¿eh?"
-    "No... lo que faltaba... otro caso..."
-    unk "¿Tú eres miembro de este club?"
-    pla "Eh, sí... soy [pla_name]."
-    unk "Ya veo."
+    extend " ¿huh?"
+    "No... I can't believe it... another case..."
+    unk "Are you a member of this club?"
+    pla "Uh, yes... I'm [pla_name]."
+    unk "I see."
     show katherine:
         ease .5 mleft
     show alice sorprendida at mright with dissolve
-    ali "¿Eh?" with hpunch
+    ali "¿Huh?" with hpunch
     show alice pensando at temblor
     extend " ... uh..."
-    pla "¿Alice, qué te pasa?"
-    "De repente, ella se puso a temblar, claramente nerviosa."
-    pla "Disculpa, ¿quién eres?"
-    unk "Vaya, qué decepcionante, ni siquiera sabes quién soy..."
-    unk "Como se esperaba de este club tan inútil."
-    pla "¿Eh?" with hpunch
-    "Pero... ¿qué ha dicho?"
+    pla "Alice, what's wrong?"
+    "Suddenly, she started shaking, clearly nervous."
+    pla "Excuse me, who are you?"
+    unk "Wow, how disappointing, you don't even know who I am..."
+    unk "As expected from this useless club."
+    pla "Huh?" with hpunch.
+    "What did she say?"
     hide alice
     show alice pensando at mright
     ali "[pla_name],{nw}"
     play sound campana
-    extend " ella es la presidenta del co- comité estudiantil..." with flashbulb
+    extend "she is the president of the student co-committee...." with flashbulb
     play music investigacion fadein 4
-    pla "¿¡La- la pre- presidenta del co- comité estudiantil!?" with hpunch
-    unk "¿Acaso es costumbre tartamudear en este club?"
-    kat "Soy, {amarillo}Katherine Hyde.{/amarillo}"
+    pla "The-the pre-president of the student co-committee!?" with hpunch.
+    unk "Is it customary to stutter in this club?"
+    kat "I am, {amarillo}Katherine Hyde.{/amarillo}"
     show katherine enojada
-    kat "Grábate ese nombre en eso que llamas cerebro."
-    "Pero qué rayos le pasa..."
-    pla "¿Y a qué vino la presidenta del comité estudiantil a este club?"
-    "Dije eso mostrandome serio, no podía ser amable con ella."
-    kat "¿Acaso no es obvio?{nw}"
+    kat "Record that name in that thing you call brain."
+    "But what the hell is wrong with her..."
+    pla "And why did the president of the student committee come to this club?"
+    "I said that looking serious, I couldn't be nice to her."
+    kat "Isn't it obvious {nw}"
     play sound campana
     show alice sorprendida
-    extend " {amarillo}Voy a cerrar este club.{/amarillo}" with flashbulb
-    pla "¿¡Eh!?" with hpunch
-    pla "Pero si todavía falta mucho tiempo..."
+    extend " {amarillo} I'm closing this club.{/amarillo}" with flashbulb
+    pla "¿¡Huh!?" with hpunch
+    pla "But there's still a long way to go before the time limit..."
     show katherine normal
-    kat "¿Para qué dejar para mañana lo que puedes hacer hoy?"
-    kat "El anterior presidente era muy suave con los clubes, pero eso se ha acabado."
-    "¿¡Acaso este es el nacimiento de una dictadura!?" with hpunch
+    kat "Why put off until tomorrow what you can do today?"
+    kat "The previous president was very soft on the clubs, but that's over."
+    "Is this the beginning of a dictatorship?!" with hpunch
     # kat "Desde mi primer año en este cargo, pondré mano dura a aquellos que no se atienen al reglamento."
     show alice pensando:
         ease .5 right
@@ -829,104 +825,103 @@ label d1r6_correcto:
         ease .5 center
     show henry sonriendo at left with dissolve
     play sound campana
-    "¿Y ahora qué?" with flashbulb
-    "Otra persona se apareció en el club."
-    pla "Eh, usted es el de la otra vez..."
-    unk "Hey, ¿qué tal chico?"
+    "And now what?" with flashbulb.
+    "Someone else showed up at the club."
+    pla Hey, you're the one from last time..."
+    unk "Hey, how's it going boy?"
     play sound campana
-    kat "{amarillo}Director Okamoto{/amarillo}..." with flashbulb
-    pla "¿¡Di- Director!?"
-    kat "¿Qué? ¿Acaso no sabías que él es el director?"
-    pla "Ehm... no..."
-    "Me da verguenza, admitirlo. Vaya, me he perdido de tanto en el primer día de clases..."
-    "Primero, conozco a la nueva presidenta del comité estudiantil."
-    "Y ahora me voy enterando que este hombre es el nuevo director de la escuela..."
+    kat "{amarillo}Principal  Okamoto{/amarillo}..." with flashbulb
+    pla "Pri-principal!?"
+    kat "What, you didn't know he's the principal?"
+    pla "Uhm... no..."
+    "I'm embarrassed to admit it. Wow, I missed so much on the first day of school..."
+    "First, I meet the new student committee president."
+    "And now I'm learning that this man is the new principal of the school..."
     show henry tranquilo
-    hen "Henry Okamoto, mucho gusto, chico, ya me suponía que no sabías quién era yo."
+    hen "Henry Okamoto, nice to meet you, boy, I was already guessing you didn't know who I was."
     "Henry... ¿Okamoto?"
     show henry alegre
-    hen "Ah, y si te lo estás preguntando, mi padre es japonés, pero yo crecí y nací en este país."
-    "¿Eh? Parece que me ha leído la mente..."
+    hen "Oh, and if you're wondering, my father is Japanese, but I grew up and was born in this country."
+    "Huh? It seems as though he's read my mind..."
     show henry tranquilo
-    hen "Y señorita Hyde... me preguntaba a dónde iba con tanta prisa..."
-    hen "Y parece que he acertado."
-    kat "Supongo que debe de estar enterado que este no es ningún club reconocido por la escuela."
-    hen "Sí, no tiene los miembros suficientes."
-    kat "Entonces no hay nada más que hablar, hay que desocupar este salón para otros clubes que sí lo necesitan."
-    pla "¡E- espera!" with hpunch
+    hen "And Miss Hyde... I was wondering where you were going in such a hurry..."
+    hen "And it looks like I got it right."
+    kat "I guess you must be aware that this is not a school-recognized club."
+    hen "Yes, it doesn't have enough members."
+    kat "Then there's nothing more to talk about, this room needs to be de-occupied for other clubs that do need it."
+    pla "W-wait!" with hpunch
     show katherine enojada
-    kat "¿Alguna objeción?"
-    pla "Eh... bueno..."
-    "Mientras balbuceaba, noté que Alice seguía sin hablar..."
+    kat "Any objections?"
+    pla "Uh... well..."
+    "As I was babbling, I noticed that Alice was still not speaking..."
     show henry sonriendo
-    hen "Ya, ya, tampoco hay que ser rudos."
+    hen "There, there, no need to be rude either."
     show henry tranquilo
-    hen "Ellos todavía tienen dos meses para conseguir los miembros suficientes."
-    hen "No veo razón para apresurar las cosas."
-    kat "Pero director... ellos no hacen más que perder el tiempo..."
-    hen "¿Cómo puedes estar segura de eso?"
-    kat "Bueno... yo..."
+    hen "They still have two months to get enough members."
+    hen "I see no reason to rush things."
+    kat "But director... they're just wasting time..."
+    hen "How can you be so sure of that?"
+    kat "Well... I..."
     show henry sonriendo
     play sound campana
-    hen "¿Los has estado vigilando?" with flashbulb
-    pla "¿Qué?"
+    hen "You've been watching them?" with flashbulb
+    pla "What?"
     show katherine enojada
-    kat "Yo- yo- solo estaba haciendo mi trabajo."
-    hen "¿Acaso ellos han faltado al reglamento en algún momento?"
+    kat " I- I- I was just doing my job."
+    hen "Did they ever break the rules?"
     kat "..."
     kat "No."
     show henry tranquilo
-    hen "Ahí lo tienes, ¿ahora quién ha estado perdiendo el tiempo?"
-    "Uh, eso debió doler."
+    hen "There you go, now who's been wasting their time?"
+    "Uh, that must have hurt."
     kat "..."
-    kat "Como sea."
-    kat "En cuanto vea que algunos de ustedes hace algo indebido..."
-    kat "¡Cerraré este club inmediatamente!" with hpunch
+    kat "Whatever."
+    kat "As soon as I see any of you do anything inappropriate..."
+    kat "I'm closing this club immediately!" with hpunch
     hide katherine with dissolve
     show henry:
         ease .5 mleft
     show alice:
         ease .5 mright
-    pla "Pero qué rayos le pasa a esa chica..."
+    pla "What the heck is wrong with that girl..."
     show henry serio
     play sound campana
-    hen "Creo que tiene algo contra el club." with flashbulb
-    pla "¿Eh?"
+    hen "I think she has something against the club." with flashbulb
+    pla "¿Huh?"
     show henry alegre
-    hen "Oh, no me hagas caso, solo estaba hablando conmigo mismo je, je, je."
+    hen "Oh, don't mind me, I was just talking to myself heh, heh, heh."
     show henry tranquilo
-    hen "Bien, tengo que irme."
-    hen "Espero que logren mantener este club a flote."
+    hen "Well, I have to go."
+    hen "I hope you manage to keep this club afloat."
     hide henry with dissolve
     show alice:
         ease .5 center
-    "Y con una leve reverencia, el director se retiró del salón..."
-    "Han pasado tantas cosas en tan poco tiempo..."
-    "Ah... creo que este dolor de cabeza está empeorando..."
-    pla "¿Alice?"
-    ali "Pe- perdón... me quedé paralizada..."
+    "And with a slight bow, the director withdrew from the salon...."
+    "So much has happened in such a short time..."
+    "Ah... I think this headache is getting worse..."
+    pla "Alice?"
+    ali "So- sorry... I froze..."
     show alice at decaer
-    ali "En cuanto pienso que el club podría cerrar..."
-    ali "Me pongo muy nerviosa..."
+    ali "As soon as I think that the club might close..."
+    ali "I get very nervous..."
     show alice at reponerse
     pause .7
     show sherinford pequeño at center with dissolve:
         ypos .450
         xoffset 60
-    she "Pío..."
-    pla "Bah, no le pongas mente a esa engreída presidenta."
-    pla "Hagamos nuestro mejor esfuerzo, y ya verás que tendremos los miembros suficientes para el club."
+    she "Tweet..."
+    pla "Bah, don't give that self-sufficient president a mind."
+    pla "Let's do our best, and you'll see we'll have enough members for the club."
     show alice sonrojada
     ali "[pla_name]..."
     show alice sonriendo
-    ali "Gracias por seguir en el club."
+    ali "Thank you for staying in the club."
     scene bg negro with slow_dissolve
-    "Aunque logramos resolver nuestro primer caso juntos..."
-    "Alice y yo seguíamos siendo los únicos miembros del club de detectives."
-    "Y tenemos dos meses para cambiar la situación."
-    "Lo he pasado bien en este club, y ahora me he comprometido a ayudar."
-    "¡No voy a dejar que este club cierre!"
-
+    "Even though we managed to solve our first case together..."
+    "Alice and I were still the only members of the detective club."
+    "And we have two months to turn the situation around."
+    "I've had a good time in this club, and now I'm committed to helping."
+    "I'm not going to let this club close!"
     $noInteract()
 
     stop music fadeout 3
@@ -969,47 +964,47 @@ label d1r6_correcto:
 
     $ renpy.pause(3,hard=True)
 
-    show text "{size=30}Concepto y guion{/size}{p}{size=70}Danny Garay{/size}" at truecenter with dissolve:
+    show text "{size=30} Concept and script{/size}{p}{size=70}Danny Garay{/size}" at truecenter with dissolve:
         xalign .5
     $ renpy.pause(2,hard=True)
     hide text
 
-    show text "{size=30}Arte de personajes (sprites){/size}{p}{size=70}Tokudaya{/size}" at truecenter with dissolve:
+    show text "{size=30} Character artwork (sprites){/size}{p}{size=70}Tokudaya{/size}" at truecenter with dissolve:
         xalign .5
     $ renpy.pause(2,hard=True)
     hide text
 
-    show text "{size=30}Ilustraciones adicionales{/size}{p}{size=70}Danny Garay{/size}" at truecenter with dissolve:
+    show text "{size=30} Additional illustrations{/size}{p}{size=70}Danny Garay{/size}" at truecenter with dissolve:
         xalign .5
     $ renpy.pause(2,hard=True)
     hide text
 
-    show text "{size=30}Escenarios{/size}{p}{size=50}loo.sakura.ne.jp{p}Pixabay.com{p}LindaHicks{p}Wokandapix{p}Ajalfalro{p}Uncle Mugen{/size}" at truecenter with dissolve:
+    show text "{size=30} scene backgrounds {/size}{p}{size=50}loo.sakura.ne.jp{p}Pixabay.com{p}LindaHicks{p}Wokandapix{p}Ajalfalro{p}Uncle Mugen{/size}" at truecenter with dissolve:
         xalign .5
     $ renpy.pause(4,hard=True)
     hide text
 
-    show text "{size=30}Música de fondo{/size}{p}{size=50}Amacha{p}Kevin Macleod{p}Eric Matyas{p}Vibe Mountain{p}Asher Fulero{p}Dead Seed{p}Silent Partner{/size}" at truecenter with dissolve:
+    show text "{size=30} Background music {/size}{p}{size=50}Amacha{p}Kevin Macleod{p}Eric Matyas{p}Vibe Mountain{p}Asher Fulero{p}Dead Seed{p}Silent Partner{/size}" at truecenter with dissolve:
         xalign .5
     $ renpy.pause(4,hard=True)
     hide text
 
-    show text "{size=30}Efectos de sonido{/size}{p}{size=60}Freesound.org{p}Taira Komori{/size}" at truecenter with dissolve:
+    show text "{size=30} Sound effects {/size}{p}{size=60}Freesound.org{p}Taira Komori{/size}" at truecenter with dissolve:
         xalign .5
     $ renpy.pause(3,hard=True)
     hide text
 
-    show text "{size=30}Progamación y diseño{/size}{p}{size=70}Danny Garay{/size}" at truecenter with dissolve:
+    show text "{size=30} Programming and design {/size}{p}{size=70}Danny Garay{/size}" at truecenter with dissolve:
         xalign .5
     $ renpy.pause(2,hard=True)
     hide text
 
-    show text "{size=30}Jugadores beta (sin ningún orden en particular){/size}{p}{size=40}Pablo Canché, Alexis Sánchez, Marcos Lopez, Davar Osorio, Danny Huerta, Iván Medina, Bill García, Williams Chia, Deivid Navarro, Juan Cruz, Matías Barraza, Jeremy Garrido, Sebas BZ, José Veintimilla, Daniel Castro, Juan Vicente, Michel Hernández, Juan Manuel, Ramiro Segovia.{/size}" at truecenter with dissolve:
+    show text "{size=30} Beta players (sin ningún orden en particular){/size}{p}{size=40}Pablo Canché, Alexis Sánchez, Marcos Lopez, Davar Osorio, Danny Huerta, Iván Medina, Bill García, Williams Chia, Deivid Navarro, Juan Cruz, Matías Barraza, Jeremy Garrido, Sebas BZ, José Veintimilla, Daniel Castro, Juan Vicente, Michel Hernández, Juan Manuel, Ramiro Segovia.{/size}" at truecenter with dissolve:
         xalign .5
     $ renpy.pause(6,hard=True)
     hide text
 
-    show text "{size=30}Motor de juego{/size}{p}{size=70}Ren'Py{/size}" at truecenter with dissolve:
+    show text "{size=30} Game engine {/size}{p}{size=70}Ren'Py{/size}" at truecenter with dissolve:
         xalign .5
     $ renpy.pause(2,hard=True)
     hide text
@@ -1021,7 +1016,7 @@ label d1r6_correcto:
             hide screen btnSkipCredits with dissolve
         show logo at truecenter with dissolve
         $ renpy.pause(1,hard=True)
-        show text "{size=70}¡Gracias por jugar!{/size}" with dissolve:
+        show text "{size=70}¡Thank you for playing!{/size}" with dissolve:
             xalign .5
             ypos .8
         $ renpy.pause(5,hard=True)
@@ -1034,6 +1029,5 @@ label d1r6_correcto:
 
     $persistent.skipcredits=True
     return
-
 
 
