@@ -12,7 +12,7 @@ label caso1_debate_rnd4:
     $ debate_args.append(4)## id de la ronda del debate
     $ debate_args.append(5)## cual id de frase es la correcta
     $ debate_args.append(1)## cual id de argumento es el correcto
-    $ argumentos = ["Cancha en fin de semana","Tropiezo","Papel y casillero","Diagrama de correlación","Beck Doran (perfil)"]  
+    $ argumentos = ["Field on weekends", "Stumble", "Paper and locker", "Correlation diagram", "Beck Doran (profile)"].    
     $ show_gameplay_layout(600)
     play music debate
 
@@ -40,7 +40,7 @@ label inicio_d1r4:
     show screen debateCharPanel("beck")
 
     $ frase_args.append(0)## el id de la frase (desde cero)
-    $ frase_args.append("Si la carta {azul}no se metió al casillero...{/azul}")
+    $ frase_args.append("If the {azul} letter did not go into the locker...{/azul}")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r2f0)## qué animacion usar
     $ frase_args.append(True)## si es clickeable (True o False)
@@ -50,7 +50,7 @@ label inicio_d1r4:
     $ renpy.pause(2,hard=True)
 
     $ frase_args.append(1)## el id de la frase (desde cero)
-    $ frase_args.append("Entonces {amarillo}la carta llegó directamente al bolso.{/amarillo}")
+    $ frase_args.append("Then {amarillo}the letter was placed directly in the bag.{/amarillo}")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r4f1)## qué animacion usar
     $ frase_args.append(True)## si es clickeable (True o False)
@@ -72,7 +72,7 @@ label inicio_d1r4:
     show screen debateCharPanel("alice")
 
     $ frase_args.append(2)## el id de la frase (desde cero)
-    $ frase_args.append("{amarillo}El acosador quizás sea del mismo salón que Marissa...{/amarillo}")
+    $ frase_args.append("{amarillo} The stalker may be from the same classroom as Marissa....{/amarillo}")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r4f2)## qué animacion usar
     $ frase_args.append(True)## si es clickeable (True o False)
@@ -82,7 +82,7 @@ label inicio_d1r4:
     $ renpy.pause(3,hard=True)
 
     $ frase_args.append(3)## el id de la frase (desde cero)
-    $ frase_args.append("{azul}Pudo meter la carta{/azul} en un descuido...")
+    $ frase_args.append("{azul} He could have slipped the letter{/azul} in an oversight...")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r4f3)## qué animacion usar
     $ frase_args.append(True)## si es clickeable (True o False)
@@ -104,7 +104,7 @@ label inicio_d1r4:
     show screen debateCharPanel("marissa")
 
     $ frase_args.append(4)## el id de la frase (desde cero)
-    $ frase_args.append("Así que el acosador {p}{azul}es un amigo...{/azul}")
+    $ frase_args.append("So the stalker {p}{azul}is a friend...{/azul}").
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r4f4)## qué animacion usar
     $ frase_args.append(False)## si es clickeable (True o False)
@@ -126,7 +126,7 @@ label inicio_d1r4:
     show screen debateCharPanel("alice")
 
     $ frase_args.append(5)## el id de la frase (desde cero)
-    $ frase_args.append("Quizás {azul}la carta no llegó a Marissa dentro del salón.{/azul}")
+    $ frase_args.append("Perhaps {azul}the letter did not reach Marissa's bag inside the classroom {/azul}")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r4f5)## qué animacion usar
     $ frase_args.append(True)## si es clickeable (True o False)
@@ -136,7 +136,7 @@ label inicio_d1r4:
     $ renpy.pause(3,hard=True)
 
     $ frase_args.append(6)## el id de la frase (desde cero)
-    $ frase_args.append("{amarillo}Algo debió haber ocurrido{/amarillo} para que pasara eso...")
+    $ frase_args.append("{amarillo}Something must have occurred{/amarillo} for that to happen...").
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r4f6)## qué animacion usar
     $ frase_args.append(True)## si es clickeable (True o False)
@@ -154,6 +154,6 @@ label inicio_d1r4:
     hide screen debateArgumento
     hide screen debateArgs
     $renpy.choice_for_skipping()
-    "Seguimos estancados en cómo pudo llegar la carta hacia Marissa..."
-    "Debe haber algo dentro de mis apuntes..."
+    "We're still stuck on how the letter could have gotten to Marissa..."
+    "There must be something in my notes..."
     jump inicio_d1r4
