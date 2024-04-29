@@ -1,52 +1,52 @@
 label int3f0:
     hide screen interrogatorio_btns
-    $showplay_excl("espera")
-    pla "¿Tu hora habitual de llegar es a las ocho y media?"
-    bec "Eso es lo que he dicho."
+    $ showplay_excl("wait")
+    pla "Do you usually arrive at eight thirty?"
+    bec "That's what I said."
     show beck pensando
-    bec "Minutos más, minutos menos..."
+    bec "Minutes more, minutes less..."
     # pla "..."
-    "No veo nada extraño en eso..."
+    "I don't see anything strange in that..."
     hide beck with dissolve
     show alice enojada with dissolve
-    $restCorazones()
-    ali "¡[pla_name]! ¡No hagas preguntas innecesarias!" with hpunch
-    pla "Lo sé, lo sé..."
+    $ restCorazones()
+    ali "[pl_name]! Don't ask unnecessary questions!" with hpunch
+    pla "I know, I know..."
     hide alice with dissolve
     jump caso1_testimonio3_inicio
 
 label int3f1:
     hide screen interrogatorio_btns
-    $showplay_excl("espera")
-    pla "Con que Física..."
+    $ showplay_excl("wait")
+    pla "So physics clases..."
     show beck enojado
-    bec "Eh, sí. ¿Podrías al menos dejarme continuar?"
-    $restCorazones()
-    pla "Ah, claro, perdón..." with hpunch
+    bec "Uh yes. Could you at least let me continue?"
+    $ restCorazones()
+    pla "Oh right, sorry..." with hpunch
     jump caso1_testimonio3_inicio
 
 label int3f2:
     hide screen interrogatorio_btns
-    $showplay_excl("espera")
-    # if not fraseInterr[2]:
-    #     $addCorazones()
+    $ showplay_excl("wait")
+
+
     show beck:
         ease .5 mleft
     show alice normal at mright with dissolve
-    ali "Eh... le entiendo..."
-    ali "Esas clases me duermen."
+    ali "Uh... I understand..."
+    ali "Those classes put me to sleep."
     show beck guino
-    bec "Je, je, je. Veo que no soy el único."
+    bec "Hahaha. I see I'm not the only one."
     show beck serio
-    bec "En serio, viejo... {amarillo}no soporto ver formúlas, números, o cosas así.{/amarillo}"
-    bec "{amarillo}No se me da bien los números.{/amarillo}"
-    bec "Es un alivio cuando esas clases terminan."
+    bec "Seriously, {amarillo}I can't stand seeing formulas, numbers, or things like that.{/amarillo}"
+    bec "{amarillo}I'm not good at numbers.{/amarillo}"
+    bec "It's a relief when those classes are over."
     show beck guino
-    bec "Menos mal que tengo una beca por deportes."
-    bec "Por que para los estudios, {amarillo}soy todo lo opuesto a un estudiante aplicado{/amarillo} ja, ja, ja."
+    bec "Luckily I have a scholarship for sports."
+    bec "Because for studies, {amarillo} I'm the complete opposite of a diligent student {/amarillo} ha ha ha."
     # if not fraseInterr[2]:
     #     $updateNote("Beck Doran (perfil)",ndesc="\n\nBeck no soporta ver cosas relacionadas a los números.",add=True)
-    "No veo que eso sea algo para enorgullecerse..."
+    "I don't see that that's something to be proud of..."
     hide alice with dissolve
     show beck:
         ease .5 center
@@ -58,60 +58,60 @@ label int3f2:
 
 label int3f3:
     hide screen interrogatorio_btns
-    $showplay_excl("espera")
-    pla "¿A qué hora tuvieron tiempo libre?"
+    $ showplay_excl("wait")
+    pla "At what moment did you have free time?"
     show beck sonriendo
-    bec "{amarillo}Creo que a las diez.{/amarillo}"#misma hora de supuesta clase de mates.
-    pla "Así que... ¿fuiste a la cancha, no?"
+    bec "{amarillo}I think at ten o'clock.{/amarillo}"#misma hora de supuesta clase de mates.
+    pla "So... you went to the soccer field, right?"
     show beck pensando
-    bec "Por supuesto, {amarillo}es el lugar que más frecuento en la escuela.{/amarillo}"
+    bec "Of course, {amarillo}is the place I go to the most at school.{/amarillo}"
     show beck serio
-    bec "Si es de importancia que lo sepas..."
+    bec "If it's important that you know..."
     show beck guino
-    bec "Me topé con un par de chicas que querían ser mis \"amigas\" ja, ja, ja."
-    bec "Si quieres, te presento a una."
+    bec "I ran into a couple of girls who wanted to be my \"friends\" ha ha ha."
+    bec "If you want, I'll introduce you to one."
     show beck:
         ease .5 mleft
     show alice normal at mright with dissolve
-    ali "Eh... debe ser agotador ser popular..."
+    ali "Huh... it must be tiring to be popular..."
     pla "..."
     show alice sorprendida
-    ali "¿[pla_name]?"
+    ali "[pla_name]?"
     # "Hay algo extraño con esto..."
     hide alice with dissolve
     show beck:
         ease .5 center
     #una vez que se encontró la pista, mandamos al tuto de la siguiente etapa
-    $fraseInterr[3]=True
+    $ fraseInterr[3]=True
     if tuto_interr_refutar:
         jump interr_3_fin_frases
     jump caso1_testimonio3_inicio
 
 label int3f4:
     hide screen interrogatorio_btns
-    $showplay_excl("espera")
-    "No sé qué preguntarle..."
-    "Seguramente a Beck tampoco le gusta las clases de Historia, {amarillo}¿o tal vez sí?{/amarillo}"
+    $ showplay_excl("wait")
+    "I don't know what to ask..."
+    "Beck probably doesn't like history classes either, {amarillo} or maybe he does?{/amarillo}"
     hide beck with dissolve
     show alice enojada with dissolve
-    $restCorazones()
-    ali "¡[pla_name]!" with hpunch
-    pla "¿¡Ahora, qué!? Si ni siquiera he hablado."
-    ali "Pero parecía que estabas a punto de hacer una pregunta innecesaria."
-    "Eh... tiene razón."
+    $ restCorazones()
+    ali "[pl_name]!" with hpunch
+    pla "Now what!? I haven't even spoken."
+    ali "But it seemed like you were about to ask an unnecessary question."
+    "Uh... she's right."
     hide alice with dissolve
     jump caso1_testimonio3_inicio
 
 label int3f5:
     hide screen interrogatorio_btns
-    $showplay_excl("espera")
+    $ showplay_excl("wait")
     show beck serio
-    pla "¿Supones?"
-    pla "¿Seguro que eso todo lo que tienes para contarme?"
-    $restCorazones()
+    pla "Do you suppose?"
+    pla "Are you sure that's all you have to tell me?"
+    $ restCorazones()
     show beck enojado
-    bec "Sí. No tengo nada más que contar." with hpunch
-    "Debo ir con más cuidado..."
+    bec "Yes. I have nothing more to say." with hpunch
+    "I have to be more careful..."
     # bec "¿Entonces? Si no tienes más preguntas..."
     # "Uh... hay algo que no encaja con lo que ha dicho hasta ahora..."
     jump caso1_testimonio3_inicio
@@ -137,43 +137,43 @@ label int3f3_refutado:
 
     if interr_item_notepad_select==interr_item_notepad_correcto:
         hide screen interrogatorio_btns
-        $quick_menu_gameplay = False
-        $hide_gameplay_layout()
+        $ quick_menu_gameplay = False
+        $ hide_gameplay_layout()
         stop music fadeout 1
-        $showplay_excl("esonoescierto")
-        pla "¿Estás seguro de que hubo tiempo libre a esa hora?"
+        $ showplay_excl("thatisnottrue")
+        pla "Are you sure there was free time at that hour?"
         show beck sorprendido
-        bec "¿Eh?"
+        bec "Huh?"
         show beck pensando
-        extend " Creo estar seguro de que así fue..."
+        extend " I think I'm sure it was like that..."
         show beck:
             ease .5 mleft
         show alice normal at mright with dissolve
-        ali "Qué frase tan contradictoria..."
+        ali "What a contradictory phrase..."
         show beck serio
-        pla "Estás en un error, Beck."
-        pla "A esa hora, y en ese día..."
+        pla "You are wrong, Beck."
+        pla "At that time, and on that day..."
         play sound campana
-        pla "No pudiste ir a la cancha a jugar." with flashbulb
+        pla "You couldn't go to the field to play." with flashbulb
         show beck sorprendido
-        bec "¿Eh? ¿Por qué no?"
-        pla "Por lo que tengo apuntado, no pudo haber tiempo libre en ese momento, y más aún cuando tocaba clases de matemáticas."
-        bec "¡Ah! ¡Es cierto!"
+        bec "Huh? Why not?"
+        pla "From what I have noted, there could be no free time at that moment, and even more so when it was math classes turn."
+        bec "Oh! It's true!"
         # bec "Me he confundido..."
         show beck pensando
-        bec "Creo que he confudido las cosas, pero ya recuerdo bien."
-        pla "También sé que fuiste al salón de maestros a pedir ayuda a la profesora Harrow."
-        pla "Y que además hubo un tropiezo entre la profesora y Marissa."
+        bec "I think I have confused things, but I remember well now."
+        pla "I also know that you went to the teachers' lounge to ask Professor Harrow for help."
+        pla "And that there was also a run-in between the teacher and Marissa."
         show beck sorprendido
-        bec "¿¡Eeeeh!? ¿¡También sabías de todo eso!?" with hpunch
-        $updateNote("Beck Doran (perfil)",ndesc="\n\nBeck estuvo en el corredor en los momentos finales al tropiezo de la profesora con Marissa, así que es algo así como un testigo.",add=True)
-        pla "Somos del club de detectives."
+        bec "Whaaat!? Did you also know about all that!?" with hpunch
+        $ updateNote("Beck Doran (profile)",ndesc="\n\nBeck was in the hallway in the final moments of the teacher bumping into Marissa, so he's kind of a witness.",add=True)
+        pla "We're from the detective club."
         show beck:
             ease .5 mleft
         show alice sonriendo at mright with dissolve
-        ali "¡Bien dicho, [pla_name]!"
+        ali "Well said, [pla_name]!"
 
-        # show beck serio
+         # show beck serio
         # pla "Hablé con la profesora Harrow..."
         # pla "Y ella me dijo que estabas en el salón de maestros en ese momento."
         # pla "Además, también me comentó que a esa hora se dirigía a tu salón."
@@ -204,23 +204,23 @@ label int3f3_refutado:
 
 label int3_incorrecto:
     hide screen interrogatorio_btns
-    $showplay_excl("espera")
+    $ showplay_excl("wait")
     ##agregar respuestas random
-    bec "¿Qué?"
-    bec "¿Y eso qué demuestra?"
-    pla "Eh... bu- bueno... yo..."
-    $restCorazones()
-    "¡Debo pensar muy bien antes de hablar!" with hpunch
+    bec "What?"
+    bec "And what does that prove?"
+    pla "Eh... we- well... I..."
+    $ restCorazones()
+    "I must think very well before speaking!" with hpunch
     jump caso1_testimonio3_inicio
 
 label int3_gameover:
     hide screen interrogatorio_btns
-    $hide_gameplay_layout()
+    $ hide_gameplay_layout()
     stop music fadeout 1.0
     show beck pensando
-    bec "Ya se me está haciendo tarde, no seguiré hablando del tema."
-    pla "¿¡Eh!? ¡Pero si no hemos terminado todavía!" with hpunch
+    bec "It's already getting late, I won't keep talking about it."
+    pla "Huh!? But we're not done yet!" with hpunch
     show beck preocupado
-    bec "Pues yo sí he terminado, suerte con la investigación."
+    bec "Well, I'm done, good luck with the investigation."
     hide beck with dissolve
     jump caso1_gameover
