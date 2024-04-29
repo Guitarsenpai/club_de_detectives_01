@@ -13,7 +13,7 @@ label caso1_debate_rnd3:
     $ debate_args.append(3)## id de la ronda del debate
     $ debate_args.append(9)## cual id de frase es la correcta
     $ debate_args.append(1)## cual id de argumento es el correcto
-    $ argumentos = ["Tropiezo","Papel y casillero","Beck Doran (perfil)","Diagrama de correlación","Cancha en fin de semana"]  
+    $ argumentos = ["Stumble", "Paper and locker", "Beck Doran (profile)", "Correlation diagram", "Field on weekends"]
     $ show_gameplay_layout(600)
     play music debate
 
@@ -39,7 +39,7 @@ label inicio_d1r3:
     show screen debateCharPanel("beck")
 
     $ frase_args.append(0)## el id de la frase (desde cero)
-    $ frase_args.append("Si ustedes dicen...{p}que {amarillo}el acosador no es del club de Marissa...{/amarillo}")
+    $ frase_args.append("If you guys say...{p}that {amarillo}the stalker is not from Marissa's club... {/amarillo}.")    
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r2f0)## qué animacion usar
     $ frase_args.append(True)## si es clickeable (True o False)
@@ -49,7 +49,7 @@ label inicio_d1r3:
     $ renpy.pause(3,hard=True)
 
     $ frase_args.append(1)## el id de la frase (desde cero)
-    $ frase_args.append("¿Cómo pudo esta persona darle una carta{p}sin que ella se diera cuenta?")
+    $ frase_args.append("How could this person give her a letter{p}without her noticing?"). 
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r2f2)## qué animacion usar
     $ frase_args.append(False)## si es clickeable (True o False)
@@ -71,7 +71,7 @@ label inicio_d1r3:
     show screen debateCharPanel("marissa")
 
     $ frase_args.append(2)## el id de la frase (desde cero)
-    $ frase_args.append("Eso también me lo he preguntado...")
+    $ frase_args.append("I've also wondered about that...")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r0f0)## qué animacion usar
     $ frase_args.append(False)## si es clickeable (True o False)
@@ -81,7 +81,7 @@ label inicio_d1r3:
     $ renpy.pause(2,hard=True)
 
     $ frase_args.append(3)## el id de la frase (desde cero)
-    $ frase_args.append("Si no es del club,{p}{azul}debería ser alguien cercano a mí...{/azul}")
+    $ frase_args.append("If it's not from the club,{p}{azul}it should be someone close to me...{/azul}")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r3f3)## qué animacion usar
     $ frase_args.append(True)## si es clickeable (True o False)
@@ -95,7 +95,7 @@ label inicio_d1r3:
     hide screen debateText2
 
     $ frase_args.append(4)## el id de la frase (desde cero)
-    $ frase_args.append("Esa persona {azul}metió la carta en mi bolso...{/azul}")
+    $ frase_args.append("That person {azul} put the letter in my bag... {/azul}")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r0f0)## qué animacion usar
     $ frase_args.append(True)## si es clickeable (True o False)
@@ -117,7 +117,7 @@ label inicio_d1r3:
     show screen debateCharPanel("alice")
 
     $ frase_args.append(5)## el id de la frase (desde cero)
-    $ frase_args.append("{azul}Tal vez sea un amigo...{/azul}")
+    $ frase_args.append("{azul} Perhaps a friend...{/azul}")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r1f4)## qué animacion usar
     $ frase_args.append(True)## si es clickeable (True o False)
@@ -127,7 +127,7 @@ label inicio_d1r3:
     $ renpy.pause(2.5,hard=True)
 
     $ frase_args.append(6)## el id de la frase (desde cero)
-    $ frase_args.append("O un {azul}compañero del salón...{/azul}")
+    $ frase_args.append("Or a {azul} classmate...{/azul}")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r1f2)## qué animacion usar
     $ frase_args.append(True)## si es clickeable (True o False)
@@ -137,7 +137,7 @@ label inicio_d1r3:
     $ renpy.pause(2,hard=True)
 
     $ frase_args.append(7)## el id de la frase (desde cero)
-    $ frase_args.append("O algún {azul}ex-novio.{/azul}")
+    $ frase_args.append("Or a {azul} ex-boyfriend.{/azul}")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r2f2)## qué animacion usar
     $ frase_args.append(True)## si es clickeable (True o False)
@@ -159,7 +159,7 @@ label inicio_d1r3:
     show screen debateCharPanel("beck")
 
     $ frase_args.append(8)## el id de la frase (desde cero)
-    $ frase_args.append("¡Ya lo sé!")
+    $ frase_args.append("I know!")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r0f0)## qué animacion usar
     $ frase_args.append(False)## si es clickeable (True o False)
@@ -172,7 +172,7 @@ label inicio_d1r3:
     show beck pensando
 
     $ frase_args.append(9)## el id de la frase (desde cero)
-    $ frase_args.append("Quizás el acosador {p}{amarillo}metió la carta a través de las {p}rejillas del casillero.{/amarillo}")
+    $ frase_args.append("Perhaps the stalker {p}{amarillo} put the letter through the {p}slits of the locker.{/amarillo}.")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r3f9)## qué animacion usar
     $ frase_args.append(True)## si es clickeable (True o False)
@@ -194,7 +194,7 @@ label inicio_d1r3:
     show screen debateCharPanel("marissa")
 
     $ frase_args.append(10)## el id de la frase (desde cero)
-    $ frase_args.append("{azul}¡Eso tiene mucho sentido!{/azul}")
+    $ frase_args.append("{azul}That makes a lot of sense! {/azul}")
     $ frase_args.append("frase")## el tipo (frase o murmullo)
     $ frase_args.append(d1r0f0)## qué animacion usar
     $ frase_args.append(True)## si es clickeable (True o False)
@@ -212,6 +212,6 @@ label inicio_d1r3:
     hide screen debateArgumento
     hide screen debateArgs
     $renpy.choice_for_skipping()
-    "Estamos discutiendo sobre {amarillo}cómo llegó la carta a Marissa...{/amarillo}"
-    "Creo recordar que Alice y yo {amarillo}averiguamos algo{/amarillo} al respecto..."
+"We're discussing {amarillo}how the letter got to Marissa...{/amarillo}"
+    "I think that Alice and I {amarillo}found out something{/amarillo} about it..."
     jump inicio_d1r3
