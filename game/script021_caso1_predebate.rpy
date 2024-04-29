@@ -17,7 +17,7 @@ label caso1_predebate:
     window show
 
     pla "Oh... did you draw that?"
-    ali "He he."
+    ali "Heh heh."
     "Alice smiled proudly as she showed me her work."
     "If she wasn't in the detective club, she wouldn't do badly in the art club..."
     pla "Uhm... So {amarillo}Neil is not known to Marissa or Beck...{/amarillo}"
