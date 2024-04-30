@@ -10,7 +10,7 @@ label d1r1_incorrecto_alice:
     $restCorazones()
     ali "No me contradigas, sé que hay otra cosa que averiguamos acerca del autor de la carta..." with hpunch
     show alice pensando
-    ali "Pero no sé exactamente qué es..."
+    ali "Pero no recuerdo exactamente qué es..."
     jump inicio_d1r1
 
 label d1r1_correcto:
@@ -32,7 +32,7 @@ label d1r1_correcto:
     mar "Tengo curiosidad, ¿cómo lo supiste?"
     show marissa normal
     pla "Me fijé en la inclinación de la letra."
-    pla "Y cualquier diestro no dejaría ese tipo de inclinación al escribir."
+    pla "Los diestros no dejan ese tipo de inclinación al escribir."
     show marissa:
         ease .5 mleft
     show alice sorprendida at mright with dissolve
@@ -83,7 +83,7 @@ label d1r1_correcto:
     show marissa alegre hablando
     mar "Conozco a Beck desde el año pasado, y estoy segura que no es alguien de los que va iniciando rumores."
     mar "Y él puede entender cómo me siento al respecto..."
-    pla "Perfecto entonces, lo mandaré a llamar."
+    pla "Perfecto entonces, lo llamaré."
     $quick_menu_gameplay=False
     scene bg negro with dissolve
     "Corrí hacia la cancha de la escuela, no tardé en encontrar a Beck, quien estaba a un lado de la cancha charlando con unos amigos."
@@ -130,7 +130,7 @@ label d1r1_correcto:
         ease .5 center
     show alice pensando at right with dissolve
     ali "E- estoy de acuerdo con [pla_name]..."
-    ali "Lo mejor, es no lanzar acusaciones si una base sólida..."
+    ali "Lo mejor, es no lanzar acusaciones sin una base sólida..."
     ali "E- eso es lo que me enseñaron mis superiores..."
     bec "Uhm..."
     show alice normal
