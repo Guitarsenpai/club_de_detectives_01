@@ -33,7 +33,7 @@ label caso1_testimonio4:
         mar "{amarillo}Los papeles de la profesora Harrow salieron volando{/amarillo}, y a mí se me {amarillo}cayeron algunos cuadernos.{/amarillo}"
         $ interr_fraseid=4
         show marissa at decaer
-        mar "No tardé en empezar a recoger las cosas, esa profesora es aterradora, {amarillo}poco después vino alguien a ayudar.{/amarillo}"
+        mar "No tardé en empezar a recoger las cosas, esa profesora es aterradora, {amarillo}poco después, vino alguien a ayudar.{/amarillo}"
         $ interr_fraseid=5
         show marissa enojada at reponerse
         mar "A pesar de haberme disculpado, la profesora {amarillo}me castigó.{/amarillo}"
