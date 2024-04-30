@@ -137,7 +137,7 @@ label caso1_predebate:
                 play sound campana
                 mar "{amarillo}¡Din, din!{/amarillo} ¡Correcto!" with flashbulb
                 show marissa normal
-                mar "Pero... ¿era necesario preguntar esto?"
+                mar "Pero... ¿era necesario preguntar eso?"
                 $updateStat("intel","+",1)
                 $renpy.notify("Inteligencia +1")
                 show alice asustada at temblor
