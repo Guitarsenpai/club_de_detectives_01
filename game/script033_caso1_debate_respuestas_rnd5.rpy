@@ -74,7 +74,7 @@ label d1r5_correcto:
     show neil pensativo
     nei "Además, de que me culpen de algo así... solo por qué me gusta ella... Es exagerado."
     show neil normal
-    nei "¿O es que {amarillo}tienen otra prueba{/amarillo} de que demuestre que yo sea el culpable?"
+    nei "¿O es que {amarillo}tienen otra prueba{/amarillo} que demuestre que yo sea el culpable?"
     show marissa normal
     "Una prueba más aparte del número que él escribió, veamos..."
     $renpy.choice_for_skipping()
