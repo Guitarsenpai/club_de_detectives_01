@@ -96,7 +96,7 @@ label caso1_interrogatorio5_final:
     ali "Al final, las contradicciones salían a flote."
     ali "Y así lográbamos tener nuevas pistas importantes con las cuales resolver el caso."
     show alice alegre
-    ali "Incluso... ¡Hasta mis superiores atrapaban al culpable en el mismo debate!" with hpunch
+    ali "Incluso... ¡A veces mis superiores atrapaban al culpable en el mismo debate!" with hpunch
     pla "Eh..."
     pla "Eso es una buena idea... necesitamos hacer algo así."
     show alice sonriendo at brinquitos
@@ -149,7 +149,7 @@ label caso1_interrogatorio5_final:
     play music ambiente fadein 2
     "Son las cinco de la tarde."
     "Después que las clases terminaron, fui al salón del club, para arreglar con Alice todo lo necesario para realizar un debate."
-    "Y ahora, estaba pasando por el edificio principal de la escuela, cuando..."
+    "Y entonces, estaba pasando por el edificio principal de la escuela, cuando..."
     show beck sonriendo with dissolve
     pause 1
     pla "¿Beck?"
@@ -184,7 +184,7 @@ label caso1_interrogatorio5_final:
     pla "Ehm... sí... supongo..."
     show beck pensando
     bec "¿Cómo puedes hablar tan tranquilamente con la profesora Harrow?"
-    pla "Pues... este... ella es como una amiga de la familia..."
+    pla "Pues... este... ella es como una amiga de mi familia..."
     # pla "Así que... bueno..."
     pla "La profesora Harrow ha estado pendiente de mis calificaciones desde que entré a esta escuela."
     show beck sorprendido
@@ -271,4 +271,3 @@ label caso1_interrogatorio5_final:
     scene bg salon club detectives with dissolve
 
     jump caso1_predebate
-
