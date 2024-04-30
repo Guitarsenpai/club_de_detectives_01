@@ -93,7 +93,7 @@ label int5f4:
         nei "Pues si estás tan seguro... {amarillo}demuestrámelo.{/amarillo}"
         show neil normal
         nei "Yo por mi parte, no recuerdo nada más."
-        "Debería tener {amarillo}algo para demostrar...{/amarillo} Neil {amarillo}tuvo haber visto a otra persona...{/amarillo}"
+        "Debería tener {amarillo}algo para demostrar...{/amarillo} que Neil {amarillo}tuvo que haber visto a otra persona...{/amarillo}"
     else:
         "No tiene caso, aquí no hay nada más que preguntar."
     jump caso1_testimonio5_inicio
@@ -177,7 +177,7 @@ label int5f4_refutado:
                 show neil sorprendido
                 nei "¡Ah! ¡Ya lo recuerdo!" with flashbulb
                 show neil normal
-                nei "Ahora que he hecho esfuerzo en recordar..."
+                nei "Ahora que me he esforzado en recordar..."
                 nei "Sí, creo haber visto a esa persona en ese momento."
                 play sound campana
                 nei "¿Pero qué importancia tiene eso?" with flashbulb
