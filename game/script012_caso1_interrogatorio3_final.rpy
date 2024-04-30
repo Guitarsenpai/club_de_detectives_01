@@ -63,7 +63,7 @@ label caso1_interrogatorio3_final:
                 pla "¿Qué pasó después de eso?"
                 show beck pensando
                 bec "No mucho... recibimos clases de matemáticas como si nada hubiera pasado."
-                bec "Marissa llegó hasta después de que la profesora Harrow se fue del salón."
+                bec "Marissa llegó después de que la profesora Harrow se fue del salón."
                 pla "Entiendo..."
                 # -menos inteligencia
                 $addintel=False
